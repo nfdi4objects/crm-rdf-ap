@@ -68,22 +68,28 @@ CRM also defines class [E55 Type] with properties [P127 has broader term] and [P
 [E31 Document]: http://www.cidoc-crm.org/cidoc-crm/E31
 [E32 Authority Document]: http://www.cidoc-crm.org/cidoc-crm/E32
 [E55 Type]: http://www.cidoc-crm.org/cidoc-crm/E55
+[E55 Identifier]: http://www.cidoc-crm.org/cidoc-crm/E42
 
 ### CRM Classes to use with caution
 
 #### E42 Identifier
 
-Don't use E42_Identifier for URIs. So use
+Don't use [E42 Identifier] for URIs if these URIs are meant to identify an RDF resource.  If a resource happens to have multiple equivalent URIs, choose a preferred URI and use `owl:sameAs` to record aliases.
 
 ~~~ttl
-<something> crm:P1_is_identified_by <http://example.org/> .
+<http://www.wikidata.org/entity/Q3018259> a crm:E18_Physical Thing ;
+  owl:sameAs <http://kbpedia.org/kko/rc/RMS-Titanic-TheShip> .
 ~~~
 
 instead of 
 
 ~~~ttl
-<something> crm:P1_is_identified_by [
-  a crm:E42_Identifier ;  crm:P90_has_value "http://example.org/" ] .
+<x> a crm:E18_Physical Thing .
+  crm:P1_is_identified_by
+    [ a crm:E42_Identifier ;
+      crm:P190_has_symbolic_content "http://www.wikidata.org/entity/Q3018259" ] ,
+    [ a crm:E42_Identifier ;
+      crm:P190_has_symbolic_content "http://kbpedia.org/kko/rc/RMS-Titanic-TheShip" ] .
 ~~~
 
 ### Deprecated CRM classes
