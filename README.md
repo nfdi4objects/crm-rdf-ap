@@ -1,8 +1,10 @@
-# Application profile of CIDOC-CRM in RDF
+# CIDOC-CRM in RDF Application Profile
 
-This repository contains some guidelines how to best use CIDOC-CRM in RDF. It is work in progress.
+> Some guidelines how to use CIDOC-CRM in RDF for more benefit.
 
-The document is written in quarto Markdown in [`index.qmd`](index.qmd).
+This is work in progress. Contributions and comments are very welcome!
+
+The guidelines are written in Markdown with [quarto](https://quarto.org/) in file [`index.qmd`](index.qmd) of repository <https://github.com/nfdi4objects/crm-rdf-ap> and published automatically at <https://nfdi4objects.github.io/crm-rdf-ap/>.
 
 ## License
 

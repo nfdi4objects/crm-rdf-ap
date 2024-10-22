@@ -1,26 +1,94 @@
 ---
-title: CIDOC-CRM in RDF Application profile
+title: CIDOC-CRM in RDF Application Profile
 ---
 
-## Motivation
+## Background and Motivation
 
-CRM classes and properties do not fully map to RDF classes and properties. CRM is not an ontology by an *abstract data model*.
+The [CIDOC Conceptual Reference Model (CRM)](https://www.cidoc-crm.org/) is a conceptual data model used in the cultural heritage domain. The [Resource Description Framework (RDF)](https://www.w3.org/TR/rdf11-concepts/) is a graph-based data format. Both CRM and RDF have been created independently for integration of information. RDF is a good fit to express CRM in data and it has been used to do so. The expression of CRM in RDF is not trivial though, so some guidelines are needed. This document is going to provide an application profile to best use CRM in RDF for integration with other data in RDF. The document is going to be compared and aligned with similar recommendations such as @Doerr2020.
 
-## CRM Classes to avoid
+The document is managed in a git repository at <https://github.com/nfdi4objects/crm-rdf-ap>. Contributions and feedback is very welcome!
 
-## CRM Classes to use with caution
+### Difficulties in expressing CRM and RDF
 
-### E42 Identifier
+CRM defines abstract types of entities (CRM classes) such as events, measurements, places, and actors with relationship types (CRM properties) to connect instances of these entity types. RDF and its most common extensions define how to identify entities (resources), entity types (RDF classes) and relationship types (CRM properties) with URIs and values with Unicode strings (RDF literals) optionally having a language or a data type to encode values such as numbers and dates. RDF is used with ontologies that define RDF classes, properties, and constraints. CRM looks like an ontology or like it could directly be mapped to an RDF ontology, but this is not the case. CRM is agnostic to data formats: CRM classes are not RDF classes and CRM has no concept of data types and values, so any expression of CRM in RDF comes with choices of design. It is possible to express the same information modeled with CRM in different forms of RDF, so data cannot be integrated flawlessly.
 
-Don't use E42_Identifier for identifier for URIs. So use
+## Guidelines
 
-~~~.ttl
+### Primitive values
+
+[E59 Primitive Value] and its subclasses are not expressed as RDF classes. Instead
+
+- instances of [E62 String](http://www.cidoc-crm.org/cidoc-crm/E62) are expressed as RDF literals with optional language tag, and
+
+- instances of [E60 Number](http://www.cidoc-crm.org/cidoc-crm/E60) are expressed as RDF literals with numeric data type such as `xsd:integer`
+
+The CRM classes [E61 Time Primitive], [E94 Space Primitive], and [E95 Spacetime Primitive] are both subclasses of [E59 Primitive Value] and of [E41 Appellation], so the latter can be used when a mapping to established RDF data types is not applicable.
+
+- instances of [E61 Time Primitive] are expressed as RDF literals of type `xsd:date`, `xsd:time`, `xsd:dateTime`, or `xsd:dateTimeStamp` if applicable. More complex time values should be expressed using the [Extended Date/Time Format (EDTF)](https://www.loc.gov/standards/datetime/) but there is no established method to express EDTF values in RDF yet.^[See <https://periodo.github.io/edtf-ontology/> for a draft.]
+
+- instances of [E94 Space Primitive] should be expressed using [GeoSPARQL] Ontology as instance of `geo:hasGeometry`, compatible with various geographic data formats (WKT, GeoJSON, GML...).^[See also CRM Geo draft at <http://www.cidoc-crm.org/extensions/crmgeo/>, defining superclasses of `geo:Geometry`.] CRM Property [P168 place is defined by] should be expressed with RDF property `geo:hasGeometry`. CRM Properties [P171 at some place within], and [P172 contains] can be used as RDF properties to link places ([E53 Place]) to outer and inner geometries but `geo:hasBoundingBox` and `geo:hasCentroid` should be preferred, if applicable.
+
+    ~~~ttl
+    <TitanticWreckLocation> a crm:E53_Place ;
+      crm:P89_falls_within <AtlanticOcean> ;
+      geo:hasGeometry [ a geo:Geometry ;
+        geo:asGeoJSON '{"type": "Point","coordinates": [-49.946944,41.7325,-3803]}' ;
+        geo:asWKT "POINT (-49.946944 41.7325 -3803)" ;
+      ] .
+    ~~~
+
+- instances of [E95 Spacetime Primitive] ... (TODO)
+
+[GeoSPARQL]: https://www.ogc.org/de/publications/standard/geosparql/
+
+[P171 at some place within]: http://www.cidoc-crm.org/cidoc-crm/P171
+[P172 contains]: http://www.cidoc-crm.org/cidoc-crm/P172
+[P168 place is defined by]: http://www.cidoc-crm.org/cidoc-crm/P168
+
+
+[E53 Place]: http://www.cidoc-crm.org/cidoc-crm/E53
+[E41 Appellation]: http://www.cidoc-crm.org/cidoc-crm/E41
+[E59 Primitive Value]: http://www.cidoc-crm.org/cidoc-crm/E59
+[E61 Time Primitive]: http://www.cidoc-crm.org/cidoc-crm/E61
+[E94 Space Primitive]: http://www.cidoc-crm.org/cidoc-crm/E94
+[E95 Spacetime Primitive]: http://www.cidoc-crm.org/cidoc-crm/E95
+
+### Authority files and types
+
+CRM class [E32 Authority Document] and CRM property [P71 lists] should not be used in RDF but corresponding SKOS RDF classes `skos:ConceptScheme` and `skos:inScheme`. Applications may define `skos:ConceptScheme` as subclass of [E31 Document] and `skos:inScheme` as subproperty of [P67 refers to] if needed.
+
+CRM also defines class [E55 Type] with properties [P127 has broader term] and [P127i has narrower term]. These can be mapped to `skos:Concept` and `skos:broader`/`skos:narrower` or to individual RDF classes, connected with `rdfs:subClassOf`, depending on use case (types are used with CRM property P2, P137, P177, P135, P125, P32, P42).
+
+[P127 has broader term]: http://www.cidoc-crm.org/cidoc-crm/P127
+[P127i has narrower term]: http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term
+[P71 lists]: http://www.cidoc-crm.org/cidoc-crm/P71
+[P67 refers to]: http://www.cidoc-crm.org/cidoc-crm/P67
+[E31 Document]: http://www.cidoc-crm.org/cidoc-crm/E31
+[E32 Authority Document]: http://www.cidoc-crm.org/cidoc-crm/E32
+[E55 Type]: http://www.cidoc-crm.org/cidoc-crm/E55
+
+### CRM Classes to use with caution
+
+#### E42 Identifier
+
+Don't use E42_Identifier for URIs. So use
+
+~~~ttl
 <something> crm:P1_is_identified_by <http://example.org/> .
 ~~~
 
 instead of 
 
 ~~~ttl
-<something> crm:P1_is_identified_by [ a crm:E42_Identifier ;  crm:P90_has_value "http://example.org/" ] .
+<something> crm:P1_is_identified_by [
+  a crm:E42_Identifier ;  crm:P90_has_value "http://example.org/" ] .
 ~~~
 
+### Deprecated CRM classes
+
+CRM is constantly evolving, so some CRM classes have been renamed or replaced. Outdated classes and properties MUST be supported nevertheless.
+
+## References
+
+::: {#refs}
+:::

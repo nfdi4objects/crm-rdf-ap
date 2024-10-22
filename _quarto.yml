@@ -2,12 +2,12 @@ project:
   output-dir: doc
 
 toc: true
-#bibliography: references.bib
+bibliography: references.bib
 
 format:
   html:
     theme: cosmo
-    link-external-icon: true
+    link-external-icon: false
     include-before-body:
       text: |
         <script src="./js/codemirror.js"></script>
