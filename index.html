@@ -148,11 +148,16 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="crm-classes-to-use-with-caution">CRM Classes to use with caution</h3>
 <section id="e42-identifier" class="level4">
 <h4 class="anchored" data-anchor-id="e42-identifier">E42 Identifier</h4>
-<p>Don’t use E42_Identifier for URIs. So use</p>
-<pre class="ttl"><code>&lt;something&gt; crm:P1_is_identified_by &lt;http://example.org/&gt; .</code></pre>
+<p>Don’t use <a href="#e42-identifier">E42 Identifier</a> for URIs if these URIs are meant to identify an RDF resource. If a resource happens to have multiple equivalent URIs, choose a preferred URI and use <code>owl:sameAs</code> to record aliases.</p>
+<pre class="ttl"><code>&lt;http://www.wikidata.org/entity/Q3018259&gt; a crm:E18_Physical Thing ;
+  owl:sameAs &lt;http://kbpedia.org/kko/rc/RMS-Titanic-TheShip&gt; .</code></pre>
 <p>instead of</p>
-<pre class="ttl"><code>&lt;something&gt; crm:P1_is_identified_by [
-  a crm:E42_Identifier ;  crm:P90_has_value "http://example.org/" ] .</code></pre>
+<pre class="ttl"><code>&lt;x&gt; a crm:E18_Physical Thing .
+  crm:P1_is_identified_by
+    [ a crm:E42_Identifier ;
+      crm:P190_has_symbolic_content "http://www.wikidata.org/entity/Q3018259" ] ,
+    [ a crm:E42_Identifier ;
+      crm:P190_has_symbolic_content "http://kbpedia.org/kko/rc/RMS-Titanic-TheShip" ] .</code></pre>
 </section>
 </section>
 <section id="deprecated-crm-classes" class="level3">
