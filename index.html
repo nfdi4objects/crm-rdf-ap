@@ -146,6 +146,18 @@ div.csl-indent {
 </section>
 <section id="crm-classes-to-use-with-caution" class="level3">
 <h3 class="anchored" data-anchor-id="crm-classes-to-use-with-caution">CRM Classes to use with caution</h3>
+<section id="e58-measurement-unit" class="level4">
+<h4 class="anchored" data-anchor-id="e58-measurement-unit">E58 Measurement Unit</h4>
+<p>Defintion of instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E58">E58 Measurement Unit</a> should be avoided but either taken from an established vocabulary of units such as QUDT or expressed as RDF value with UCUM datatype.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<pre class="ttl"><code>@prefix unit: &lt;http://qudt.org/vocab/unit/&gt; .
+@prefix cdt: &lt;https://w3id.org/cdt/&gt; .
+
+&lt;measurement&gt;
+  crm:P40 observed dimension [
+    crm:P90_has_value 7 ; crm:P91_has_unit unit:M ;     # QUDT unit URI
+    rdf:value "7 m"^^cdt:ucum                           # UCUM value
+  ] .</code></pre>
+</section>
 <section id="e42-identifier" class="level4">
 <h4 class="anchored" data-anchor-id="e42-identifier">E42 Identifier</h4>
 <p>Don’t use <a href="#e42-identifier">E42 Identifier</a> for URIs if these URIs are meant to identify an RDF resource. If a resource happens to have multiple equivalent URIs, choose a preferred URI and use <code>owl:sameAs</code> to record aliases.</p>
@@ -180,6 +192,7 @@ Doerr, Martin, Richard Light, and Gerald Hiebel. 2020. <span>“Implementing the
 <ol>
 <li id="fn1"><p>See <a href="https://periodo.github.io/edtf-ontology/" class="uri">https://periodo.github.io/edtf-ontology/</a> for a draft.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>See also CRM Geo draft at <a href="http://www.cidoc-crm.org/extensions/crmgeo/" class="uri">http://www.cidoc-crm.org/extensions/crmgeo/</a>, defining superclasses of <code>geo:Geometry</code>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>See <a href="https://ci.mines-stetienne.fr/lindt/v4/custom_datatypes#ucum">cdt:ucum</a> and <a href="https://qudt.org/">QUDT</a>).<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->
