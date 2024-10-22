@@ -1,0 +1,20 @@
+project:
+  output-dir: doc
+
+toc: true
+#bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    link-external-icon: true
+    include-before-body:
+      text: |
+        <script src="./js/codemirror.js"></script>
+        <script src="./js/sparql.js"></script>
+        <script src="./js/turtle.js"></script>
+        <script src="./js/runmode.js"></script>
+        <script src="./js/highlight.js"></script>
+    css:
+      - codemirror.css
+
