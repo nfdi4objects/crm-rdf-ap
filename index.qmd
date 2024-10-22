@@ -69,8 +69,24 @@ CRM also defines class [E55 Type] with properties [P127 has broader term] and [P
 [E32 Authority Document]: http://www.cidoc-crm.org/cidoc-crm/E32
 [E55 Type]: http://www.cidoc-crm.org/cidoc-crm/E55
 [E55 Identifier]: http://www.cidoc-crm.org/cidoc-crm/E42
+[E58 Measurement Unit]: http://www.cidoc-crm.org/cidoc-crm/E58
 
 ### CRM Classes to use with caution
+
+#### E58 Measurement Unit
+
+Defintion of instances of [E58 Measurement Unit] should be avoided but either taken from an established vocabulary of units such as QUDT or expressed as RDF value with UCUM datatype.^[See [cdt:ucum](https://ci.mines-stetienne.fr/lindt/v4/custom_datatypes#ucum) and [QUDT](https://qudt.org/)).]
+
+~~~ttl
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix cdt: <https://w3id.org/cdt/> .
+
+<measurement>
+  crm:P40 observed dimension [
+    crm:P90_has_value 7 ; crm:P91_has_unit unit:M ;     # QUDT unit URI
+    rdf:value "7 m"^^cdt:ucum                           # UCUM value
+  ] .
+~~~
 
 #### E42 Identifier
 
