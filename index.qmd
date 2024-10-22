@@ -37,6 +37,8 @@ The CRM classes [E61 Time Primitive], [E94 Space Primitive], and [E95 Spacetime 
       ] .
     ~~~
 
+  GeoSPARQL properties `geo:hasMetricSpatialResolution` and/or `geo:hasSpatialAccuracy` can be used to indicate level of detail. 
+
 - instances of [E95 Spacetime Primitive] ... (TODO)
 
 [GeoSPARQL]: https://www.ogc.org/de/publications/standard/geosparql/
