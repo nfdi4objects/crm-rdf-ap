@@ -30,13 +30,11 @@ The CRM classes [E61 Time Primitive], [E94 Space Primitive], and [E95 Spacetime 
     @prefix edtf: <http://id.loc.gov/datatypes/edtf/>
     @prefix unit: <http://qudt.org/vocab/unit/> .
 
-    <x> dc:date "2000?"^^edtf:EDTF .
-
     <TitanticSinking> a crm:E81_Transformation ;
       crm:P124_transformed <RMSTitanic> ;
       crm:P123_resulted_in <TitanticWreck> .
       crm:P4_has_time-span 
-        "1912-04-15"^^xsd:date ,
+        "1912-04-15"^^xsd:date , # or ^^edtf:EDTF (subsumes xsd:date)
         [
           a crm:E52_Time-Span ;
           crm:P82_at_some_time_within "1912-04-15"^^xsd:date          
