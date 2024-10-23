@@ -98,7 +98,11 @@ Defintion of instances of [E58 Measurement Unit] should be avoided but either ta
 
 ~~~ttl
 <RMSTitantic>
-  crm:P102_has_title "RMS Titanic"@en .
+  crm:P102_has_title "RMS Titanic"@en ;
+  crm:P1_is_identified_by [
+    rdfs:value "MGY" ; 
+    crm:P2_has_type <http://www.wikidata.org/entity/Q353659> # call sign
+  ] .
 ~~~
 
 If there are multiple names with one preferred name per language and optional name alias, use `skos:prefLabel` and `skos:altLabel`:
