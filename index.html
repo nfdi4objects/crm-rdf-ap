@@ -131,13 +131,11 @@ div.csl-indent {
 <pre class="ttl"><code>@prefix edtf: &lt;http://id.loc.gov/datatypes/edtf/&gt;
 @prefix unit: &lt;http://qudt.org/vocab/unit/&gt; .
 
-&lt;x&gt; dc:date "2000?"^^edtf:EDTF .
-
 &lt;TitanticSinking&gt; a crm:E81_Transformation ;
   crm:P124_transformed &lt;RMSTitanic&gt; ;
   crm:P123_resulted_in &lt;TitanticWreck&gt; .
   crm:P4_has_time-span 
-    "1912-04-15"^^xsd:date ,
+    "1912-04-15"^^xsd:date , # or ^^edtf:EDTF (subsumes xsd:date)
     [
       a crm:E52_Time-Span ;
       crm:P82_at_some_time_within "1912-04-15"^^xsd:date          
