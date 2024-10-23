@@ -126,8 +126,7 @@ div.csl-indent {
 <li><p>instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E60">E60 Number</a> are expressed as RDF literals with numeric data type such as <code>xsd:integer</code></p></li>
 </ul>
 <p>The CRM classes <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E95">E95 Spacetime Primitive</a> are both subclasses of <a href="http://www.cidoc-crm.org/cidoc-crm/E59">E59 Primitive Value</a> and of <a href="http://www.cidoc-crm.org/cidoc-crm/E41">E41 Appellation</a>, so the latter can be used when a mapping to established RDF data types is not applicable.</p>
-<ul>
-<li><p>instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a> eare expressed as RDF literals of type <code>xsd:date</code>, <code>xsd:time</code>, <code>xsd:dateTime</code>, or <code>xsd:dateTimeStamp</code> if applicable. More complex time values should be expressed using the <a href="https://www.loc.gov/standards/datetime/">Extended Date/Time Format (EDTF)</a> but there is no established method to calculate with EDTF in RDF yet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> CRM includes its own classes and properties to model more complex temporal values so this has not been decided yet.</p>
+<p>Instances of <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a></strong> are better expressed as RDF literals of type <code>xsd:date</code>, <code>xsd:time</code>, <code>xsd:dateTime</code>, or <code>xsd:dateTimeStamp</code> if applicable. More complex time values should be expressed using the <a href="https://www.loc.gov/standards/datetime/">Extended Date/Time Format (EDTF)</a> but there is no established method to calculate with EDTF in RDF yet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> CRM includes its own classes and properties to model more complex temporal values so this has not been decided yet.</p>
 <pre class="ttl"><code>@prefix edtf: &lt;http://id.loc.gov/datatypes/edtf/&gt;
 @prefix unit: &lt;http://qudt.org/vocab/unit/&gt; .
 
@@ -141,21 +140,16 @@ div.csl-indent {
       crm:P82_at_some_time_within "1912-04-15"^^xsd:date          
     ] ;
     # TODO: add exact time of sinking (02:38–05:18 GMT)
-  crm:P191_had_duration [
-    crm:P90_has_value 160 ;
-    crm:P91_has_unit unit:MIN
-  ]
-.</code></pre></li>
-<li><p>instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a> should be expressed using <a href="https://www.ogc.org/de/publications/standard/geosparql/">GeoSPARQL</a> Ontology as instance of <code>geo:hasGeometry</code>, compatible with various geographic data formats (WKT, GeoJSON, GML…).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> CRM Property <a href="http://www.cidoc-crm.org/cidoc-crm/P168">P168 place is defined by</a> should be expressed with RDF property <code>geo:hasGeometry</code>. CRM Properties <a href="http://www.cidoc-crm.org/cidoc-crm/P171">P171 at some place within</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/P172">P172 contains</a> can be used as RDF properties to link places (<a href="http://www.cidoc-crm.org/cidoc-crm/E53">E53 Place</a>) to outer and inner geometries but <code>geo:hasBoundingBox</code> and <code>geo:hasCentroid</code> should be preferred, if applicable.</p>
+.</code></pre>
+<p>Instances of <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a></strong> should be expressed using <a href="https://www.ogc.org/de/publications/standard/geosparql/">GeoSPARQL</a> Ontology as instance of <code>geo:hasGeometry</code>, compatible with various geographic data formats (WKT, GeoJSON, GML…).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> CRM Property <a href="http://www.cidoc-crm.org/cidoc-crm/P168">P168 place is defined by</a> should be expressed with RDF property <code>geo:hasGeometry</code>. CRM Properties <a href="http://www.cidoc-crm.org/cidoc-crm/P171">P171 at some place within</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/P172">P172 contains</a> can be used as RDF properties to link places (<a href="http://www.cidoc-crm.org/cidoc-crm/E53">E53 Place</a>) to outer and inner geometries but <code>geo:hasBoundingBox</code> and <code>geo:hasCentroid</code> should be preferred, if applicable.</p>
 <pre class="ttl"><code>&lt;TitanticWreckLocation&gt; a crm:E53_Place ;
   crm:P89_falls_within &lt;AtlanticOcean&gt; ;
   geo:hasGeometry [ a geo:Geometry ;
     geo:asGeoJSON '{"type": "Point","coordinates": [-49.946944,41.7325,-3803]}' ;
     geo:asWKT "POINT (-49.946944 41.7325 -3803)" ;
   ] .</code></pre>
-<p>GeoSPARQL properties <code>geo:hasMetricSpatialResolution</code> and/or <code>geo:hasSpatialAccuracy</code> can be used to indicate level of detail.</p></li>
-<li><p>instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E95">E95 Spacetime Primitive</a> … (TODO)</p></li>
-</ul>
+<p>GeoSPARQL properties <code>geo:hasMetricSpatialResolution</code> and/or <code>geo:hasSpatialAccuracy</code> can be used to indicate level of detail.</p>
+<p>Instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E95">E95 Spacetime Primitive</a> … (TODO)</p>
 </section>
 <section id="authority-files-and-types" class="level3">
 <h3 class="anchored" data-anchor-id="authority-files-and-types">Authority files and types</h3>
@@ -170,10 +164,10 @@ div.csl-indent {
 <pre class="ttl"><code>@prefix unit: &lt;http://qudt.org/vocab/unit/&gt; .
 @prefix cdt: &lt;https://w3id.org/cdt/&gt; .
 
-&lt;measurement&gt;
-  crm:P40 observed dimension [
-    crm:P90_has_value 7 ; crm:P91_has_unit unit:M ;     # QUDT unit URI
-    rdf:value "7 m"^^cdt:ucum                           # UCUM value
+&lt;TitanticSinking&gt;
+  crm:P191_had_duration [ a crm:E54_Dimension ;
+    crm:P90_has_value 160 ; crm:P91_has_unit unit:MIN ;   # value and QUDT unit
+    rdf:value "7 min"^^cdt:ucum                           # UCUM string
   ] .</code></pre>
 </section>
 <section id="e42-identifier" class="level4">
