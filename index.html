@@ -125,7 +125,7 @@ div.csl-indent {
 <li><p>instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E62">E62 String</a> are expressed as RDF literals with optional language tag, and</p></li>
 <li><p>instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E60">E60 Number</a> are expressed as RDF literals with numeric data type such as <code>xsd:integer</code></p></li>
 </ul>
-<p>The CRM classes <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E95">E95 Spacetime Primitive</a> are both subclasses of <a href="http://www.cidoc-crm.org/cidoc-crm/E59">E59 Primitive Value</a> and of <a href="http://www.cidoc-crm.org/cidoc-crm/E41">E41 Appellation</a>, so the latter can be used when a mapping to established RDF data types is not applicable.</p>
+<p>The CRM classes <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E95">E95 Spacetime Primitive</a> are both subclasses of <a href="http://www.cidoc-crm.org/cidoc-crm/E59">E59 Primitive Value</a> and of <a href="http://www.cidoc-crm.org/cidoc-crm/E41">E41 Appellation</a>, so <a href="#e41-appelation">the latter</a> can be used when a mapping to established RDF data types is not applicable.</p>
 <p>Instances of <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a></strong> are better expressed as RDF literals of type <code>xsd:date</code>, <code>xsd:time</code>, <code>xsd:dateTime</code>, or <code>xsd:dateTimeStamp</code> if applicable. More complex time values should be expressed using the <a href="https://www.loc.gov/standards/datetime/">Extended Date/Time Format (EDTF)</a> but there is no established method to calculate with dates in RDF yet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> CRM includes its own classes and properties to model more complex temporal values so this has not been decided yet.</p>
 <pre class="ttl"><code>@prefix edtf: &lt;http://id.loc.gov/datatypes/edtf/&gt;
 @prefix unit: &lt;http://qudt.org/vocab/unit/&gt; .
@@ -172,13 +172,15 @@ div.csl-indent {
 </section>
 <section id="e41-appellation" class="level4">
 <h4 class="anchored" data-anchor-id="e41-appellation">E41 Appellation</h4>
-<p><strong>[E42 Appellation]</strong> and its subclasses (<a href="http://www.cidoc-crm.org/cidoc-crm/E35">E35 Title</a> and [E42 Identifier]) should be avoided (see <a href="#primitive-values">above</a> for additional subclasses <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>):</p>
+<p><strong><a href="http://www.cidoc-crm.org/cidoc-crm/E41">E41 Appellation</a></strong> and its subclasses (<a href="http://www.cidoc-crm.org/cidoc-crm/E35">E35 Title</a> and [E42 Identifier]) should be avoided (see <a href="#primitive-values">above</a> for additional subclasses <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>), unless a name cannot uniquely be identified with a sequence of Unicode characters and an optional language tag:</p>
 <pre class="ttl"><code>&lt;RMSTitantic&gt;
   crm:P102_has_title "RMS Titanic"@en .</code></pre>
 <p>If there are multiple names with one preferred name per language and optional name alias, use <code>skos:prefLabel</code> and <code>skos:altLabel</code>:</p>
 <pre class="ttl"><code>&lt;RMSTitantic&gt;
   skos:prefLabel "RMS Titanic"@en ;
   skos:altLabel "Titanic"@en, "Royal Mail Steamship Titanic"@en .</code></pre>
+<p>The RDF property <code>skos:prefLabel</code> should not be confused with [P48 has preferred identifier] to be used for identifiers only.</p>
+<p>If information about the act of naming is required, use <a href="http://www.cidoc-crm.org/cidoc-crm/E13">E13 Attribute Assignment</a> for simple appelations or <a href="http://www.cidoc-crm.org/cidoc-crm/E15">E15 Identifier Assignment</a> for identifiers.</p>
 <p>If an identifier <strong>[E42 Identifier] is an URI</strong> meant to identify an RDF resource, dont use plain strings but resource URIs in RDF. If a resource happens to have multiple equivalent URIs, choose a preferred URI and use <code>owl:sameAs</code> to record aliases:</p>
 <pre class="ttl"><code>  &lt;RMSTitantic&gt; a crm:E18_Physical Thing ;
   owl:sameAs
