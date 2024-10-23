@@ -109,7 +109,7 @@ div.csl-indent {
 
 <section id="background-and-motivation" class="level2">
 <h2 class="anchored" data-anchor-id="background-and-motivation">Background and Motivation</h2>
-<p>The <a href="https://www.cidoc-crm.org/">CIDOC Conceptual Reference Model (CRM)</a> is a conceptual data model used in the cultural heritage domain. The <a href="https://www.w3.org/TR/rdf11-concepts/">Resource Description Framework (RDF)</a> is a graph-based data format. Both CRM and RDF have been created independently for integration of information. RDF is a good fit to express CRM in data and it has been used to do so. The expression of CRM in RDF is not trivial though, so some guidelines are needed. This document is going to provide an application profile to best use CRM in RDF for integration with other data in RDF. The document is going to be compared and aligned with similar recommendations such as <span class="citation" data-cites="Doerr2020">Doerr, Light, and Hiebel (<a href="#ref-Doerr2020" role="doc-biblioref">2020</a>)</span>.</p>
+<p>The <a href="https://www.cidoc-crm.org/">CIDOC Conceptual Reference Model (CRM)</a> is a conceptual data model used in the cultural heritage domain. The <a href="https://www.w3.org/TR/rdf11-concepts/">Resource Description Framework (RDF)</a> is a graph-based data format. Both CRM and RDF have been created independently for integration of information. RDF is a good fit to express CRM in data and it has been used to do so. The expression of CRM in RDF is not trivial though, so some guidelines are needed. This document is going to provide an application profile to best use CRM in RDF for integration with other RDF data within NFDI4Objects. The document is going to be compared and aligned with similar recommendations such as <span class="citation" data-cites="Doerr2020">Doerr, Light, and Hiebel (<a href="#ref-Doerr2020" role="doc-biblioref">2020</a>)</span>.</p>
 <p>The document is managed in a git repository at <a href="https://github.com/nfdi4objects/crm-rdf-ap" class="uri">https://github.com/nfdi4objects/crm-rdf-ap</a>. Contributions and feedback is very welcome!</p>
 <section id="difficulties-in-expressing-crm-and-rdf" class="level3">
 <h3 class="anchored" data-anchor-id="difficulties-in-expressing-crm-and-rdf">Difficulties in expressing CRM and RDF</h3>
@@ -127,7 +127,27 @@ div.csl-indent {
 </ul>
 <p>The CRM classes <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E95">E95 Spacetime Primitive</a> are both subclasses of <a href="http://www.cidoc-crm.org/cidoc-crm/E59">E59 Primitive Value</a> and of <a href="http://www.cidoc-crm.org/cidoc-crm/E41">E41 Appellation</a>, so the latter can be used when a mapping to established RDF data types is not applicable.</p>
 <ul>
-<li><p>instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a> are expressed as RDF literals of type <code>xsd:date</code>, <code>xsd:time</code>, <code>xsd:dateTime</code>, or <code>xsd:dateTimeStamp</code> if applicable. More complex time values should be expressed using the <a href="https://www.loc.gov/standards/datetime/">Extended Date/Time Format (EDTF)</a> but there is no established method to express EDTF values in RDF yet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p></li>
+<li><p>instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a> eare expressed as RDF literals of type <code>xsd:date</code>, <code>xsd:time</code>, <code>xsd:dateTime</code>, or <code>xsd:dateTimeStamp</code> if applicable. More complex time values should be expressed using the <a href="https://www.loc.gov/standards/datetime/">Extended Date/Time Format (EDTF)</a> but there is no established method to calculate with EDTF in RDF yet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> CRM includes its own classes and properties to model more complex temporal values so this has not been decided yet.</p>
+<pre class="ttl"><code>@prefix edtf: &lt;http://id.loc.gov/datatypes/edtf/&gt;
+@prefix unit: &lt;http://qudt.org/vocab/unit/&gt; .
+
+&lt;x&gt; dc:date "2000?"^^edtf:EDTF .
+
+&lt;TitanticSinking&gt; a crm:E81_Transformation ;
+  crm:P124_transformed &lt;RMSTitanic&gt; ;
+  crm:P123_resulted_in &lt;TitanticWreck&gt; .
+  crm:P4_has_time-span 
+    "1912-04-15"^^xsd:date ,
+    [
+      a crm:E52_Time-Span ;
+      crm:P82_at_some_time_within "1912-04-15"^^xsd:date          
+    ] ;
+    # TODO: add exact time of sinking (02:38–05:18 GMT)
+  crm:P191_had_duration [
+    crm:P90_has_value 160 ;
+    crm:P91_has_unit unit:MIN
+  ]
+.</code></pre></li>
 <li><p>instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a> should be expressed using <a href="https://www.ogc.org/de/publications/standard/geosparql/">GeoSPARQL</a> Ontology as instance of <code>geo:hasGeometry</code>, compatible with various geographic data formats (WKT, GeoJSON, GML…).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> CRM Property <a href="http://www.cidoc-crm.org/cidoc-crm/P168">P168 place is defined by</a> should be expressed with RDF property <code>geo:hasGeometry</code>. CRM Properties <a href="http://www.cidoc-crm.org/cidoc-crm/P171">P171 at some place within</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/P172">P172 contains</a> can be used as RDF properties to link places (<a href="http://www.cidoc-crm.org/cidoc-crm/E53">E53 Place</a>) to outer and inner geometries but <code>geo:hasBoundingBox</code> and <code>geo:hasCentroid</code> should be preferred, if applicable.</p>
 <pre class="ttl"><code>&lt;TitanticWreckLocation&gt; a crm:E53_Place ;
   crm:P89_falls_within &lt;AtlanticOcean&gt; ;
@@ -161,10 +181,12 @@ div.csl-indent {
 <section id="e42-identifier" class="level4">
 <h4 class="anchored" data-anchor-id="e42-identifier">E42 Identifier</h4>
 <p>Don’t use <a href="#e42-identifier">E42 Identifier</a> for URIs if these URIs are meant to identify an RDF resource. If a resource happens to have multiple equivalent URIs, choose a preferred URI and use <code>owl:sameAs</code> to record aliases.</p>
-<pre class="ttl"><code>&lt;http://www.wikidata.org/entity/Q3018259&gt; a crm:E18_Physical Thing ;
-  owl:sameAs &lt;http://kbpedia.org/kko/rc/RMS-Titanic-TheShip&gt; .</code></pre>
+<pre class="ttl"><code>  &lt;RMSTitantic&gt; a crm:E18_Physical Thing ;
+  owl:sameAs
+    &lt;http://www.wikidata.org/entity/Q3018259&gt; ,
+    &lt;http://kbpedia.org/kko/rc/RMS-Titanic-TheShip&gt; .</code></pre>
 <p>instead of</p>
-<pre class="ttl"><code>&lt;x&gt; a crm:E18_Physical Thing .
+<pre class="ttl"><code>&lt;RMSTitanic&gt; a crm:E18_Physical Thing .
   crm:P1_is_identified_by
     [ a crm:E42_Identifier ;
       crm:P190_has_symbolic_content "http://www.wikidata.org/entity/Q3018259" ] ,
