@@ -126,7 +126,7 @@ div.csl-indent {
 <li><p>instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E60">E60 Number</a> are expressed as RDF literals with numeric data type such as <code>xsd:integer</code></p></li>
 </ul>
 <p>The CRM classes <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E95">E95 Spacetime Primitive</a> are both subclasses of <a href="http://www.cidoc-crm.org/cidoc-crm/E59">E59 Primitive Value</a> and of <a href="http://www.cidoc-crm.org/cidoc-crm/E41">E41 Appellation</a>, so the latter can be used when a mapping to established RDF data types is not applicable.</p>
-<p>Instances of <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a></strong> are better expressed as RDF literals of type <code>xsd:date</code>, <code>xsd:time</code>, <code>xsd:dateTime</code>, or <code>xsd:dateTimeStamp</code> if applicable. More complex time values should be expressed using the <a href="https://www.loc.gov/standards/datetime/">Extended Date/Time Format (EDTF)</a> but there is no established method to calculate with EDTF in RDF yet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> CRM includes its own classes and properties to model more complex temporal values so this has not been decided yet.</p>
+<p>Instances of <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a></strong> are better expressed as RDF literals of type <code>xsd:date</code>, <code>xsd:time</code>, <code>xsd:dateTime</code>, or <code>xsd:dateTimeStamp</code> if applicable. More complex time values should be expressed using the <a href="https://www.loc.gov/standards/datetime/">Extended Date/Time Format (EDTF)</a> but there is no established method to calculate with dates in RDF yet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> CRM includes its own classes and properties to model more complex temporal values so this has not been decided yet.</p>
 <pre class="ttl"><code>@prefix edtf: &lt;http://id.loc.gov/datatypes/edtf/&gt;
 @prefix unit: &lt;http://qudt.org/vocab/unit/&gt; .
 
@@ -170,9 +170,16 @@ div.csl-indent {
     rdf:value "7 min"^^cdt:ucum                           # UCUM string
   ] .</code></pre>
 </section>
-<section id="e42-identifier" class="level4">
-<h4 class="anchored" data-anchor-id="e42-identifier">E42 Identifier</h4>
-<p>Don’t use <a href="#e42-identifier">E42 Identifier</a> for URIs if these URIs are meant to identify an RDF resource. If a resource happens to have multiple equivalent URIs, choose a preferred URI and use <code>owl:sameAs</code> to record aliases.</p>
+<section id="e41-appellation" class="level4">
+<h4 class="anchored" data-anchor-id="e41-appellation">E41 Appellation</h4>
+<p><strong>[E42 Appellation]</strong> and its subclasses (<a href="http://www.cidoc-crm.org/cidoc-crm/E35">E35 Title</a> and [E42 Identifier]) should be avoided (see <a href="#primitive-values">above</a> for additional subclasses <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>):</p>
+<pre class="ttl"><code>&lt;RMSTitantic&gt;
+  crm:P102_has_title "RMS Titanic"@en .</code></pre>
+<p>If there are multiple names with one preferred name per language and optional name alias, use <code>skos:prefLabel</code> and <code>skos:altLabel</code>:</p>
+<pre class="ttl"><code>&lt;RMSTitantic&gt;
+  skos:prefLabel "RMS Titanic"@en ;
+  skos:altLabel "Titanic"@en, "Royal Mail Steamship Titanic"@en .</code></pre>
+<p>If an identifier <strong>[E42 Identifier] is an URI</strong> meant to identify an RDF resource, dont use plain strings but resource URIs in RDF. If a resource happens to have multiple equivalent URIs, choose a preferred URI and use <code>owl:sameAs</code> to record aliases:</p>
 <pre class="ttl"><code>  &lt;RMSTitantic&gt; a crm:E18_Physical Thing ;
   owl:sameAs
     &lt;http://www.wikidata.org/entity/Q3018259&gt; ,
@@ -204,7 +211,7 @@ Doerr, Martin, Richard Light, and Gerald Hiebel. 2020. <span>“Implementing the
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>See <a href="https://periodo.github.io/edtf-ontology/" class="uri">https://periodo.github.io/edtf-ontology/</a> for a draft.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>See discussion to extend SPARQL <a href="https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md">for simple dates</a> and <a href="https://periodo.github.io/edtf-ontology/">EDTF in RDF</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>See also CRM Geo draft at <a href="http://www.cidoc-crm.org/extensions/crmgeo/" class="uri">http://www.cidoc-crm.org/extensions/crmgeo/</a>, defining superclasses of <code>geo:Geometry</code>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>See <a href="https://ci.mines-stetienne.fr/lindt/v4/custom_datatypes#ucum">cdt:ucum</a> and <a href="https://qudt.org/">QUDT</a>).<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
