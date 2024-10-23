@@ -174,7 +174,11 @@ div.csl-indent {
 <h4 class="anchored" data-anchor-id="e41-appellation">E41 Appellation</h4>
 <p><strong><a href="http://www.cidoc-crm.org/cidoc-crm/E41">E41 Appellation</a></strong> and its subclasses (<a href="http://www.cidoc-crm.org/cidoc-crm/E35">E35 Title</a> and [E42 Identifier]) should be avoided (see <a href="#primitive-values">above</a> for additional subclasses <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>), unless a name cannot uniquely be identified with a sequence of Unicode characters and an optional language tag:</p>
 <pre class="ttl"><code>&lt;RMSTitantic&gt;
-  crm:P102_has_title "RMS Titanic"@en .</code></pre>
+  crm:P102_has_title "RMS Titanic"@en ;
+  crm:P1_is_identified_by [
+    rdfs:value "MGY" ; 
+    crm:P2_has_type &lt;http://www.wikidata.org/entity/Q353659&gt; # call sign
+  ] .</code></pre>
 <p>If there are multiple names with one preferred name per language and optional name alias, use <code>skos:prefLabel</code> and <code>skos:altLabel</code>:</p>
 <pre class="ttl"><code>&lt;RMSTitantic&gt;
   skos:prefLabel "RMS Titanic"@en ;
