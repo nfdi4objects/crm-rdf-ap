@@ -24,7 +24,7 @@ CRM defines abstract types of entities (CRM classes) such as events, measurement
 
 The CRM classes [E61 Time Primitive], [E94 Space Primitive], and [E95 Spacetime Primitive] are both subclasses of [E59 Primitive Value] and of [E41 Appellation], so the latter can be used when a mapping to established RDF data types is not applicable.
 
-Instances of **[E61 Time Primitive] and [E52 Time-Span]** are better expressed as RDF literals of type `xsd:date`, `xsd:time`, `xsd:dateTime`, or `xsd:dateTimeStamp` if applicable. More complex time values should be expressed using the [Extended Date/Time Format (EDTF)](https://www.loc.gov/standards/datetime/) but there is no established method to calculate with EDTF in RDF yet.^[See <https://periodo.github.io/edtf-ontology/> for a draft.] CRM includes its own classes and properties to model more complex temporal values so this has not been decided yet.
+Instances of **[E61 Time Primitive] and [E52 Time-Span]** are better expressed as RDF literals of type `xsd:date`, `xsd:time`, `xsd:dateTime`, or `xsd:dateTimeStamp` if applicable. More complex time values should be expressed using the [Extended Date/Time Format (EDTF)](https://www.loc.gov/standards/datetime/) but there is no established method to calculate with dates in RDF yet.^[See discussion to extend SPARQL [for simple dates](https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md) and [EDTF in RDF](https://periodo.github.io/edtf-ontology/).] CRM includes its own classes and properties to model more complex temporal values so this has not been decided yet.
 
 ~~~ttl
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/>
@@ -86,6 +86,8 @@ CRM also defines class [E55 Type] with properties [P127 has broader term] and [P
 [E31 Document]: http://www.cidoc-crm.org/cidoc-crm/E31
 [E32 Authority Document]: http://www.cidoc-crm.org/cidoc-crm/E32
 [E55 Type]: http://www.cidoc-crm.org/cidoc-crm/E55
+[E35 Title]: http://www.cidoc-crm.org/cidoc-crm/E35
+[E41 Appellation]: http://www.cidoc-crm.org/cidoc-crm/E41
 [E55 Identifier]: http://www.cidoc-crm.org/cidoc-crm/E42
 [E58 Measurement Unit]: http://www.cidoc-crm.org/cidoc-crm/E58
 
@@ -106,9 +108,24 @@ Defintion of instances of [E58 Measurement Unit] should be avoided but either ta
   ] .
 ~~~
 
-#### E42 Identifier
+#### E41 Appellation
 
-Don't use [E42 Identifier] for URIs if these URIs are meant to identify an RDF resource.  If a resource happens to have multiple equivalent URIs, choose a preferred URI and use `owl:sameAs` to record aliases.
+**[E42 Appellation]** and its subclasses ([E35 Title] and [E42 Identifier]) should be avoided (see [above](#primitive-values) for additional subclasses [E61 Time Primitive], [E94 Space Primitive], and [E94 Space Primitive]):
+
+~~~ttl
+<RMSTitantic>
+  crm:P102_has_title "RMS Titanic"@en .
+~~~
+
+If there are multiple names with one preferred name per language and optional name alias, use `skos:prefLabel` and `skos:altLabel`:
+
+~~~ttl
+<RMSTitantic>
+  skos:prefLabel "RMS Titanic"@en ;
+  skos:altLabel "Titanic"@en, "Royal Mail Steamship Titanic"@en .
+~~~
+
+If an identifier **[E42 Identifier] is an URI** meant to identify an RDF resource, dont use plain strings but resource URIs in RDF.  If a resource happens to have multiple equivalent URIs, choose a preferred URI and use `owl:sameAs` to record aliases:
 
 ~~~ttl
   <RMSTitantic> a crm:E18_Physical Thing ;
