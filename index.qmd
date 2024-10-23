@@ -24,43 +24,39 @@ CRM defines abstract types of entities (CRM classes) such as events, measurement
 
 The CRM classes [E61 Time Primitive], [E94 Space Primitive], and [E95 Spacetime Primitive] are both subclasses of [E59 Primitive Value] and of [E41 Appellation], so the latter can be used when a mapping to established RDF data types is not applicable.
 
-- instances of [E61 Time Primitive] and [E52 Time-Span] eare expressed as RDF literals of type `xsd:date`, `xsd:time`, `xsd:dateTime`, or `xsd:dateTimeStamp` if applicable. More complex time values should be expressed using the [Extended Date/Time Format (EDTF)](https://www.loc.gov/standards/datetime/) but there is no established method to calculate with EDTF in RDF yet.^[See <https://periodo.github.io/edtf-ontology/> for a draft.] CRM includes its own classes and properties to model more complex temporal values so this has not been decided yet.
+Instances of **[E61 Time Primitive] and [E52 Time-Span]** are better expressed as RDF literals of type `xsd:date`, `xsd:time`, `xsd:dateTime`, or `xsd:dateTimeStamp` if applicable. More complex time values should be expressed using the [Extended Date/Time Format (EDTF)](https://www.loc.gov/standards/datetime/) but there is no established method to calculate with EDTF in RDF yet.^[See <https://periodo.github.io/edtf-ontology/> for a draft.] CRM includes its own classes and properties to model more complex temporal values so this has not been decided yet.
 
-    ~~~ttl
-    @prefix edtf: <http://id.loc.gov/datatypes/edtf/>
-    @prefix unit: <http://qudt.org/vocab/unit/> .
+~~~ttl
+@prefix edtf: <http://id.loc.gov/datatypes/edtf/>
+@prefix unit: <http://qudt.org/vocab/unit/> .
 
-    <TitanticSinking> a crm:E81_Transformation ;
-      crm:P124_transformed <RMSTitanic> ;
-      crm:P123_resulted_in <TitanticWreck> .
-      crm:P4_has_time-span 
-        "1912-04-15"^^xsd:date , # or ^^edtf:EDTF (subsumes xsd:date)
-        [
-          a crm:E52_Time-Span ;
-          crm:P82_at_some_time_within "1912-04-15"^^xsd:date          
-        ] ;
-        # TODO: add exact time of sinking (02:38–05:18 GMT)
-      crm:P191_had_duration [
-       	crm:P90_has_value 160 ;
-        crm:P91_has_unit unit:MIN
-      ]
-    .
-    ~~~
+<TitanticSinking> a crm:E81_Transformation ;
+  crm:P124_transformed <RMSTitanic> ;
+  crm:P123_resulted_in <TitanticWreck> .
+  crm:P4_has_time-span 
+    "1912-04-15"^^xsd:date , # or ^^edtf:EDTF (subsumes xsd:date)
+    [
+      a crm:E52_Time-Span ;
+      crm:P82_at_some_time_within "1912-04-15"^^xsd:date          
+    ] ;
+    # TODO: add exact time of sinking (02:38–05:18 GMT)
+.
+~~~
 
-- instances of [E94 Space Primitive] should be expressed using [GeoSPARQL] Ontology as instance of `geo:hasGeometry`, compatible with various geographic data formats (WKT, GeoJSON, GML...).^[See also CRM Geo draft at <http://www.cidoc-crm.org/extensions/crmgeo/>, defining superclasses of `geo:Geometry`.] CRM Property [P168 place is defined by] should be expressed with RDF property `geo:hasGeometry`. CRM Properties [P171 at some place within], and [P172 contains] can be used as RDF properties to link places ([E53 Place]) to outer and inner geometries but `geo:hasBoundingBox` and `geo:hasCentroid` should be preferred, if applicable.
+Instances of **[E94 Space Primitive]** should be expressed using [GeoSPARQL] Ontology as instance of `geo:hasGeometry`, compatible with various geographic data formats (WKT, GeoJSON, GML...).^[See also CRM Geo draft at <http://www.cidoc-crm.org/extensions/crmgeo/>, defining superclasses of `geo:Geometry`.] CRM Property [P168 place is defined by] should be expressed with RDF property `geo:hasGeometry`. CRM Properties [P171 at some place within], and [P172 contains] can be used as RDF properties to link places ([E53 Place]) to outer and inner geometries but `geo:hasBoundingBox` and `geo:hasCentroid` should be preferred, if applicable.
 
-    ~~~ttl
-    <TitanticWreckLocation> a crm:E53_Place ;
-      crm:P89_falls_within <AtlanticOcean> ;
-      geo:hasGeometry [ a geo:Geometry ;
-        geo:asGeoJSON '{"type": "Point","coordinates": [-49.946944,41.7325,-3803]}' ;
-        geo:asWKT "POINT (-49.946944 41.7325 -3803)" ;
-      ] .
-    ~~~
+~~~ttl
+<TitanticWreckLocation> a crm:E53_Place ;
+  crm:P89_falls_within <AtlanticOcean> ;
+  geo:hasGeometry [ a geo:Geometry ;
+    geo:asGeoJSON '{"type": "Point","coordinates": [-49.946944,41.7325,-3803]}' ;
+    geo:asWKT "POINT (-49.946944 41.7325 -3803)" ;
+  ] .
+~~~
 
-  GeoSPARQL properties `geo:hasMetricSpatialResolution` and/or `geo:hasSpatialAccuracy` can be used to indicate level of detail. 
+GeoSPARQL properties `geo:hasMetricSpatialResolution` and/or `geo:hasSpatialAccuracy` can be used to indicate level of detail. 
 
-- instances of [E95 Spacetime Primitive] ... (TODO)
+Instances of [E95 Spacetime Primitive] ... (TODO)
 
 [GeoSPARQL]: https://www.ogc.org/de/publications/standard/geosparql/
 
@@ -103,10 +99,10 @@ Defintion of instances of [E58 Measurement Unit] should be avoided but either ta
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix cdt: <https://w3id.org/cdt/> .
 
-<measurement>
-  crm:P40 observed dimension [
-    crm:P90_has_value 7 ; crm:P91_has_unit unit:M ;     # QUDT unit URI
-    rdf:value "7 m"^^cdt:ucum                           # UCUM value
+<TitanticSinking>
+  crm:P191_had_duration [ a crm:E54_Dimension ;
+    crm:P90_has_value 160 ; crm:P91_has_unit unit:MIN ;   # value and QUDT unit
+    rdf:value "7 min"^^cdt:ucum                           # UCUM string
   ] .
 ~~~
 
