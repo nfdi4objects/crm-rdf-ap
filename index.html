@@ -172,7 +172,7 @@ div.csl-indent {
 </section>
 <section id="e41-appellation" class="level4">
 <h4 class="anchored" data-anchor-id="e41-appellation">E41 Appellation</h4>
-<p><strong><a href="http://www.cidoc-crm.org/cidoc-crm/E41">E41 Appellation</a></strong> and its subclasses (<a href="http://www.cidoc-crm.org/cidoc-crm/E35">E35 Title</a> and [E42 Identifier]) should be avoided (see <a href="#primitive-values">above</a> for additional subclasses <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>), unless a name cannot uniquely be identified with a sequence of Unicode characters and an optional language tag:</p>
+<p><strong><a href="http://www.cidoc-crm.org/cidoc-crm/E41">E41 Appellation</a></strong> and its subclasses (<a href="http://www.cidoc-crm.org/cidoc-crm/E35">E35 Title</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E42">E42 Identifier</a>) should be avoided (see <a href="#primitive-values">above</a> for additional subclasses <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>), unless a name cannot uniquely be identified with a sequence of Unicode characters and an optional language tag:</p>
 <pre class="ttl"><code>&lt;RMSTitantic&gt;
   crm:P102_has_title "RMS Titanic"@en ;
   crm:P1_is_identified_by [
@@ -185,7 +185,7 @@ div.csl-indent {
   skos:altLabel "Titanic"@en, "Royal Mail Steamship Titanic"@en .</code></pre>
 <p>The RDF property <code>skos:prefLabel</code> should not be confused with [P48 has preferred identifier] to be used for identifiers only.</p>
 <p>If information about the act of naming is required, use <a href="http://www.cidoc-crm.org/cidoc-crm/E13">E13 Attribute Assignment</a> for simple appelations or <a href="http://www.cidoc-crm.org/cidoc-crm/E15">E15 Identifier Assignment</a> for identifiers.</p>
-<p>If an identifier <strong>[E42 Identifier] is an URI</strong> meant to identify an RDF resource, dont use plain strings but resource URIs in RDF. If a resource happens to have multiple equivalent URIs, choose a preferred URI and use <code>owl:sameAs</code> to record aliases:</p>
+<p>If an identifier <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E42">E42 Identifier</a> is an URI</strong> meant to identify an RDF resource, dont use plain strings but resource URIs in RDF. If a resource happens to have multiple equivalent URIs, choose a preferred URI and use <code>owl:sameAs</code> to record aliases:</p>
 <pre class="ttl"><code>  &lt;RMSTitantic&gt; a crm:E18_Physical Thing ;
   owl:sameAs
     &lt;http://www.wikidata.org/entity/Q3018259&gt; ,
