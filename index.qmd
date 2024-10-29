@@ -152,7 +152,7 @@ CRM is constantly evolving, so some CRM classes have been renamed or replaced. O
 [E31 Document]: http://www.cidoc-crm.org/cidoc-crm/E31
 [E32 Authority Document]: http://www.cidoc-crm.org/cidoc-crm/E32
 [E35 Title]: http://www.cidoc-crm.org/cidoc-crm/E35
-[E55 Identifier]: http://www.cidoc-crm.org/cidoc-crm/E42
+[E42 Identifier]: http://www.cidoc-crm.org/cidoc-crm/E42
 [E55 Type]: http://www.cidoc-crm.org/cidoc-crm/E55
 [E58 Measurement Unit]: http://www.cidoc-crm.org/cidoc-crm/E58
 [E52 Time-Span]: http://www.cidoc-crm.org/cidoc-crm/E52
