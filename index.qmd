@@ -79,7 +79,7 @@ CRM also defines class [E55 Type] with properties [P127 has broader term] and [P
 
 #### E58 Measurement Unit
 
-Defintion of instances of [E58 Measurement Unit] should be avoided but either taken from an established vocabulary of units such as QUDT or expressed as RDF value with UCUM datatype.^[See [cdt:ucum](https://ci.mines-stetienne.fr/lindt/v4/custom_datatypes#ucum) and [QUDT](https://qudt.org/)).]
+Defintion of instances of [E58 Measurement Unit] should be avoided but either taken from an established vocabulary of units such as QUDT or expressed as RDF value with UCUM datatype.^[See [cdt:ucum](https://ci.mines-stetienne.fr/lindt/v4/custom_datatypes#ucum) and [QUDT](https://qudt.org/).]
 
 ~~~ttl
 @prefix unit: <http://qudt.org/vocab/unit/> .
