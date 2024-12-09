@@ -66,9 +66,12 @@ Instances of [E95 Spacetime Primitive] ... (TODO)
 
 ### Authority files and types
 
-CRM class [E32 Authority Document] and CRM property [P71 lists] should not be used in RDF but corresponding SKOS RDF classes `skos:ConceptScheme` and `skos:inScheme`. Applications may define `skos:ConceptScheme` as subclass of [E31 Document] and `skos:inScheme` as subproperty of [P67 refers to] if needed.
+CRM class **[E32 Authority Document]** and CRM property **[P71 lists]** MUST NOT be used in RDF but corresponding SKOS RDF classes `skos:ConceptScheme` and `skos:inScheme` instead. Applications MAY define `skos:ConceptScheme` as subclass of [E31 Document] and `skos:inScheme` as subproperty of [P67 refers to].
 
-CRM also defines class [E55 Type] with properties [P127 has broader term] and [P127i has narrower term]. These can be mapped to `skos:Concept` and `skos:broader`/`skos:narrower` or to individual RDF classes, connected with `rdfs:subClassOf`, depending on use case (types are used with CRM property P2, P137, P177, P135, P125, P32, P42).
+CRM also defines class **[E55 Type]** with properties **[P127 has broader term]** and **[P127i has narrower term]**. The class, used with CRM properties P2, P137, P177, P135, P125, P32, and P42, MUST NOT be used in RDF but mapped to
+
+- `skos:Concept` and `skos:broader`/`skos:narrower` or to
+- individual RDF classes, connected with `rdfs:subClassOf`.
 
 [P127 has broader term]: http://www.cidoc-crm.org/cidoc-crm/P127
 [P127i has narrower term]: http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term
