@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -49,10 +49,10 @@ div.csl-indent {
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="index_files/libs/quarto-html/anchor.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-e1e378e796bdd1aa61cf7dc9c87af473.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 <link rel="stylesheet" href="codemirror.css">
@@ -153,8 +153,12 @@ div.csl-indent {
 </section>
 <section id="authority-files-and-types" class="level3">
 <h3 class="anchored" data-anchor-id="authority-files-and-types">Authority files and types</h3>
-<p>CRM class <a href="http://www.cidoc-crm.org/cidoc-crm/E32">E32 Authority Document</a> and CRM property <a href="http://www.cidoc-crm.org/cidoc-crm/P71">P71 lists</a> should not be used in RDF but corresponding SKOS RDF classes <code>skos:ConceptScheme</code> and <code>skos:inScheme</code>. Applications may define <code>skos:ConceptScheme</code> as subclass of <a href="http://www.cidoc-crm.org/cidoc-crm/E31">E31 Document</a> and <code>skos:inScheme</code> as subproperty of <a href="http://www.cidoc-crm.org/cidoc-crm/P67">P67 refers to</a> if needed.</p>
-<p>CRM also defines class <a href="http://www.cidoc-crm.org/cidoc-crm/E55">E55 Type</a> with properties <a href="http://www.cidoc-crm.org/cidoc-crm/P127">P127 has broader term</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term">P127i has narrower term</a>. These can be mapped to <code>skos:Concept</code> and <code>skos:broader</code>/<code>skos:narrower</code> or to individual RDF classes, connected with <code>rdfs:subClassOf</code>, depending on use case (types are used with CRM property P2, P137, P177, P135, P125, P32, P42).</p>
+<p>CRM class <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E32">E32 Authority Document</a></strong> and CRM property <strong><a href="http://www.cidoc-crm.org/cidoc-crm/P71">P71 lists</a></strong> MUST NOT be used in RDF but corresponding SKOS RDF classes <code>skos:ConceptScheme</code> and <code>skos:inScheme</code> instead. Applications MAY define <code>skos:ConceptScheme</code> as subclass of <a href="http://www.cidoc-crm.org/cidoc-crm/E31">E31 Document</a> and <code>skos:inScheme</code> as subproperty of <a href="http://www.cidoc-crm.org/cidoc-crm/P67">P67 refers to</a>.</p>
+<p>CRM also defines class <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E55">E55 Type</a></strong> with properties <strong><a href="http://www.cidoc-crm.org/cidoc-crm/P127">P127 has broader term</a></strong> and <strong><a href="http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term">P127i has narrower term</a></strong>. The class, used with CRM properties P2, P137, P177, P135, P125, P32, and P42, MUST NOT be used in RDF but mapped to</p>
+<ul>
+<li><code>skos:Concept</code> and <code>skos:broader</code>/<code>skos:narrower</code> or to</li>
+<li>individual RDF classes, connected with <code>rdfs:subClassOf</code>.</li>
+</ul>
 </section>
 <section id="crm-classes-to-use-with-caution" class="level3">
 <h3 class="anchored" data-anchor-id="crm-classes-to-use-with-caution">CRM Classes to use with caution</h3>
@@ -305,8 +309,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -417,7 +419,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
