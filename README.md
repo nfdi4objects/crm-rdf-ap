@@ -1,6 +1,6 @@
 # CIDOC-CRM in RDF Application Profile
 
-> Some guidelines how to use CIDOC-CRM in RDF for more benefit.
+> Guidelines how to use CIDOC-CRM in RDF for interoperability
 
 This is work in progress. Contributions and comments are very welcome!
 

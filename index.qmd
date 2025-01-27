@@ -1,20 +1,32 @@
 ---
 title: CIDOC-CRM in RDF Application Profile
+subtitle: Guidelines how to use CIDOC-CRM in RDF for interoperability
+date: 2025-01-27
+authors:
+  - name: Jakob Voß
+    orcid: 0000-0002-7613-4123
+    affiliations:
+    - name: Verbundzentrale des GBV (VZG)    
 ---
+
+# Introduction
 
 ## Background and Motivation
 
 The [CIDOC Conceptual Reference Model (CRM)](https://www.cidoc-crm.org/) is a conceptual data model used in the cultural heritage domain. The [Resource Description Framework (RDF)](https://www.w3.org/TR/rdf11-concepts/) is a graph-based data format. Both CRM and RDF have been created independently for integration of information. RDF is a good fit to express CRM in data and it has been used to do so. The expression of CRM in RDF is not trivial though, so some guidelines are needed. This document is going to provide an application profile to best use CRM in RDF for integration with other RDF data within NFDI4Objects. The document is going to be compared and aligned with similar recommendations such as @Doerr2020.
 
-The document is managed in a git repository at <https://github.com/nfdi4objects/crm-rdf-ap>. Contributions and feedback is very welcome!
-
-### Difficulties in expressing CRM and RDF
+## Difficulties in expressing CRM and RDF
 
 CRM defines abstract types of entities (CRM classes) such as events, measurements, places, and actors with relationship types (CRM properties) to connect instances of these entity types. RDF and its most common extensions define how to identify entities (resources), entity types (RDF classes) and relationship types (CRM properties) with URIs and values with Unicode strings (RDF literals) optionally having a language or a data type to encode values such as numbers and dates. RDF is used with ontologies that define RDF classes, properties, and constraints. CRM looks like an ontology or like it could directly be mapped to an RDF ontology, but this is not the case. CRM is agnostic to data formats: CRM classes are not RDF classes and CRM has no concept of data types and values, so any expression of CRM in RDF comes with choices of design. It is possible to express the same information modeled with CRM in different forms of RDF, so data cannot be integrated flawlessly.
 
-## Guidelines
+## About this document
 
-### Primitive values
+The document is managed in a git repository at <https://github.com/nfdi4objects/crm-rdf-ap>. Contributions and feedback is very welcome!
+
+
+# Guidelines
+
+## Primitive values
 
 [E59 Primitive Value] and its subclasses are not expressed as RDF classes. Instead
 
@@ -24,9 +36,9 @@ CRM defines abstract types of entities (CRM classes) such as events, measurement
 
 The CRM classes [E61 Time Primitive], [E94 Space Primitive], and [E95 Spacetime Primitive] are both subclasses of [E59 Primitive Value] and of [E41 Appellation], so [the latter](#e41-appelation) can be used when a mapping to established RDF data types is not applicable.
 
-Instances of **[E61 Time Primitive] and [E52 Time-Span]** are better expressed as RDF literals of type `xsd:date`, `xsd:time`, `xsd:dateTime`, or `xsd:dateTimeStamp` if applicable. More complex time values should be expressed using the [Extended Date/Time Format (EDTF)](https://www.loc.gov/standards/datetime/) but there is no established method to calculate with dates in RDF yet.^[See discussion to extend SPARQL [for simple dates](https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md) and [EDTF in RDF](https://periodo.github.io/edtf-ontology/).] CRM includes its own classes and properties to model more complex temporal values so this has not been decided yet.
+Instances of [E61 Time Primitive] and [E52 Time-Span] are better expressed as RDF literals of type `xsd:date`, `xsd:time`, `xsd:dateTime`, or `xsd:dateTimeStamp` if applicable. More complex time values should be expressed using the [Extended Date/Time Format (EDTF)](https://www.loc.gov/standards/datetime/) but there is no established method to calculate with dates in RDF yet.^[See discussion to extend SPARQL [for simple dates](https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md) and [EDTF in RDF](https://periodo.github.io/edtf-ontology/).] CRM includes its own classes and properties to model more complex temporal values so this has not been decided yet.
 
-~~~ttl
+~~~{.ttl #lst-times}
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/>
 @prefix unit: <http://qudt.org/vocab/unit/> .
 
@@ -78,9 +90,9 @@ CRM also defines class **[E55 Type]** with properties **[P127 has broader term]*
 [P71 lists]: http://www.cidoc-crm.org/cidoc-crm/P71
 [P67 refers to]: http://www.cidoc-crm.org/cidoc-crm/P67
 
-### CRM Classes to use with caution
+## CRM Classes to use with caution
 
-#### E58 Measurement Unit
+### E58 Measurement Unit
 
 Defintion of instances of [E58 Measurement Unit] should be avoided but either taken from an established vocabulary of units such as QUDT or expressed as RDF value with UCUM datatype.^[See [cdt:ucum](https://ci.mines-stetienne.fr/lindt/v4/custom_datatypes#ucum) and [QUDT](https://qudt.org/).]
 
@@ -95,7 +107,7 @@ Defintion of instances of [E58 Measurement Unit] should be avoided but either ta
   ] .
 ~~~
 
-#### E41 Appellation
+### E41 Appellation
 
 **[E41 Appellation]** and its subclasses ([E35 Title] and [E42 Identifier]) should be avoided (see [above](#primitive-values) for additional subclasses [E61 Time Primitive], [E94 Space Primitive], and [E94 Space Primitive]), unless a name cannot uniquely be identified with a sequence of Unicode characters and an optional language tag:
 
@@ -141,11 +153,12 @@ instead of
       crm:P190_has_symbolic_content "http://kbpedia.org/kko/rc/RMS-Titanic-TheShip" ] .
 ~~~
 
-### Deprecated CRM classes
+## Deprecated CRM classes
 
-CRM is constantly evolving, so some CRM classes have been renamed or replaced. Outdated classes and properties MUST be supported nevertheless.
+CRM is constantly evolving, so some CRM classes have been renamed or replaced. Outdated classes and properties MUST be supported nevertheless to integrate data that has already been published.
 
-## References
+
+# References
 
 ::: {#refs}
 :::
