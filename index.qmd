@@ -78,7 +78,7 @@ Instances of [E95 Spacetime Primitive] ... (TODO)
 
 ### Authority files and types
 
-CRM class **[E32 Authority Document]** and CRM property **[P71 lists]** MUST NOT be used in RDF but corresponding SKOS RDF classes `skos:ConceptScheme` and `skos:inScheme` instead. Applications MAY define `skos:ConceptScheme` as subclass of [E31 Document] and `skos:inScheme` as subproperty of [P67 refers to].
+CRM class **[E32 Authority Document]** and CRM property **[P71 lists]** MUST NOT be used in RDF but corresponding SKOS RDF classes [ConceptScheme] and [inScheme] instead. Applications MAY define [ConceptScheme] as subclass of [E31 Document] and [inScheme] as subproperty of [P67 refers to].
 
 CRM also defines class **[E55 Type]** with properties **[P127 has broader term]** and **[P127i has narrower term]**. The class, used with CRM properties P2, P137, P177, P135, P125, P32, and P42, MUST NOT be used in RDF but mapped to
 
@@ -157,14 +157,29 @@ instead of
 
 CRM is constantly evolving, so some CRM classes have been renamed or replaced. Outdated classes and properties MUST be supported nevertheless to integrate data that has already been published.
 
+See @CRMResources for a list of CRM versions.
+
+# Differences to RDF encoding
+
+An official encoding of CRM in RDF is published since version 7.1.2, managed at <https://gitlab.isl.ics.forth.gr/cidoc-crm/cidoc_crm_rdf/>. The encoding of CRM in RDF described in this document differes by introduction of SKOS:
+
+- [E55 Type] has been replaced by [Concept] and the latter is made a subclass of [E28 Conceptual Object].
+- [E32 Authority Document] has been replaced by [ConceptScheme] and the latter is made a subclass of [E31 Document]
+- [P71 lists] has been replaced by [inScheme] and the latter is made a subproperty of [P67 refers to].
+
+- [P172 has broader term] has been replaced by [broader]
+- [P172i has narrower term] has been replaced by [narrower]
 
 # References
+
+<!-- TODO: add SKOS -->
 
 ::: {#refs}
 :::
 
 [E13 Attribute Assignment]: http://www.cidoc-crm.org/cidoc-crm/E13
 [E15 Identifier Assignment]: http://www.cidoc-crm.org/cidoc-crm/E15
+[E28 Conceptual Object]: http://www.cidoc-crm.org/cidoc-crm/E28
 [E31 Document]: http://www.cidoc-crm.org/cidoc-crm/E31
 [E32 Authority Document]: http://www.cidoc-crm.org/cidoc-crm/E32
 [E35 Title]: http://www.cidoc-crm.org/cidoc-crm/E35
@@ -178,4 +193,13 @@ CRM is constantly evolving, so some CRM classes have been renamed or replaced. O
 [E61 Time Primitive]: http://www.cidoc-crm.org/cidoc-crm/E61
 [E94 Space Primitive]: http://www.cidoc-crm.org/cidoc-crm/E94
 [E95 Spacetime Primitive]: http://www.cidoc-crm.org/cidoc-crm/E95
+
+[P172 has broader term]: http://cidoc-crm.org/cidoc-crm/P127_has_broader_term
+[P172i has narrower term]: http://cidoc-crm.org/cidoc-crm/P127_has_broader_term
+
+[Concept]: https://www.w3.org/TR/skos-reference/#concepts
+[ConceptScheme]: https://www.w3.org/TR/skos-reference/#schemes
+[inScheme]: https://www.w3.org/TR/skos-reference/#schemes
+[broader]: https://www.w3.org/TR/skos-reference/#semantic-relations
+[narrower]: https://www.w3.org/TR/skos-reference/#semantic-relations
 
