@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-01-27">
 
 <title>CIDOC-CRM in RDF Application Profile</title>
 <style>
@@ -43,91 +44,147 @@ div.csl-indent {
 }</style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-2ecafa609d29e6b5df2c2179b389d5c3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-2ecafa609d29e6b5df2c2179b389d5c3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 <link rel="stylesheet" href="codemirror.css">
+<link rel="stylesheet" href="style.css">
+<meta name="citation_title" content="CIDOC-CRM in RDF Application Profile">
+<meta name="citation_author" content="Jakob Voß">
+<meta name="citation_publication_date" content="2025-01-27">
+<meta name="citation_cover_date" content="2025-01-27">
+<meta name="citation_year" content="2025">
+<meta name="citation_online_date" content="2025-01-27">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Implementing the CIDOC conceptual reference model in RDF;,citation_author=Martin Doerr;,citation_author=Richard Light;,citation_author=Gerald Hiebel;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_fulltext_html_url=https://cidoc-crm.org/sites/default/files/Implementing%20the%20CIDOC%20Conceptual%20Reference%20Model%20in%20RDF.pdf;">
 </head>
 
 <body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">CIDOC-CRM in RDF Application Profile</h1>
+            <p class="subtitle lead">Guidelines how to use CIDOC-CRM in RDF for interoperability</p>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+            <div class="quarto-title-meta-author">
+          <div class="quarto-title-meta-heading">Author</div>
+          <div class="quarto-title-meta-heading">Affiliation</div>
+          
+                <div class="quarto-title-meta-contents">
+            <p class="author">Jakob Voß <a href="https://orcid.org/0000-0002-7613-4123" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Verbundzentrale des GBV (VZG)
+                      </p>
+                  </div>
+                    </div>
+        
+        <div class="quarto-title-meta">
+
+                      
+                <div>
+            <div class="quarto-title-meta-heading">Published</div>
+            <div class="quarto-title-meta-contents">
+              <p class="date">January 27, 2025</p>
+            </div>
+          </div>
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      </div>
+    </div>
+
+
+
+    <div class="quarto-other-links-text-target">
+    <div class="quarto-code-links"><div class="quarto-title-meta-heading">Code Links</div><div class="quarto-title-meta-contents"><span style="padding-right: 0.5em;"><a href="https://github.com/nfdi4objects/crm-rdf-ap/" target="_blank"><i class="bi bi-github"></i>GitHub Repo</a>,</span><span><a href="https://github.com/nfdi4objects/crm-rdf-ap/issues"><i class="bi bi-link-45deg"></i>GitHub Issues</a></span></div></div></div>  </div>
+</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#background-and-motivation" id="toc-background-and-motivation" class="nav-link active" data-scroll-target="#background-and-motivation">Background and Motivation</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
   <ul class="collapse">
-  <li><a href="#difficulties-in-expressing-crm-and-rdf" id="toc-difficulties-in-expressing-crm-and-rdf" class="nav-link" data-scroll-target="#difficulties-in-expressing-crm-and-rdf">Difficulties in expressing CRM and RDF</a></li>
+  <li><a href="#background-and-motivation" id="toc-background-and-motivation" class="nav-link" data-scroll-target="#background-and-motivation"><span class="header-section-number">1.1</span> Background and Motivation</a></li>
+  <li><a href="#difficulties-in-expressing-crm-and-rdf" id="toc-difficulties-in-expressing-crm-and-rdf" class="nav-link" data-scroll-target="#difficulties-in-expressing-crm-and-rdf"><span class="header-section-number">1.2</span> Difficulties in expressing CRM and RDF</a></li>
+  <li><a href="#about-this-document" id="toc-about-this-document" class="nav-link" data-scroll-target="#about-this-document"><span class="header-section-number">1.3</span> About this document</a></li>
   </ul></li>
-  <li><a href="#guidelines" id="toc-guidelines" class="nav-link" data-scroll-target="#guidelines">Guidelines</a>
+  <li><a href="#guidelines" id="toc-guidelines" class="nav-link" data-scroll-target="#guidelines"><span class="header-section-number">2</span> Guidelines</a>
   <ul class="collapse">
-  <li><a href="#primitive-values" id="toc-primitive-values" class="nav-link" data-scroll-target="#primitive-values">Primitive values</a></li>
-  <li><a href="#authority-files-and-types" id="toc-authority-files-and-types" class="nav-link" data-scroll-target="#authority-files-and-types">Authority files and types</a></li>
-  <li><a href="#crm-classes-to-use-with-caution" id="toc-crm-classes-to-use-with-caution" class="nav-link" data-scroll-target="#crm-classes-to-use-with-caution">CRM Classes to use with caution</a></li>
-  <li><a href="#deprecated-crm-classes" id="toc-deprecated-crm-classes" class="nav-link" data-scroll-target="#deprecated-crm-classes">Deprecated CRM classes</a></li>
+  <li><a href="#primitive-values" id="toc-primitive-values" class="nav-link" data-scroll-target="#primitive-values"><span class="header-section-number">2.1</span> Primitive values</a>
+  <ul class="collapse">
+  <li><a href="#authority-files-and-types" id="toc-authority-files-and-types" class="nav-link" data-scroll-target="#authority-files-and-types"><span class="header-section-number">2.1.1</span> Authority files and types</a></li>
   </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#crm-classes-to-use-with-caution" id="toc-crm-classes-to-use-with-caution" class="nav-link" data-scroll-target="#crm-classes-to-use-with-caution"><span class="header-section-number">2.2</span> CRM Classes to use with caution</a>
+  <ul class="collapse">
+  <li><a href="#e58-measurement-unit" id="toc-e58-measurement-unit" class="nav-link" data-scroll-target="#e58-measurement-unit"><span class="header-section-number">2.2.1</span> E58 Measurement Unit</a></li>
+  <li><a href="#e41-appellation" id="toc-e41-appellation" class="nav-link" data-scroll-target="#e41-appellation"><span class="header-section-number">2.2.2</span> E41 Appellation</a></li>
+  </ul></li>
+  <li><a href="#deprecated-crm-classes" id="toc-deprecated-crm-classes" class="nav-link" data-scroll-target="#deprecated-crm-classes"><span class="header-section-number">2.3</span> Deprecated CRM classes</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3</span> References</a></li>
   </ul>
 </nav>
 </div>
-<main class="content" id="quarto-document-content">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 <script src="./js/codemirror.js"></script>
 <script src="./js/sparql.js"></script>
 <script src="./js/turtle.js"></script>
 <script src="./js/runmode.js"></script>
 <script src="./js/highlight.js"></script>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">CIDOC-CRM in RDF Application Profile</h1>
-</div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
   
 
 
-</header>
-
-
-<section id="background-and-motivation" class="level2">
-<h2 class="anchored" data-anchor-id="background-and-motivation">Background and Motivation</h2>
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<section id="background-and-motivation" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="background-and-motivation"><span class="header-section-number">1.1</span> Background and Motivation</h2>
 <p>The <a href="https://www.cidoc-crm.org/">CIDOC Conceptual Reference Model (CRM)</a> is a conceptual data model used in the cultural heritage domain. The <a href="https://www.w3.org/TR/rdf11-concepts/">Resource Description Framework (RDF)</a> is a graph-based data format. Both CRM and RDF have been created independently for integration of information. RDF is a good fit to express CRM in data and it has been used to do so. The expression of CRM in RDF is not trivial though, so some guidelines are needed. This document is going to provide an application profile to best use CRM in RDF for integration with other RDF data within NFDI4Objects. The document is going to be compared and aligned with similar recommendations such as <span class="citation" data-cites="Doerr2020">Doerr, Light, and Hiebel (<a href="#ref-Doerr2020" role="doc-biblioref">2020</a>)</span>.</p>
-<p>The document is managed in a git repository at <a href="https://github.com/nfdi4objects/crm-rdf-ap" class="uri">https://github.com/nfdi4objects/crm-rdf-ap</a>. Contributions and feedback is very welcome!</p>
-<section id="difficulties-in-expressing-crm-and-rdf" class="level3">
-<h3 class="anchored" data-anchor-id="difficulties-in-expressing-crm-and-rdf">Difficulties in expressing CRM and RDF</h3>
+</section>
+<section id="difficulties-in-expressing-crm-and-rdf" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="difficulties-in-expressing-crm-and-rdf"><span class="header-section-number">1.2</span> Difficulties in expressing CRM and RDF</h2>
 <p>CRM defines abstract types of entities (CRM classes) such as events, measurements, places, and actors with relationship types (CRM properties) to connect instances of these entity types. RDF and its most common extensions define how to identify entities (resources), entity types (RDF classes) and relationship types (CRM properties) with URIs and values with Unicode strings (RDF literals) optionally having a language or a data type to encode values such as numbers and dates. RDF is used with ontologies that define RDF classes, properties, and constraints. CRM looks like an ontology or like it could directly be mapped to an RDF ontology, but this is not the case. CRM is agnostic to data formats: CRM classes are not RDF classes and CRM has no concept of data types and values, so any expression of CRM in RDF comes with choices of design. It is possible to express the same information modeled with CRM in different forms of RDF, so data cannot be integrated flawlessly.</p>
 </section>
+<section id="about-this-document" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="about-this-document"><span class="header-section-number">1.3</span> About this document</h2>
+<p>The document is managed in a git repository at <a href="https://github.com/nfdi4objects/crm-rdf-ap" class="uri">https://github.com/nfdi4objects/crm-rdf-ap</a>. Contributions and feedback is very welcome!</p>
 </section>
-<section id="guidelines" class="level2">
-<h2 class="anchored" data-anchor-id="guidelines">Guidelines</h2>
-<section id="primitive-values" class="level3">
-<h3 class="anchored" data-anchor-id="primitive-values">Primitive values</h3>
+</section>
+<section id="guidelines" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Guidelines</h1>
+<section id="primitive-values" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="primitive-values"><span class="header-section-number">2.1</span> Primitive values</h2>
 <p><a href="http://www.cidoc-crm.org/cidoc-crm/E59">E59 Primitive Value</a> and its subclasses are not expressed as RDF classes. Instead</p>
 <ul>
 <li><p>instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E62">E62 String</a> are expressed as RDF literals with optional language tag, and</p></li>
 <li><p>instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E60">E60 Number</a> are expressed as RDF literals with numeric data type such as <code>xsd:integer</code></p></li>
 </ul>
 <p>The CRM classes <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E95">E95 Spacetime Primitive</a> are both subclasses of <a href="http://www.cidoc-crm.org/cidoc-crm/E59">E59 Primitive Value</a> and of <a href="http://www.cidoc-crm.org/cidoc-crm/E41">E41 Appellation</a>, so <a href="#e41-appelation">the latter</a> can be used when a mapping to established RDF data types is not applicable.</p>
-<p>Instances of <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a></strong> are better expressed as RDF literals of type <code>xsd:date</code>, <code>xsd:time</code>, <code>xsd:dateTime</code>, or <code>xsd:dateTimeStamp</code> if applicable. More complex time values should be expressed using the <a href="https://www.loc.gov/standards/datetime/">Extended Date/Time Format (EDTF)</a> but there is no established method to calculate with dates in RDF yet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> CRM includes its own classes and properties to model more complex temporal values so this has not been decided yet.</p>
-<pre class="ttl"><code>@prefix edtf: &lt;http://id.loc.gov/datatypes/edtf/&gt;
+<p>Instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a> are better expressed as RDF literals of type <code>xsd:date</code>, <code>xsd:time</code>, <code>xsd:dateTime</code>, or <code>xsd:dateTimeStamp</code> if applicable. More complex time values should be expressed using the <a href="https://www.loc.gov/standards/datetime/">Extended Date/Time Format (EDTF)</a> but there is no established method to calculate with dates in RDF yet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> CRM includes its own classes and properties to model more complex temporal values so this has not been decided yet.</p>
+<pre id="lst-times" class="ttl"><code>@prefix edtf: &lt;http://id.loc.gov/datatypes/edtf/&gt;
 @prefix unit: &lt;http://qudt.org/vocab/unit/&gt; .
 
 &lt;TitanticSinking&gt; a crm:E81_Transformation ;
@@ -150,9 +207,8 @@ div.csl-indent {
   ] .</code></pre>
 <p>GeoSPARQL properties <code>geo:hasMetricSpatialResolution</code> and/or <code>geo:hasSpatialAccuracy</code> can be used to indicate level of detail.</p>
 <p>Instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E95">E95 Spacetime Primitive</a> … (TODO)</p>
-</section>
-<section id="authority-files-and-types" class="level3">
-<h3 class="anchored" data-anchor-id="authority-files-and-types">Authority files and types</h3>
+<section id="authority-files-and-types" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="authority-files-and-types"><span class="header-section-number">2.1.1</span> Authority files and types</h3>
 <p>CRM class <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E32">E32 Authority Document</a></strong> and CRM property <strong><a href="http://www.cidoc-crm.org/cidoc-crm/P71">P71 lists</a></strong> MUST NOT be used in RDF but corresponding SKOS RDF classes <code>skos:ConceptScheme</code> and <code>skos:inScheme</code> instead. Applications MAY define <code>skos:ConceptScheme</code> as subclass of <a href="http://www.cidoc-crm.org/cidoc-crm/E31">E31 Document</a> and <code>skos:inScheme</code> as subproperty of <a href="http://www.cidoc-crm.org/cidoc-crm/P67">P67 refers to</a>.</p>
 <p>CRM also defines class <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E55">E55 Type</a></strong> with properties <strong><a href="http://www.cidoc-crm.org/cidoc-crm/P127">P127 has broader term</a></strong> and <strong><a href="http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term">P127i has narrower term</a></strong>. The class, used with CRM properties P2, P137, P177, P135, P125, P32, and P42, MUST NOT be used in RDF but mapped to</p>
 <ul>
@@ -160,10 +216,11 @@ div.csl-indent {
 <li>individual RDF classes, connected with <code>rdfs:subClassOf</code>.</li>
 </ul>
 </section>
-<section id="crm-classes-to-use-with-caution" class="level3">
-<h3 class="anchored" data-anchor-id="crm-classes-to-use-with-caution">CRM Classes to use with caution</h3>
-<section id="e58-measurement-unit" class="level4">
-<h4 class="anchored" data-anchor-id="e58-measurement-unit">E58 Measurement Unit</h4>
+</section>
+<section id="crm-classes-to-use-with-caution" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="crm-classes-to-use-with-caution"><span class="header-section-number">2.2</span> CRM Classes to use with caution</h2>
+<section id="e58-measurement-unit" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="e58-measurement-unit"><span class="header-section-number">2.2.1</span> E58 Measurement Unit</h3>
 <p>Defintion of instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E58">E58 Measurement Unit</a> should be avoided but either taken from an established vocabulary of units such as QUDT or expressed as RDF value with UCUM datatype.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <pre class="ttl"><code>@prefix unit: &lt;http://qudt.org/vocab/unit/&gt; .
 @prefix cdt: &lt;https://w3id.org/cdt/&gt; .
@@ -174,8 +231,8 @@ div.csl-indent {
     rdf:value "7 min"^^cdt:ucum                           # UCUM string
   ] .</code></pre>
 </section>
-<section id="e41-appellation" class="level4">
-<h4 class="anchored" data-anchor-id="e41-appellation">E41 Appellation</h4>
+<section id="e41-appellation" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="e41-appellation"><span class="header-section-number">2.2.2</span> E41 Appellation</h3>
 <p><strong><a href="http://www.cidoc-crm.org/cidoc-crm/E41">E41 Appellation</a></strong> and its subclasses (<a href="http://www.cidoc-crm.org/cidoc-crm/E35">E35 Title</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E42">E42 Identifier</a>) should be avoided (see <a href="#primitive-values">above</a> for additional subclasses <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>), unless a name cannot uniquely be identified with a sequence of Unicode characters and an optional language tag:</p>
 <pre class="ttl"><code>&lt;RMSTitantic&gt;
   crm:P102_has_title "RMS Titanic"@en ;
@@ -203,13 +260,13 @@ div.csl-indent {
       crm:P190_has_symbolic_content "http://kbpedia.org/kko/rc/RMS-Titanic-TheShip" ] .</code></pre>
 </section>
 </section>
-<section id="deprecated-crm-classes" class="level3">
-<h3 class="anchored" data-anchor-id="deprecated-crm-classes">Deprecated CRM classes</h3>
-<p>CRM is constantly evolving, so some CRM classes have been renamed or replaced. Outdated classes and properties MUST be supported nevertheless.</p>
+<section id="deprecated-crm-classes" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="deprecated-crm-classes"><span class="header-section-number">2.3</span> Deprecated CRM classes</h2>
+<p>CRM is constantly evolving, so some CRM classes have been renamed or replaced. Outdated classes and properties MUST be supported nevertheless to integrate data that has already been published.</p>
 </section>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
+<section id="references" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-Doerr2020" class="csl-entry" role="listitem">
 Doerr, Martin, Richard Light, and Gerald Hiebel. 2020. <span>“Implementing the CIDOC Conceptual Reference Model in RDF.”</span> <a href="https://cidoc-crm.org/sites/default/files/Implementing%20the%20CIDOC%20Conceptual%20Reference%20Model%20in%20RDF.pdf">https://cidoc-crm.org/sites/default/files/Implementing%20the%20CIDOC%20Conceptual%20Reference%20Model%20in%20RDF.pdf</a>.
