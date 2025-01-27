@@ -66,6 +66,7 @@ div.csl-indent {
 <meta name="citation_online_date" content="2025-01-27">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Implementing the CIDOC conceptual reference model in RDF;,citation_author=Martin Doerr;,citation_author=Richard Light;,citation_author=Gerald Hiebel;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_fulltext_html_url=https://cidoc-crm.org/sites/default/files/Implementing%20the%20CIDOC%20Conceptual%20Reference%20Model%20in%20RDF.pdf;">
+<meta name="citation_reference" content="citation_title=Versions of the CIDOC-CRM;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_fulltext_html_url=https://cidoc-crm.org/versions-of-the-cidoc-crm;,citation_publisher=ICOM;">
 </head>
 
 <body>
@@ -140,7 +141,8 @@ div.csl-indent {
   </ul></li>
   <li><a href="#deprecated-crm-classes" id="toc-deprecated-crm-classes" class="nav-link" data-scroll-target="#deprecated-crm-classes"><span class="header-section-number">2.3</span> Deprecated CRM classes</a></li>
   </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3</span> References</a></li>
+  <li><a href="#differences-to-rdf-encoding" id="toc-differences-to-rdf-encoding" class="nav-link" data-scroll-target="#differences-to-rdf-encoding"><span class="header-section-number">3</span> Differences to RDF encoding</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">4</span> References</a></li>
   </ul>
 </nav>
 </div>
@@ -209,7 +211,7 @@ div.csl-indent {
 <p>Instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E95">E95 Spacetime Primitive</a> … (TODO)</p>
 <section id="authority-files-and-types" class="level3" data-number="2.1.1">
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="authority-files-and-types"><span class="header-section-number">2.1.1</span> Authority files and types</h3>
-<p>CRM class <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E32">E32 Authority Document</a></strong> and CRM property <strong><a href="http://www.cidoc-crm.org/cidoc-crm/P71">P71 lists</a></strong> MUST NOT be used in RDF but corresponding SKOS RDF classes <code>skos:ConceptScheme</code> and <code>skos:inScheme</code> instead. Applications MAY define <code>skos:ConceptScheme</code> as subclass of <a href="http://www.cidoc-crm.org/cidoc-crm/E31">E31 Document</a> and <code>skos:inScheme</code> as subproperty of <a href="http://www.cidoc-crm.org/cidoc-crm/P67">P67 refers to</a>.</p>
+<p>CRM class <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E32">E32 Authority Document</a></strong> and CRM property <strong><a href="http://www.cidoc-crm.org/cidoc-crm/P71">P71 lists</a></strong> MUST NOT be used in RDF but corresponding SKOS RDF classes <a href="https://www.w3.org/TR/skos-reference/#schemes">ConceptScheme</a> and <a href="https://www.w3.org/TR/skos-reference/#schemes">inScheme</a> instead. Applications MAY define <a href="https://www.w3.org/TR/skos-reference/#schemes">ConceptScheme</a> as subclass of <a href="http://www.cidoc-crm.org/cidoc-crm/E31">E31 Document</a> and <a href="https://www.w3.org/TR/skos-reference/#schemes">inScheme</a> as subproperty of <a href="http://www.cidoc-crm.org/cidoc-crm/P67">P67 refers to</a>.</p>
 <p>CRM also defines class <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E55">E55 Type</a></strong> with properties <strong><a href="http://www.cidoc-crm.org/cidoc-crm/P127">P127 has broader term</a></strong> and <strong><a href="http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term">P127i has narrower term</a></strong>. The class, used with CRM properties P2, P137, P177, P135, P125, P32, and P42, MUST NOT be used in RDF but mapped to</p>
 <ul>
 <li><code>skos:Concept</code> and <code>skos:broader</code>/<code>skos:narrower</code> or to</li>
@@ -263,13 +265,29 @@ div.csl-indent {
 <section id="deprecated-crm-classes" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="deprecated-crm-classes"><span class="header-section-number">2.3</span> Deprecated CRM classes</h2>
 <p>CRM is constantly evolving, so some CRM classes have been renamed or replaced. Outdated classes and properties MUST be supported nevertheless to integrate data that has already been published.</p>
+<p>See <span class="citation" data-cites="CRMResources"><span>“Versions of the CIDOC-CRM”</span> (<a href="#ref-CRMResources" role="doc-biblioref">2025</a>)</span> for a list of CRM versions.</p>
 </section>
 </section>
-<section id="references" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> References</h1>
+<section id="differences-to-rdf-encoding" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Differences to RDF encoding</h1>
+<p>An official encoding of CRM in RDF is published since version 7.1.2, managed at <a href="https://gitlab.isl.ics.forth.gr/cidoc-crm/cidoc_crm_rdf/" class="uri">https://gitlab.isl.ics.forth.gr/cidoc-crm/cidoc_crm_rdf/</a>. The encoding of CRM in RDF described in this document differes by introduction of SKOS:</p>
+<ul>
+<li><p><a href="http://www.cidoc-crm.org/cidoc-crm/E55">E55 Type</a> has been replaced by <a href="https://www.w3.org/TR/skos-reference/#concepts">Concept</a> and the latter is made a subclass of <a href="http://www.cidoc-crm.org/cidoc-crm/E28">E28 Conceptual Object</a>.</p></li>
+<li><p><a href="http://www.cidoc-crm.org/cidoc-crm/E32">E32 Authority Document</a> has been replaced by <a href="https://www.w3.org/TR/skos-reference/#schemes">ConceptScheme</a> and the latter is made a subclass of <a href="http://www.cidoc-crm.org/cidoc-crm/E31">E31 Document</a></p></li>
+<li><p><a href="http://www.cidoc-crm.org/cidoc-crm/P71">P71 lists</a> has been replaced by <a href="https://www.w3.org/TR/skos-reference/#schemes">inScheme</a> and the latter is made a subproperty of <a href="http://www.cidoc-crm.org/cidoc-crm/P67">P67 refers to</a>.</p></li>
+<li><p><a href="http://cidoc-crm.org/cidoc-crm/P127_has_broader_term">P172 has broader term</a> has been replaced by <a href="https://www.w3.org/TR/skos-reference/#semantic-relations">broader</a></p></li>
+<li><p><a href="http://cidoc-crm.org/cidoc-crm/P127_has_broader_term">P172i has narrower term</a> has been replaced by <a href="https://www.w3.org/TR/skos-reference/#semantic-relations">narrower</a></p></li>
+</ul>
+</section>
+<section id="references" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> References</h1>
+<!-- TODO: add SKOS -->
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-Doerr2020" class="csl-entry" role="listitem">
 Doerr, Martin, Richard Light, and Gerald Hiebel. 2020. <span>“Implementing the CIDOC Conceptual Reference Model in RDF.”</span> <a href="https://cidoc-crm.org/sites/default/files/Implementing%20the%20CIDOC%20Conceptual%20Reference%20Model%20in%20RDF.pdf">https://cidoc-crm.org/sites/default/files/Implementing%20the%20CIDOC%20Conceptual%20Reference%20Model%20in%20RDF.pdf</a>.
+</div>
+<div id="ref-CRMResources" class="csl-entry" role="listitem">
+<span>“Versions of the CIDOC-CRM.”</span> 2025. ICOM. <a href="https://cidoc-crm.org/versions-of-the-cidoc-crm">https://cidoc-crm.org/versions-of-the-cidoc-crm</a>.
 </div>
 </div>
 </section>
