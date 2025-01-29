@@ -199,6 +199,8 @@ An official encoding of CRM in RDF is published since version 7.1.2, managed at 
 - [P172i has narrower term] has been replaced by [narrower]
   (instead of defining the former superproperty of the latter)
 
+In addition the use of non-standard temporal properties such as `P81a_end_of_the_begin` and `P82b_end_of_the_end` will likely be discouraged in favour of [Time Ontology] and [EDTF].
+
 Rationales: integration with terminologies and simplification of queries.
 
 # References
