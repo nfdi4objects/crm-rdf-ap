@@ -24,9 +24,7 @@ CRM defines abstract types of entities (CRM classes) such as events, measurement
 The document is managed in a git repository at <https://github.com/nfdi4objects/crm-rdf-ap>. Contributions and feedback is very welcome!
 
 
-# Guidelines
-
-## Primitive values
+# Primitive values
 
 [E59 Primitive Value] and its subclasses are not expressed as RDF classes. Instead
 
@@ -36,9 +34,11 @@ The document is managed in a git repository at <https://github.com/nfdi4objects/
 
 The CRM classes [E61 Time Primitive], [E94 Space Primitive], and [E95 Spacetime Primitive] are both subclasses of [E59 Primitive Value] and of [E41 Appellation], so [the latter](#e41-appelation) can be used when a mapping to established RDF data types is not applicable.
 
-Instances of [E61 Time Primitive] and [E52 Time-Span] are better expressed as RDF literals of type `xsd:date`, `xsd:time`, `xsd:dateTime`, or `xsd:dateTimeStamp` if applicable. More complex time values should be expressed using the [Extended Date/Time Format (EDTF)](https://www.loc.gov/standards/datetime/) but there is no established method to calculate with dates in RDF yet.^[See discussion to extend SPARQL [for simple dates](https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md) and [EDTF in RDF](https://periodo.github.io/edtf-ontology/).] CRM includes its own classes and properties to model more complex temporal values so this has not been decided yet.
+## Temporal data
 
-~~~{.ttl #lst-times}
+Instances of [E61 Time Primitive] and [E52 Time-Span] are better expressed as RDF literals of type `xsd:date`, `xsd:time`, `xsd:dateTime`, or `xsd:dateTimeStamp` if applicable. More complex values, in particular explicit intervals can be expressed with [EDTF] and [Time Ontology]\ (both mapped to each other with [EDTF in RDF]). Support of complex temporal data is limited in SPARQL, so there is no consensus yet.^[See discussion to extend SPARQL 1.2 [for simple dates](https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md).]
+
+~~~{.ttl #lst-temporal-primitives}
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/>
 @prefix unit: <http://qudt.org/vocab/unit/> .
 
@@ -46,14 +46,37 @@ Instances of [E61 Time Primitive] and [E52 Time-Span] are better expressed as RD
   crm:P124_transformed <RMSTitanic> ;
   crm:P123_resulted_in <TitanticWreck> .
   crm:P4_has_time-span 
-    "1912-04-15"^^xsd:date , # or ^^edtf:EDTF (subsumes xsd:date)
-    [
-      a crm:E52_Time-Span ;
-      crm:P82_at_some_time_within "1912-04-15"^^xsd:date          
-    ] ;
-    # TODO: add exact time of sinking (02:38–05:18 GMT)
-.
+    "1912-04-15"^^xsd:date ,                        # date only
+    "1912-04-15T02:38–05:18Z"^^xsd:dateTimeStamp ,  # precise date and time with timezone
+    "1912-04-15"^^edtf:EDTF .                       # imprecise date with EDTF
 ~~~
+
+@Doerr2020 recommend to use additional properties for temporal intervals ([E52 Time-Span]):
+
+- `P81a_end_of_the_begin` together with  `P81b_begin_of_the_end` instead of [P81 ongoing throughout]
+- `P82a_begin_of_the_begin` together with `P82b_end_of_the_end` instead of [P82 at some time within]
+
+The use of these properties may lead to false assumption of precision and it introduced a solitary solution to a problem also addressed outside of CIDOC. For this reasons these additional properties should *not* be used in favour of EDTF and/or Time Ontology, for instance like this: 
+
+~~~{.ttl}
+<WW1> a crm:E52_Time-Span , time:TemporalEntity .
+  edtfo:hasEDTFDateTimeDescription "1914/1918" ;
+  time:hasBeginning [ time:inXSDgYear "1914"^^xsd:gYear ] ;
+  time:hasEnd [ time:inXSDgYear "1918"^^xsd:gYear ] .
+~~~
+
+Temporal CRM properties such as [P86 falls within] should also be replaced by corresponding properties from Time Ontology such as [time:intervalIn].
+
+[Time Ontology]: https://www.w3.org/TR/owl-time/
+[EDTF in RDF]: https://periodo.github.io/edtf-ontology/
+[time:intervalIn]: https://www.w3.org/TR/owl-time/#time:intervalIn
+
+[EDTF]: https://www.loc.gov/standards/datetime/
+[P81 ongoing throughout]: http://www.cidoc-crm.org/cidoc-crm/P81
+[P82 at some time within]: http://www.cidoc-crm.org/cidoc-crm/P82
+[P86 falls within]: http://www.cidoc-crm.org/cidoc-crm/P86
+
+## Geographic data
 
 Instances of **[E94 Space Primitive]** should be expressed using [GeoSPARQL] Ontology as instance of `geo:hasGeometry`, compatible with various geographic data formats (WKT, GeoJSON, GML...).^[See also CRM Geo draft at <http://www.cidoc-crm.org/extensions/crmgeo/>, defining superclasses of `geo:Geometry`.] CRM Property [P168 place is defined by] should be expressed with RDF property `geo:hasGeometry`. CRM Properties [P171 at some place within], and [P172 contains] can be used as RDF properties to link places ([E53 Place]) to outer and inner geometries but `geo:hasBoundingBox` and `geo:hasCentroid` should be preferred, if applicable.
 
@@ -159,16 +182,24 @@ CRM is constantly evolving, so some CRM classes have been renamed or replaced. O
 
 See @CRMResources for a list of CRM versions.
 
-# Differences to RDF encoding
+# Differences to the official encoding of CRM in RDF
 
-An official encoding of CRM in RDF is published since version 7.1.2, managed at <https://gitlab.isl.ics.forth.gr/cidoc-crm/cidoc_crm_rdf/>. The encoding of CRM in RDF described in this document differes by introduction of SKOS:
+An official encoding of CRM in RDF is published since version 7.1.2, managed at <https://gitlab.isl.ics.forth.gr/cidoc-crm/cidoc_crm_rdf/> (@Doerr2020). The encoding of CRM in RDF described in this document differes by introduction of SKOS:
 
-- [E55 Type] has been replaced by [Concept] and the latter is made a subclass of [E28 Conceptual Object].
-- [E32 Authority Document] has been replaced by [ConceptScheme] and the latter is made a subclass of [E31 Document]
-- [P71 lists] has been replaced by [inScheme] and the latter is made a subproperty of [P67 refers to].
+- [E55 Type] has been replaced by [Concept] and the latter is defined subclass of [E28 Conceptual Object]
+  (instead of defining [Concept] a subclass of [E55 Type]).
+
+- [E32 Authority Document] has been replaced by [ConceptScheme] and the latter is defined subclass of [E31 Document]
+
+- [P71 lists] has been replaced by [inScheme] and the latter is defined subproperty of [P67 refers to].
 
 - [P172 has broader term] has been replaced by [broader]
+  (instead of defining the former superproperty of the latter)
+
 - [P172i has narrower term] has been replaced by [narrower]
+  (instead of defining the former superproperty of the latter)
+
+Rationales: integration with terminologies and simplification of queries.
 
 # References
 
