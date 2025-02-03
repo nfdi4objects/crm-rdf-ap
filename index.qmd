@@ -36,7 +36,7 @@ The CRM classes [E61 Time Primitive], [E94 Space Primitive], and [E95 Spacetime 
 
 ## Temporal data
 
-Instances of [E61 Time Primitive] and [E52 Time-Span] are better expressed as RDF literals of type `xsd:date`, `xsd:time`, `xsd:dateTime`, or `xsd:dateTimeStamp` if applicable. More complex values, in particular explicit intervals can be expressed with [EDTF] and [Time Ontology]\ (both mapped to each other with [EDTF in RDF]). Support of complex temporal data is limited in SPARQL, so there is no consensus yet.^[See discussion to extend SPARQL 1.2 [for simple dates](https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md).]
+Instances of [E61 Time Primitive] and [E52 Time-Span] are better expressed as RDF literals of type `xsd:date`, `xsd:time`, `xsd:dateTime`, `xsd:dateTimeStamp`, or `xsd:gDay`, `xsd:gMonthDay`, `xsd:gMonth`, `xsd:gYear`, or `xsd:gYearMonth` if applicable. More complex values, in particular explicit intervals can be expressed with [EDTF] and [Time Ontology]\ (both mapped to each other with [EDTF in RDF]). Support of complex temporal data is limited in SPARQL, so there is no consensus yet.^[See discussion to extend SPARQL 1.2 [for simple dates](https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md).]
 
 ~~~{.ttl #lst-temporal-primitives}
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/>
