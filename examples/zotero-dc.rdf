@@ -1,0 +1,13 @@
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <rdf:Description rdf:about="urn:isbn:978-3-936527-32-2">
+        <dc:title>Die Datenmodellstandardisierung und ihre Auswirkungen auf RFID-Bibliotheken</dc:title>
+        <dc:type>bookSection</dc:type>
+        <dc:creator>Kern, Christian</dc:creator>
+        <dc:contributor>Seeliger, Frank</dc:contributor>
+        <dc:publisher>Verlag News &amp; Media</dc:publisher>
+        <dc:date>2014</dc:date>
+        <dc:identifier>ISBN 978-3-936527-32-2</dc:identifier>
+    </rdf:Description>
+</rdf:RDF>

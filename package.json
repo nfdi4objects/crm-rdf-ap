@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "jsonld2rdf": "jsonld2rdf -p prefixes.json"
+  },
+  "dependencies": {    
+    "jsonld2rdf": "^0.5.1"
+  }
+}

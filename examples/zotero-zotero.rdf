@@ -1,0 +1,52 @@
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:z="http://www.zotero.org/namespaces/export#"
+ xmlns:dcterms="http://purl.org/dc/terms/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:bib="http://purl.org/net/biblio#"
+ xmlns:foaf="http://xmlns.com/foaf/0.1/"
+ xmlns:prism="http://prismstandard.org/namespaces/1.2/basic/">
+    <bib:BookSection rdf:about="urn:isbn:978-3-936527-32-2">
+        <z:itemType>bookSection</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Book>
+                <dc:title>RFID für Bibliothekare: ein Vademecum</dc:title>
+                <dc:identifier>ISBN 978-3-936527-32-2</dc:identifier>
+            </bib:Book>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>Verlag News &amp; Media</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kern</foaf:surname>
+                        <foaf:givenName>Christian</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <bib:editors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Seeliger</foaf:surname>
+                        <foaf:givenName>Frank</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:editors>
+        <dc:title>Die Datenmodellstandardisierung und ihre Auswirkungen auf RFID-Bibliotheken</dc:title>
+        <prism:edition>3. Auflage</prism:edition>
+        <dc:date>2014</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://core.ac.uk/download/pdf/33985396.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:description>Citation Key: Kern2014</dc:description>
+    </bib:BookSection>
+</rdf:RDF>

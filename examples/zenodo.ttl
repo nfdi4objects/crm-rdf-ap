@@ -1,0 +1,35 @@
+@prefix schema: <http://schema.org/> .
+
+<https://doi.org/10.5281/zenodo.10971391> a <https://schema.org/ScholarlyArticle> ;
+  schema:author <https://orcid.org/0000-0002-7613-4123> ;
+  schema:container_title "VZG Aktuell" ;
+  schema:contentSize "337.95 KB" ;
+  schema:creator <https://orcid.org/0000-0002-7613-4123> ;
+  schema:dateCreated "2024-04-24T10:04:24.205860+00:00"^^<http://schema.org/Date> ;
+  schema:dateModified "2024-07-06T11:56:22.560636+00:00"^^<http://schema.org/Date> ;
+  schema:datePublished "2024"^^<http://schema.org/Date> ;
+  schema:description "<p>Short introduction to Property Graphs with comparision to RDF and their use at VZG (in German).</p>" ;
+  schema:identifier "https://doi.org/10.5281/zenodo.10971391" ;
+  schema:issue "1" ;
+  schema:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
+  schema:name "Property-Graphen: eine kurze Einführung" ;
+  schema:publisher [
+    a schema:Organization ;
+    schema:name "VZG"
+  ] ;
+  schema:size "337.95 KB" ;
+  schema:temporal "2024-04-24" ;
+  schema:url <https://zenodo.org/records/10971391> ;
+  schema:volume "2024" .
+
+<https://orcid.org/0000-0002-7613-4123> a schema:Person ;
+  schema:name "Voß, Jakob" ;
+  schema:affiliation [
+    a schema:Organization ;
+    schema:name "Verbundzentrale des GBV"
+  ], [
+    a schema:Organization ;
+    schema:name "Verbundzentrale des GBV"
+  ] ;
+  schema:familyName "Voß" ;
+  schema:givenName "Jakob" .

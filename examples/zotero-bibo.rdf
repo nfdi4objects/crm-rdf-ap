@@ -1,0 +1,43 @@
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:res="http://purl.org/vocab/resourcelist/schema#"
+ xmlns:z="http://www.zotero.org/namespaces/export#"
+ xmlns:dcterms="http://purl.org/dc/terms/"
+ xmlns:bibo="http://purl.org/ontology/bibo/"
+ xmlns:foaf="http://xmlns.com/foaf/0.1/">
+    <z:UserItem rdf:about="http://zotero.org/groups/4673379/items/BLJATWNY">
+       <res:resource rdf:resource="https://core.ac.uk/download/pdf/33985396.pdf"/>
+    </z:UserItem>
+    <bibo:BookSection rdf:about="https://core.ac.uk/download/pdf/33985396.pdf">
+        <dcterms:title>Die Datenmodellstandardisierung und ihre Auswirkungen auf RFID-Bibliotheken</dcterms:title>
+        <bibo:uri>https://core.ac.uk/download/pdf/33985396.pdf</bibo:uri>
+        <z:extra>Citation Key: Kern2014</z:extra>
+        <dcterms:creator rdf:nodeID="n20"/>
+        <bibo:authorList>
+           <rdf:Seq><rdf:li rdf:nodeID="n20"/></rdf:Seq>
+        </bibo:authorList>
+        <dcterms:isPartOf>
+            <bibo:EditedBook>
+                <dcterms:title>RFID für Bibliothekare: ein Vademecum</dcterms:title>
+                <bibo:edition>3. Auflage</bibo:edition>
+                <dcterms:publisher>
+                    <foaf:Organization>
+                       <foaf:name>Verlag News &amp; Media</foaf:name>
+                    </foaf:Organization>
+                </dcterms:publisher>
+                <dcterms:date>2014</dcterms:date>
+                <bibo:isbn13>978-3-936527-32-2</bibo:isbn13>
+                <bibo:editor rdf:nodeID="n22"/>
+                <bibo:editorList>
+                   <rdf:Seq><rdf:li rdf:nodeID="n22"/></rdf:Seq>
+                </bibo:editorList>
+            </bibo:EditedBook>
+        </dcterms:isPartOf>
+    </bibo:BookSection>
+    <foaf:Person rdf:nodeID="n20">
+       <foaf:givenName>Christian</foaf:givenName><foaf:surname>Kern</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n22">
+       <foaf:givenName>Frank</foaf:givenName><foaf:surname>Seeliger</foaf:surname>
+    </foaf:Person>
+</rdf:RDF>
