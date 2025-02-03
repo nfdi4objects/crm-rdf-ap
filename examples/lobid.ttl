@@ -1,0 +1,352 @@
+@prefix schema: <http://schema.org/> .
+@prefix gndo:  <https://d-nb.info/standards/elementset/gnd#> .
+@prefix mo:    <http://purl.org/ontology/mo/> .
+@prefix bf:    <http://id.loc.gov/ontologies/bibframe/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix lv:    <http://purl.org/lobid/lv#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdau:  <http://rdaregistry.info/Elements/u/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix wdrs:  <http://www.w3.org/2007/05/powder-s#> .
+@prefix bibo:  <http://purl.org/ontology/bibo/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://lobid.org/resources/dataset#!>
+        rdfs:label  "lobid-resources – Der hbz-Verbundkatalog als Linked Open Data" .
+
+<https://www.loc.gov/marc/bibliographic/bdleader.html#Monograph_Item>
+        rdfs:label  "Monograph/Item" .
+
+<http://lobid.org/items/990024216780206441:DE-61:23270395610006443#!>
+        a                   <file:///home/sol/git/lobid-resources-alma/web/target/universal/stage/PhysicalObject> , bf:Item ;
+        rdfs:label          "lobid Bestandsressource" ;
+        rdfs:seeAlso        "https://katalog.ulb.hhu.de/Search/Results?lookfor=id_marc_001_txt:990024216780206441" ;
+        bf:heldBy           <http://lobid.org/organisations/DE-61#!> ;
+        lv:callNumber       "GUST3581" ;
+        lv:currentLocation  "00" ;
+        lv:inCollection     <http://lobid.org/organisations/DE-61#!> ;
+        <https://schema.org/serialNumber>
+                "407812301" .
+
+<http://id.loc.gov/vocabulary/iso639-2/ger>
+        rdfs:label  "Deutsch" .
+
+<http://lobid.org/organisations/DE-61#!>
+        rdfs:label  "Universitäts- und Landesbibliothek Düsseldorf" ;
+        lv:isil     "DE-61" .
+
+<http://lobid.org/organisations/DE-Kn39#!>
+        rdfs:label  "Kölnisches Stadtmuseum, Bibliothek" ;
+        lv:isil     "DE-Kn39" .
+
+<http://lobid.org/items/990024216780206441:DE-38:23279509510006476#!>
+        a                   <file:///home/sol/git/lobid-resources-alma/web/target/universal/stage/PhysicalObject> , bf:Item ;
+        rdfs:label          "lobid Bestandsressource" ;
+        rdfs:seeAlso        "https://katalog.ub.uni-koeln.de/portal/search.html?num=20&page=1&l=de&srt=year_desc&tab=books&hbzid=990024216780206441&fdb=uni" ;
+        bf:heldBy           <http://lobid.org/organisations/DE-38#!> ;
+        lv:callNumber       "RHK943" ;
+        lv:currentLocation  "38-HLS-MAG" ;
+        lv:inCollection     <http://lobid.org/organisations/DE-38#!> ;
+        <https://schema.org/serialNumber>
+                "RHK943" .
+
+<http://lobid.org/items/990024216780206441:DE-38-420:23279509480006476#!>
+        a                   <file:///home/sol/git/lobid-resources-alma/web/target/universal/stage/PhysicalObject> , bf:Item ;
+        rdfs:label          "lobid Bestandsressource" ;
+        rdfs:seeAlso        "https://katalog.ub.uni-koeln.de/portal/search.html?num=20&page=1&l=de&srt=year_desc&tab=books&hbzid=990024216780206441&fdb=uni" ;
+        bf:heldBy           <http://lobid.org/organisations/DE-38-420#!> ;
+        lv:callNumber       "420/Ma230:3" ;
+        lv:currentLocation  "38-420-BIB" ;
+        lv:inCollection     <http://lobid.org/organisations/DE-38#!> ;
+        <https://schema.org/serialNumber>
+                "420/044675" .
+
+<http://lobid.org/items/990024216780206441:DE-929:23207912490008973#!>
+        a                   <file:///home/sol/git/lobid-resources-alma/web/target/universal/stage/PhysicalObject> , bf:Item ;
+        rdfs:label          "lobid Bestandsressource" ;
+        rdfs:seeAlso        "https://lbz-rlp.digibib.net/search/katalog/record/(DE-605)HT006379905" ;
+        bf:heldBy           <http://lobid.org/organisations/DE-929#!> ;
+        lv:callNumber       "2003/1416" ;
+        lv:currentLocation  "RLB_INT" ;
+        lv:inCollection     <http://lobid.org/organisations/DE-929#!> ;
+        <https://schema.org/serialNumber>
+                "04948598" .
+
+<http://lobid.org/organisations/DE-38#!>
+        rdfs:label  "Universitäts- und Stadtbibliothek Köln, Hauptabteilung" ;
+        lv:isil     "DE-38" .
+
+<https://d-nb.info/gnd/4031483-2>
+        a                   gndo:PlaceOrGeographicName ;
+        rdfs:label          "Köln" ;
+        bf:source           <https://d-nb.info/gnd/7749153-1> ;
+        skos:altLabel       "Ara Ubiorum" , "Colonia ad Rhenum" , "Cöllen" , "Hansestadt Köln" , "Keln" , "Colonia Agrippina" , "Cölln (Köln)" , "Kūlūniyā" , "Cöln" , "Gross-Köln" , "Colonia Ubiorum" , "Kölln am Rheine" , "CCAA" , "Oppidum Ubiorum" , "Kerun" , "Colonia Agrippinensis" , "Colonia (Köln)" , "Colonia Claudia Ara Agrippinensium" , "Groß-Köln" , "Stadt Köln" , "Keulen" , "Cologne" ;
+        gndo:gndIdentifier  "4031483-2" .
+
+<http://id.loc.gov/vocabulary/relators/aut>
+        rdfs:label  "Autor/in" .
+
+<http://lobid.org/organisations/DE-5-39#!>
+        rdfs:label  "Universität Bonn, Institut für Geschichtswissenschaft, Abteilung für Geschichte der Frühen Neuzeit und Rheinische Landesgeschichte, Bibliothek" ;
+        lv:isil     "DE-5-39" .
+
+<http://lobid.org/items/990024216780206441:DE-2192:238477960007825#!>
+        a                   <file:///home/sol/git/lobid-resources-alma/web/target/universal/stage/PhysicalObject> , bf:Item ;
+        rdfs:label          "lobid Bestandsressource" ;
+        bf:heldBy           <http://lobid.org/organisations/DE-2192#!> ;
+        lv:callNumber       "To Köln/1/1936-1" ;
+        lv:currentLocation  "BIB" ;
+        lv:inCollection     <http://lobid.org/organisations/DE-2192#!> ;
+        <https://schema.org/serialNumber>
+                "000048601" .
+
+<https://hub.culturegraph.org/resource/(DE-605)990024216780206441>
+        rdfs:label  "Culturegraph Ressource" .
+
+<https://datahub.io/dataset/hbz_unioncatalog>
+        rdfs:label  "hbz_unioncatalog" .
+
+<https://nrw.digibib.net/search/hbzvk/>
+        a           bf:Collection ;
+        rdfs:label  "DigiBib hbz Verbundkatalog" .
+
+<https://w3id.org/lobid/rpb2#n330>
+        a              skos:Concept ;
+        rdfs:label     "Geschichte" ;
+        bf:source      <https://w3id.org/lobid/rpb2> ;
+        skos:notation  "330" .
+
+<https://d-nb.info/gnd/7749153-1>
+        rdfs:label  "Gemeinsame Normdatei (GND)" .
+
+<http://rdaregistry.info/termList/RDAproductionMethod/1010>
+        rdfs:label  "Print" .
+
+<http://worldcat.org/oclc/250012287>
+        rdfs:label  "OCLC Ressource" .
+
+<http://lobid.org/organisations/DE-6#!>
+        rdfs:label  "Universitäts- und Landesbibliothek Münster, Zentralbibliothek" ;
+        lv:isil     "DE-6" .
+
+<http://lobid.org/items/990024216780206441:DE-38:23279509500006476#!>
+        a                   <file:///home/sol/git/lobid-resources-alma/web/target/universal/stage/PhysicalObject> , bf:Item ;
+        rdfs:label          "lobid Bestandsressource" ;
+        rdfs:seeAlso        "https://katalog.ub.uni-koeln.de/portal/search.html?num=20&page=1&l=de&srt=year_desc&tab=books&hbzid=990024216780206441&fdb=uni" ;
+        bf:heldBy           <http://lobid.org/organisations/DE-38#!> ;
+        lv:callNumber       "RHK943#2" ;
+        lv:currentLocation  "38-HLS-MAG" ;
+        lv:inCollection     <http://lobid.org/organisations/DE-38#!> ;
+        <https://schema.org/serialNumber>
+                "RHK943#2" .
+
+<http://lobid.org/organisations/DE-5#!>
+        rdfs:label  "Universitäts- und Landesbibliothek Bonn" ;
+        lv:isil     "DE-5" .
+
+<http://lobid.org/organisations/DE-467#!>
+        rdfs:label  "Universitätsbibliothek Siegen" ;
+        lv:isil     "DE-467" .
+
+<http://lobid.org/items/990024216780206441:DE-Kn39:2310708810007823#!>
+        a                   <file:///home/sol/git/lobid-resources-alma/web/target/universal/stage/PhysicalObject> , bf:Item ;
+        rdfs:label          "lobid Bestandsressource" ;
+        bf:heldBy           <http://lobid.org/organisations/DE-Kn39#!> ;
+        lv:callNumber       "C 3498" ;
+        lv:currentLocation  "kA" ;
+        lv:inCollection     <http://lobid.org/organisations/DE-Kn39#!> ;
+        <https://schema.org/serialNumber>
+                "keinBarcode" .
+
+<https://w3id.org/lobid/rpb2>
+        rdfs:label  "LBZ-Notationen" .
+
+<http://lobid.org/organisations/DE-38-420#!>
+        rdfs:label  "Historisches Institut, Abteilung für Mittlere und Neuere Geschichte mit Abteilung für Nationalismusforschung, Bibliothek" ;
+        lv:isil     "DE-38-420" .
+
+<http://lobid.org/items/990024216780206441:DE-Kob7:2333404660008057#!>
+        a                   <file:///home/sol/git/lobid-resources-alma/web/target/universal/stage/PhysicalObject> , bf:Item ;
+        rdfs:label          "lobid Bestandsressource" ;
+        rdfs:seeAlso        "https://primo.uni-koblenz.de/permalink/49HBZ_UKO/16pslu1/alma990024216780206441" ;
+        bf:heldBy           <http://lobid.org/organisations/DE-Kob7#!> ;
+        lv:callNumber       "GE 515" ;
+        lv:currentLocation  "MAGKO" ;
+        lv:inCollection     <http://lobid.org/organisations/DE-Kob7#!> ;
+        <https://schema.org/serialNumber>
+                "M21 8004" .
+
+<https://lobid.org/marcxml/990024216780206441>
+        a                          schema:DataFeedItem ;
+        rdfs:label                 "hbz-Ressource 990024216780206441 im Exportformat MARC21 XML" ;
+        <http://open-services.net/ns/core#modifiedBy>
+                <http://lobid.org/organisations/DE-Kob7#!> ;
+        dcterms:created            "1999-08-28" ;
+        dcterms:modified           "2021-04-07" ;
+        lv:inDataset               <https://datahub.io/dataset/hbz_unioncatalog> ;
+        schema:sourceOrganization  <http://lobid.org/organisations/DE-6#!> .
+
+<http://lobid.org/organisations/DE-655#!>
+        a           bf:Collection ;
+        rdfs:label  "hbz - Hochschulbibliothekszentrum des Landes Nordrhein-Westfalen, Netzwerkzone" .
+
+<http://lobid.org/organisations/DE-Kob7#!>
+        rdfs:label  "Universitätsbibliothek Koblenz" ;
+        lv:isil     "DE-Kob7" .
+
+<http://lobid.org/resources/990024216780206441>
+        a               lv:BibliographicDescription ;
+        rdfs:label      "Webseite der hbz-Ressource 990024216780206441" ;
+        lv:inDataset    <http://lobid.org/resources/dataset#!> ;
+        lv:resultOf     [ a                  schema:CreateAction ;
+                          schema:endTime     "2025-02-01T19:14:33" ;
+                          schema:instrument  <https://github.com/hbz/lobid-resources> ;
+                          schema:object      <https://lobid.org/marcxml/990024216780206441>
+                        ] ;
+        schema:license  <http://creativecommons.org/publicdomain/zero/1.0> .
+
+<http://lobid.org/items/990024216780206441:DE-5-41:23273379090006467#!>
+        a                   <file:///home/sol/git/lobid-resources-alma/web/target/universal/stage/PhysicalObject> , bf:Item ;
+        rdfs:label          "lobid Bestandsressource" ;
+        rdfs:seeAlso        "https://bonnus.ulb.uni-bonn.de/permalink/49HBZ_ULB/idtnkp/alma990024216780206441" ;
+        bf:heldBy           <http://lobid.org/organisations/DE-5-41#!> ;
+        lv:callNumber       "NR 3660 W828" ;
+        lv:currentLocation  "MG-Mag" ;
+        lv:inCollection     <http://lobid.org/organisations/DE-5#!> ;
+        <https://schema.org/serialNumber>
+                "MG-101580" .
+
+<http://lobid.org/items/990024216780206441:DE-Eus2:23128830280007816#!>
+        a                   <file:///home/sol/git/lobid-resources-alma/web/target/universal/stage/PhysicalObject> , bf:Item ;
+        rdfs:label          "lobid Bestandsressource" ;
+        bf:heldBy           <http://lobid.org/organisations/DE-Eus2#!> ;
+        lv:callNumber       "1020" ;
+        lv:currentLocation  "kA" ;
+        lv:inCollection     <http://lobid.org/organisations/BRIDGE_FIZ-7816#!> ;
+        <https://schema.org/serialNumber>
+                "keinBarcode" .
+
+<http://lobid.org/organisations/DE-5-41#!>
+        rdfs:label  "Universität Bonn, Institute for Medical Humanities, Bibliothek" ;
+        lv:isil     "DE-5-41" .
+
+<http://lobid.org/items/990024216780206441:DE-6:23607177890006449#!>
+        a                   <file:///home/sol/git/lobid-resources-alma/web/target/universal/stage/PhysicalObject> , bf:Item ;
+        rdfs:label          "lobid Bestandsressource" ;
+        rdfs:seeAlso        "https://hbz-ulbms.primo.exlibrisgroup.com/discovery/search?query=any,contains,990024216780206441&tab=Everything&search_scope=MyInst_and_CI&vid=49HBZ_ULM:VU2&offset=0" ;
+        bf:heldBy           <http://lobid.org/organisations/DE-6#!> ;
+        lv:callNumber       "47 12182" ;
+        lv:currentLocation  "ZB_GMAG" ;
+        lv:inCollection     <http://lobid.org/organisations/DE-6#!> ;
+        <https://schema.org/serialNumber>
+                "47 12182" .
+
+<http://lobid.org/resources/990024216780206441#!>
+        a                           dcterms:BibliographicResource , bibo:Book ;
+        bf:contribution             ( [ a         bf:Contribution ;
+                                        bf:agent  [ a           gndo:Person ;
+                                                    rdfs:label  "Witte, Fritz"
+                                                  ] ;
+                                        bf:role   <http://id.loc.gov/vocabulary/relators/aut>
+                                      ]
+                                    ) ;
+        bf:extent                   "103 S. : Ill., graph. Darst, Kt." ;
+        bf:hasItem                  <http://lobid.org/items/990024216780206441:DE-Eus2:23128830280007816#!> , <http://lobid.org/items/990024216780206441:DE-929:23207912490008973#!> , <http://lobid.org/items/990024216780206441:DE-38-420:23279509480006476#!> , <http://lobid.org/items/990024216780206441:DE-61:23270395610006443#!> , <http://lobid.org/items/990024216780206441:DE-Kob7:2333404660008057#!> , <http://lobid.org/items/990024216780206441:DE-5-39:23273359250006467#!> , <http://lobid.org/items/990024216780206441:DE-2192:238477960007825#!> , <http://lobid.org/items/990024216780206441:DE-38:23279509510006476#!> , <http://lobid.org/items/990024216780206441:DE-Kn39:2310708810007823#!> , <http://lobid.org/items/990024216780206441:DE-5:23273359270006467#!> , <http://lobid.org/items/990024216780206441:DE-467:2369740430006462#!> , <http://lobid.org/items/990024216780206441:DE-38:23279509500006476#!> , <http://lobid.org/items/990024216780206441:DE-6:23607177890006449#!> , <http://lobid.org/items/990024216780206441:DE-5-41:23273379090006467#!> ;
+        bf:responsibilityStatement  "von Fritz Witte" ;
+        dcterms:alternative         "Köln" ;
+        dcterms:language            <http://id.loc.gov/vocabulary/iso639-2/ger> ;
+        dcterms:medium              <http://rdaregistry.info/termList/RDAproductionMethod/1010> ;
+        dcterms:subject             <https://w3id.org/lobid/rpb2#n330> ;
+        dcterms:subject             [ a           <http://www.loc.gov/mads/rdf/v1#ComplexSubject> ;
+                                      rdfs:label  "Köln | Geschichte" ;
+                                      <http://www.loc.gov/mads/rdf/v1#componentList>
+                                              ( <https://d-nb.info/gnd/4031483-2>
+                                                [ a           gndo:SubjectHeading ;
+                                                  rdfs:label  "Geschichte"
+                                                ]
+                                              )
+                                    ] ;
+        dcterms:subject             [ a              skos:Concept ;
+                                      bf:source      <https://d-nb.info/gnd/4449787-8> ;
+                                      skos:notation  "LK 42477"
+                                    ] ;
+        dcterms:subject             [ a              skos:Concept ;
+                                      bf:source      <https://d-nb.info/gnd/4449787-8> ;
+                                      skos:notation  "NR 3660"
+                                    ] ;
+        dcterms:title               "Köln - 1900 Jahre deutsche Stadt" ;
+        lv:almaMmsId                "990024216780206441" ;
+        lv:bibliographicLevel       <https://www.loc.gov/marc/bibliographic/bdleader.html#Monograph_Item> ;
+        lv:hbzID                    "HT006379905" ;
+        lv:inCollection             <http://lobid.org/organisations/DE-655#!> , <https://nrw.digibib.net/search/hbzvk/> ;
+        bibo:oclcnum                "250012287" ;
+        schema:publication          [ a                   schema:PublicationEvent ;
+                                      schema:location     "Köln" ;
+                                      schema:publishedBy  "Bachem" ;
+                                      schema:startDate    "1936"
+                                    ] ;
+        schema:sameAs               <https://hub.culturegraph.org/resource/(DE-605)990024216780206441> , <http://worldcat.org/oclc/250012287> ;
+        wdrs:describedby            <http://lobid.org/resources/990024216780206441> ;
+        <https://d-nb.info/standards/elementset/dnb#deprecatedUri>
+                "http://lobid.org/resources/HT006379905#!" .
+
+<http://lobid.org/organisations/DE-929#!>
+        rdfs:label  "Landesbibliothekszentrum Rheinland-Pfalz / Rheinische Landesbibliothek" ;
+        lv:isil     "DE-929" .
+
+<http://lobid.org/organisations/DE-2192#!>
+        rdfs:label  "Museum Schnütgen, Bibliothek" ;
+        lv:isil     "DE-2192" .
+
+<http://lobid.org/items/990024216780206441:DE-467:2369740430006462#!>
+        a                   <file:///home/sol/git/lobid-resources-alma/web/target/universal/stage/PhysicalObject> , bf:Item ;
+        rdfs:label          "lobid Bestandsressource" ;
+        rdfs:seeAlso        "https://ub-siegen.digibib.net/search/katalog/record/(DE-605)HT006379905" ;
+        bf:heldBy           <http://lobid.org/organisations/DE-467#!> ;
+        lv:callNumber       "S22252" ;
+        lv:currentLocation  "FMAG" ;
+        lv:inCollection     <http://lobid.org/organisations/DE-467#!> ;
+        <https://schema.org/serialNumber>
+                "S22252" .
+
+<http://lobid.org/organisations/BRIDGE_FIZ-7816#!>
+        rdfs:label  "Bibliotheken ohne zentrale Katalogisierung (IZ Bridge)" .
+
+<https://d-nb.info/gnd/4449787-8>
+        rdfs:label  "RVK (Regensburger Verbundklassifikation)" .
+
+<http://creativecommons.org/publicdomain/zero/1.0>
+        rdfs:label  "Creative Commons-Lizenz CC0 1.0 Universal" .
+
+<http://lobid.org/organisations/DE-Eus2#!>
+        rdfs:label  "Historische Kreisbibliothek Euskirchen" ;
+        lv:isil     "DE-Eus2" .
+
+<http://lobid.org/items/990024216780206441:DE-5-39:23273359250006467#!>
+        a                   <file:///home/sol/git/lobid-resources-alma/web/target/universal/stage/PhysicalObject> , bf:Item ;
+        rdfs:label          "lobid Bestandsressource" ;
+        rdfs:seeAlso        "https://bonnus.ulb.uni-bonn.de/permalink/49HBZ_ULB/idtnkp/alma990024216780206441" ;
+        bf:heldBy           <http://lobid.org/organisations/DE-5-39#!> ;
+        lv:callNumber       "Gb 8825/10" ;
+        lv:currentLocation  "GL-Frei" ;
+        lv:inCollection     <http://lobid.org/organisations/DE-5#!> ;
+        <https://schema.org/serialNumber>
+                "GL-111210" .
+
+<http://lobid.org/items/990024216780206441:DE-5:23273359270006467#!>
+        a                   <file:///home/sol/git/lobid-resources-alma/web/target/universal/stage/PhysicalObject> , bf:Item ;
+        rdfs:label          "lobid Bestandsressource" ;
+        rdfs:seeAlso        "https://bonnus.ulb.uni-bonn.de/permalink/49HBZ_ULB/idtnkp/alma990024216780206441" ;
+        bf:heldBy           <http://lobid.org/organisations/DE-5#!> ;
+        lv:callNumber       "Lf 834/386" ;
+        lv:currentLocation  "0-MagAlt" ;
+        lv:inCollection     <http://lobid.org/organisations/DE-5#!> ;
+        <https://schema.org/serialNumber>
+                "Lf834/386" .
+
+<https://github.com/hbz/lobid-resources>
+        a           schema:SoftwareApplication ;
+        rdfs:label  "Software lobid-resources" .

@@ -12,3 +12,6 @@ curl -s https://zenodo.org/records/10971391/export/json-ld | npm run -s jsonld2r
 curl -s 'https://api.zotero.org/groups/4673379/items?format=rdf_bibliontology&limit=5' > examples/zotero-bibo.rdf
 curl -s 'https://api.zotero.org/groups/4673379/items?format=rdf_dc&limit=5' > examples/zotero-dc.rdf
 curl -s 'https://api.zotero.org/groups/4673379/items?format=rdf_zotero&limit=5' > examples/zotero-zotero.rdf
+
+# Lobid resources
+curl -s https://lobid.org/resources/990024216780206441.ttl > examples/lobid.ttl
