@@ -1,1 +1,316 @@
-An error occurred
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:res="http://purl.org/vocab/resourcelist/schema#"
+ xmlns:z="http://www.zotero.org/namespaces/export#"
+ xmlns:dcterms="http://purl.org/dc/terms/"
+ xmlns:bibo="http://purl.org/ontology/bibo/"
+ xmlns:foaf="http://xmlns.com/foaf/0.1/"
+ xmlns:ctag="http://commontag.org/ns#">
+    <z:UserItem rdf:about="http://zotero.org/groups/4673379/items/BLJATWNY">
+       <res:resource rdf:resource="https://core.ac.uk/download/pdf/33985396.pdf"/>
+    </z:UserItem>
+    <bibo:BookSection rdf:about="https://core.ac.uk/download/pdf/33985396.pdf">
+        <dcterms:title>Die Datenmodellstandardisierung und ihre Auswirkungen auf RFID-Bibliotheken</dcterms:title>
+        <bibo:uri>https://core.ac.uk/download/pdf/33985396.pdf</bibo:uri>
+        <z:extra>Citation Key: Kern2014</z:extra>
+        <dcterms:creator rdf:nodeID="n225"/>
+        <bibo:authorList>
+           <rdf:Seq><rdf:li rdf:nodeID="n225"/></rdf:Seq>
+        </bibo:authorList>
+        <dcterms:isPartOf>
+            <bibo:EditedBook>
+                <dcterms:title>RFID für Bibliothekare: ein Vademecum</dcterms:title>
+                <bibo:edition>3. Auflage</bibo:edition>
+                <dcterms:publisher>
+                    <foaf:Organization>
+                       <foaf:name>Verlag News &amp; Media</foaf:name>
+                    </foaf:Organization>
+                </dcterms:publisher>
+                <dcterms:date>2014</dcterms:date>
+                <bibo:isbn13>978-3-936527-32-2</bibo:isbn13>
+                <bibo:editor rdf:nodeID="n227"/>
+                <bibo:editorList>
+                   <rdf:Seq><rdf:li rdf:nodeID="n227"/></rdf:Seq>
+                </bibo:editorList>
+            </bibo:EditedBook>
+        </dcterms:isPartOf>
+    </bibo:BookSection>
+    <foaf:Person rdf:nodeID="n225">
+       <foaf:givenName>Christian</foaf:givenName><foaf:surname>Kern</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n227">
+       <foaf:givenName>Frank</foaf:givenName><foaf:surname>Seeliger</foaf:surname>
+    </foaf:Person>
+    <z:UserItem rdf:about="http://zotero.org/groups/4673379/items/44EDE6XE">
+        <res:resource rdf:resource="https://www.degruyter.com/document/doi/10.1515/9783110657807/html"/>
+        <z:accessDate>2023-12-17 14:47:30</z:accessDate>
+        <dcterms:rights>De Gruyter expressly reserves the right to use all content for commercial text and data mining within the meaning of Section 44b of the German Copyright Act.</dcterms:rights>
+        <ctag:tagged>
+           <ctag:AutoTag><ctag:label>Digitale Daten</ctag:label></ctag:AutoTag>
+        </ctag:tagged>
+        <ctag:tagged>
+           <ctag:AutoTag><ctag:label>Forschungsdaten</ctag:label></ctag:AutoTag>
+        </ctag:tagged>
+        <ctag:tagged rdf:nodeID="n237"/>
+        <ctag:tagged>
+            <ctag:AutoTag>
+               <ctag:label>Informationsinfrastruktur</ctag:label>
+            </ctag:AutoTag>
+        </ctag:tagged>
+    </z:UserItem>
+    <bibo:Book rdf:about="https://www.degruyter.com/document/doi/10.1515/9783110657807/html">
+        <dcterms:title>Praxishandbuch Forschungsdatenmanagement</dcterms:title>
+        <dcterms:abstract>Aktuelle Geschehnisse wie das Inkrafttreten des Kodex „Leitlinien zur Sicherung guter wissenschaftlicher Praxis&quot; der Deutschen Forschungsgemeinschaft (DFG) oder der Aufbau der Nationalen Forschungsdateninfrastruktur (NFDI) und der European Open Science Cloud (EOSC) stellen Anbietende, Produzierende und Nutzende von Forschungsdaten vor fachwissenschaftliche, technische, rechtliche und organisatorische Herausforderungen. Das Praxishandbuch Forschungsdatenmanagement behandelt umfassend alle relevanten Aspekte des Forschungsdatenmanagements und der derzeitigen Rahmenbedingungen im Datenökosystem. Insbesondere die praktischen Implikationen der Datenpolitik und des -rechts, des jeweiligen Datenmarkts, der Datenkultur, der persönlichen Qualifizierung, des Datenmanagements sowie des „FAIR&quot;en Datentransfers und der Datennachnutzung werden untersucht. Das Praxishandbuch gibt überdies einen Überblick über Projekte, Entwicklungen und Herausforderungen beim Forschungsdatenmanagement. Am 16. Juni 2021 fand ein Interview mit dem Herausgeber und den Herausgeberrinnen statt, das Ihnen Einblicke in die Intentionen, inhaltlichen Einflüsse sowie ihre Gedanken für die Zukunft des Forschungsdatenmanagements gibt. Hier finden Sie das Webinar auf Youtube : https://www.youtube.com/watch?v=H-v1KPTWsac</dcterms:abstract>
+        <dcterms:publisher>
+            <foaf:Organization>
+               <foaf:name>De Gruyter Saur</foaf:name>
+            </foaf:Organization>
+        </dcterms:publisher>
+        <dcterms:date>2021-01-18</dcterms:date>
+        <dcterms:language>de</dcterms:language>
+        <bibo:isbn13>978-3-11-065780-7</bibo:isbn13>
+        <bibo:uri>https://www.degruyter.com/document/doi/10.1515/9783110657807/html</bibo:uri>
+        <z:extra>DOI: 10.1515/9783110657807
+Citation Key: Putnings2021</z:extra>
+        <bibo:editor rdf:nodeID="n231"/>
+        <bibo:editorList>
+            <rdf:Seq>
+                <rdf:li rdf:nodeID="n231"/>
+                <rdf:li rdf:nodeID="n233"/>
+                <rdf:li rdf:nodeID="n234"/>
+            </rdf:Seq>
+        </bibo:editorList>
+        <bibo:editor rdf:nodeID="n233"/>
+        <bibo:editor rdf:nodeID="n234"/>
+    </bibo:Book>
+    <foaf:Person rdf:nodeID="n231">
+        <foaf:givenName>Markus</foaf:givenName>
+        <foaf:surname>Putnings</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n233">
+       <foaf:givenName>Heike</foaf:givenName><foaf:surname>Neuroth</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n234">
+       <foaf:givenName>Janna</foaf:givenName><foaf:surname>Neumann</foaf:surname>
+    </foaf:Person>
+    <ctag:AutoTag rdf:nodeID="n237">
+       <ctag:label>Forschungsdatenmanagement</ctag:label>
+    </ctag:AutoTag>
+    <z:UserItem rdf:about="http://zotero.org/groups/4673379/items/22AWBQU4">
+        <res:resource rdf:resource="https://www.nature.com/articles/s41597-022-01710-x"/>
+        <z:accessDate>2023-12-17 14:46:49</z:accessDate>
+        <z:repository>www.nature.com</z:repository>
+        <dcterms:rights>2022 The Author(s)</dcterms:rights>
+        <ctag:tagged>
+           <ctag:AutoTag><ctag:label>Policy</ctag:label></ctag:AutoTag>
+        </ctag:tagged>
+        <ctag:tagged>
+            <ctag:AutoTag>
+               <ctag:label>Research management</ctag:label>
+            </ctag:AutoTag>
+        </ctag:tagged>
+    </z:UserItem>
+    <bibo:AcademicArticle rdf:about="https://www.nature.com/articles/s41597-022-01710-x">
+        <dcterms:title>Introducing the FAIR Principles for research software</dcterms:title>
+        <dcterms:abstract>Research software is a fundamental and vital part of research, yet significant challenges to discoverability, productivity, quality, reproducibility, and sustainability exist. Improving the practice of scholarship is a common goal of the open science, open source, and FAIR (Findable, Accessible, Interoperable and Reusable) communities and research software is now being understood as a type of digital object to which FAIR should be applied. This emergence reflects a maturation of the research community to better understand the crucial role of FAIR research software in maximising research value. The FAIR for Research Software (FAIR4RS) Working Group has adapted the FAIR Guiding Principles to create the FAIR Principles for Research Software (FAIR4RS Principles). The contents and context of the FAIR4RS Principles are summarised here to provide the basis for discussion of their adoption. Examples of implementation by organisations are provided to share information on how to maximise the value of research outputs, and to encourage others to amplify the importance and impact of this work.</dcterms:abstract>
+        <bibo:pages>622</bibo:pages>
+        <dcterms:language>en</dcterms:language>
+        <bibo:doi>10.1038/s41597-022-01710-x</bibo:doi>
+        <bibo:uri>https://www.nature.com/articles/s41597-022-01710-x</bibo:uri>
+        <z:extra>Number: 1
+Publisher: Nature Publishing Group
+Citation Key: Barker2022</z:extra>
+        <dcterms:creator rdf:nodeID="n244"/>
+        <bibo:authorList>
+            <rdf:Seq>
+                <rdf:li rdf:nodeID="n244"/>
+                <rdf:li rdf:nodeID="n246"/>
+                <rdf:li rdf:nodeID="n247"/>
+                <rdf:li rdf:nodeID="n248"/>
+                <rdf:li rdf:nodeID="n249"/>
+                <rdf:li rdf:nodeID="n250"/>
+                <rdf:li rdf:nodeID="n251"/>
+                <rdf:li rdf:nodeID="n252"/>
+                <rdf:li rdf:nodeID="n253"/>
+                <rdf:li rdf:nodeID="n254"/>
+                <rdf:li rdf:nodeID="n255"/>
+            </rdf:Seq>
+        </bibo:authorList>
+        <dcterms:creator rdf:nodeID="n246"/>
+        <dcterms:creator rdf:nodeID="n247"/>
+        <dcterms:creator rdf:nodeID="n248"/>
+        <dcterms:creator rdf:nodeID="n249"/>
+        <dcterms:creator rdf:nodeID="n250"/>
+        <dcterms:creator rdf:nodeID="n251"/>
+        <dcterms:creator rdf:nodeID="n252"/>
+        <dcterms:creator rdf:nodeID="n253"/>
+        <dcterms:creator rdf:nodeID="n254"/>
+        <dcterms:creator rdf:nodeID="n255"/>
+        <dcterms:isPartOf>
+            <bibo:Issue>
+                <bibo:volume>9</bibo:volume>
+                <bibo:issue>1</bibo:issue>
+                <dcterms:date>2022-10-14</dcterms:date>
+                <dcterms:isPartOf>
+                    <bibo:Journal>
+                        <dcterms:title>Scientific Data</dcterms:title>
+                        <bibo:shortTitle>Sci Data</bibo:shortTitle>
+                        <bibo:issn>2052-4463</bibo:issn>
+                    </bibo:Journal>
+                </dcterms:isPartOf>
+            </bibo:Issue>
+        </dcterms:isPartOf>
+    </bibo:AcademicArticle>
+    <foaf:Person rdf:nodeID="n244">
+        <foaf:givenName>Michelle</foaf:givenName>
+        <foaf:surname>Barker</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n246">
+        <foaf:givenName>Neil P.</foaf:givenName>
+        <foaf:surname>Chue Hong</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n247">
+       <foaf:givenName>Daniel S.</foaf:givenName><foaf:surname>Katz</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n248">
+        <foaf:givenName>Anna-Lena</foaf:givenName>
+        <foaf:surname>Lamprecht</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n249">
+        <foaf:givenName>Carlos</foaf:givenName>
+        <foaf:surname>Martinez-Ortiz</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n250">
+        <foaf:givenName>Fotis</foaf:givenName>
+        <foaf:surname>Psomopoulos</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n251">
+        <foaf:givenName>Jennifer</foaf:givenName>
+        <foaf:surname>Harrow</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n252">
+        <foaf:givenName>Leyla Jael</foaf:givenName>
+        <foaf:surname>Castro</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n253">
+        <foaf:givenName>Morane</foaf:givenName>
+        <foaf:surname>Gruenpeter</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n254">
+        <foaf:givenName>Paula Andrea</foaf:givenName>
+        <foaf:surname>Martinez</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n255">
+       <foaf:givenName>Tom</foaf:givenName><foaf:surname>Honeyman</foaf:surname>
+    </foaf:Person>
+    <z:UserItem rdf:about="http://zotero.org/groups/4673379/items/FF47ZYPD">
+        <res:resource rdf:resource="https://bausteine-fdm.de/article/view/8435"/>
+        <z:accessDate>2023-12-17 14:47:38</z:accessDate>
+        <z:repository>bausteine-fdm.de</z:repository>
+        <dcterms:rights>Copyright (c) 2022 Magdalene Alice Cyra, Marius  Politze, Henning Timm</dcterms:rights>
+        <ctag:tagged>
+           <ctag:AutoTag><ctag:label>Best Practice</ctag:label></ctag:AutoTag>
+        </ctag:tagged>
+        <ctag:tagged>
+           <ctag:AutoTag><ctag:label>CSV</ctag:label></ctag:AutoTag>
+        </ctag:tagged>
+        <ctag:tagged rdf:nodeID="n237"/>
+        <ctag:tagged>
+           <ctag:AutoTag><ctag:label>GitLab</ctag:label></ctag:AutoTag>
+        </ctag:tagged>
+        <ctag:tagged>
+           <ctag:AutoTag><ctag:label>JSON</ctag:label></ctag:AutoTag>
+        </ctag:tagged>
+        <ctag:tagged>
+           <ctag:AutoTag><ctag:label>Kollaboration</ctag:label></ctag:AutoTag>
+        </ctag:tagged>
+        <ctag:tagged>
+           <ctag:AutoTag><ctag:label>Schulung</ctag:label></ctag:AutoTag>
+        </ctag:tagged>
+        <ctag:tagged>
+           <ctag:AutoTag><ctag:label>Versionierung</ctag:label></ctag:AutoTag>
+        </ctag:tagged>
+        <ctag:tagged>
+            <ctag:AutoTag>
+               <ctag:label>Versionsverwaltung</ctag:label>
+            </ctag:AutoTag>
+        </ctag:tagged>
+        <ctag:tagged>
+           <ctag:AutoTag><ctag:label>Workshop</ctag:label></ctag:AutoTag>
+        </ctag:tagged>
+        <ctag:tagged>
+           <ctag:AutoTag><ctag:label>git</ctag:label></ctag:AutoTag>
+        </ctag:tagged>
+    </z:UserItem>
+    <bibo:AcademicArticle rdf:about="https://bausteine-fdm.de/article/view/8435">
+        <dcterms:title>A push for better RDM: Erfahrungsbericht aus dem Einsatz von git für Forschungsdaten</dcterms:title>
+        <dcterms:abstract>Die Versionskontrollsoftware git und die Serversoftware GitLab wurden für die Softwareentwicklung konzipiert, ermöglichen aber auch kooperatives Arbeiten an Forschungsdaten entlang der FAIR-Prinzipien, beides elementare Herausforderungen im Forschungsdatenmanagement (FDM). Koordiniert durch die Landesinitiative fdm.nrw wurden in den vergangenen Jahren daher Abläufe und Schulungen zum FDM mit git und GitLab erprobt und durchgeführt.
+Eine Hürde bei der Verwendung von git und GitLab im FDM kann die Anwendung der zugrundeliegenden Software mittels Kommandozeilenbefehlen darstellen. Zwar wird das Verständnis der Versionierungsvorgänge erhöht, einige Forschende bevorzugen aber die intuitiven graphischen Interfaces. In jedem Fall ist für die Adaption Einarbeitungszeit einzuplanen. Für datengetriebene Forschung werden Versionsverwaltung und andere Digitalkompetenzen mittelfristig einen ebenso hohen Stellenwert wie das „wissenschaftliche Schreiben“ im Bereich der Sprachkompetenzen einnehmen müssen.
+Es gilt daher zunächst ein grundlegendes Verständnis für git und die Möglichkeiten zur Nutzung im FDM darzustellen. Ergänzend zu etablierten Schulungen wurden kurze, konkrete Beispiele in einer Best Practice Sammlung zusammengetragen: öffentliche GitLab-Projekte realisieren und dokumentieren einzelne Anwendungsfälle mit Hilfe der gebotenen Werkzeuge. Dadurch soll die Anwendungs- und Digitalkompetenz der Forschenden, aber auch der Infrastrukturmitarbeitenden und der Schulenden gesteigert werden und so git und GitLab zu einer besseren Umsetzung des FDM beitragen.</dcterms:abstract>
+        <dcterms:language>de</dcterms:language>
+        <bibo:doi>10.17192/bfdm.2022.2.8435</bibo:doi>
+        <bibo:shortTitle>A push for better RDM</bibo:shortTitle>
+        <bibo:uri>https://bausteine-fdm.de/article/view/8435</bibo:uri>
+        <z:extra>Citation Key: Cyra2022</z:extra>
+        <dcterms:creator rdf:nodeID="n263"/>
+        <bibo:authorList>
+            <rdf:Seq>
+                <rdf:li rdf:nodeID="n263"/>
+                <rdf:li rdf:nodeID="n265"/>
+                <rdf:li rdf:nodeID="n266"/>
+            </rdf:Seq>
+        </bibo:authorList>
+        <dcterms:creator rdf:nodeID="n265"/>
+        <dcterms:creator rdf:nodeID="n266"/>
+        <dcterms:isPartOf>
+            <bibo:Issue>
+                <bibo:issue>2</bibo:issue>
+                <dcterms:date>2022-08-05</dcterms:date>
+                <dcterms:isPartOf>
+                    <bibo:Journal>
+                        <dcterms:title>Bausteine Forschungsdatenmanagement</dcterms:title>
+                        <bibo:issn>2626-7489</bibo:issn>
+                    </bibo:Journal>
+                </dcterms:isPartOf>
+            </bibo:Issue>
+        </dcterms:isPartOf>
+    </bibo:AcademicArticle>
+    <foaf:Person rdf:nodeID="n263">
+        <foaf:givenName>Magdalene Alice</foaf:givenName>
+        <foaf:surname>Cyra</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n265">
+       <foaf:givenName>Marius</foaf:givenName><foaf:surname>Politze</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n266">
+       <foaf:givenName>Henning</foaf:givenName><foaf:surname>Timm</foaf:surname>
+    </foaf:Person>
+    <z:UserItem rdf:about="http://zotero.org/groups/4673379/items/MV2Q7YRV">
+        <res:resource>
+            <bibo:AcademicArticle>
+                <dcterms:title>Software ist kein Beiprodukt!</dcterms:title>
+                <dcterms:abstract>Forschungssoftware ist ein integraler Bestandteil der Wissenschaft und kein Nebenprodukt mehr. Je nach Disziplin wird dem Code immer mehr Aufmerksamkeit geschenkt. Die fachinterne Anerkennung von Software wird für Wissenschaftlerinnen und Wissenschaftler immer wichtiger. Gleichzeitig entwickelt sich Forschungssoftware zu einem eigenständigen Publikationsgenre neben Text- und Datenpublikationen. Allerdings ist der professionelle Umgang mit Softwareprojekten in der Wissenschaft noch nicht überall gelebte Praxis. Dabei bietet ein expliziter Umgang mit Forschungssoftware erhöhten Nutzen im wissenschaftlichen Alltag und darüber hinaus. Ein Software-Management-Plan als Organisations-Werkzeug besitzt hierfür großes Potenzial. Der Beitrag diskutiert diese aktuellen Entwicklungen und zeigt zugleich mögliche Lösungswege auf.</dcterms:abstract>
+                <dcterms:language>de</dcterms:language>
+                <z:extra>Citation Key: Grossmann2023</z:extra>
+                <dcterms:creator rdf:nodeID="n283"/>
+                <bibo:authorList>
+                    <rdf:Seq>
+                       <rdf:li rdf:nodeID="n283"/><rdf:li rdf:nodeID="n285"/>
+                    </rdf:Seq>
+                </bibo:authorList>
+                <dcterms:creator rdf:nodeID="n285"/>
+                <dcterms:isPartOf>
+                   <bibo:Issue><dcterms:date>2023</dcterms:date></bibo:Issue>
+                </dcterms:isPartOf>
+            </bibo:AcademicArticle>
+        </res:resource>
+        <z:repository>Zotero</z:repository>
+    </z:UserItem>
+    <foaf:Person rdf:nodeID="n283">
+        <foaf:givenName>Yves Vincent</foaf:givenName>
+        <foaf:surname>Grossmann</foaf:surname>
+    </foaf:Person>
+    <foaf:Person rdf:nodeID="n285">
+       <foaf:givenName>Michael</foaf:givenName><foaf:surname>Franke</foaf:surname>
+    </foaf:Person>
+</rdf:RDF>
