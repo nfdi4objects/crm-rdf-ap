@@ -49,4 +49,1146 @@
         </dc:identifier>
         <dc:description>Citation Key: Kern2014</dc:description>
     </bib:BookSection>
+    <bib:Book rdf:about="urn:isbn:978-3-11-065780-7">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>De Gruyter Saur</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:editors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Putnings</foaf:surname>
+                        <foaf:givenName>Markus</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Neuroth</foaf:surname>
+                        <foaf:givenName>Heike</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Neumann</foaf:surname>
+                        <foaf:givenName>Janna</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:editors>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Digitale Daten</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Forschungsdaten</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Forschungsdatenmanagement</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Informationsinfrastruktur</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Praxishandbuch Forschungsdatenmanagement</dc:title>
+        <dcterms:abstract>Aktuelle Geschehnisse wie das Inkrafttreten des Kodex „Leitlinien zur Sicherung guter wissenschaftlicher Praxis&quot; der Deutschen Forschungsgemeinschaft (DFG) oder der Aufbau der Nationalen Forschungsdateninfrastruktur (NFDI) und der European Open Science Cloud (EOSC) stellen Anbietende, Produzierende und Nutzende von Forschungsdaten vor fachwissenschaftliche, technische, rechtliche und organisatorische Herausforderungen. Das Praxishandbuch Forschungsdatenmanagement behandelt umfassend alle relevanten Aspekte des Forschungsdatenmanagements und der derzeitigen Rahmenbedingungen im Datenökosystem. Insbesondere die praktischen Implikationen der Datenpolitik und des -rechts, des jeweiligen Datenmarkts, der Datenkultur, der persönlichen Qualifizierung, des Datenmanagements sowie des „FAIR&quot;en Datentransfers und der Datennachnutzung werden untersucht. Das Praxishandbuch gibt überdies einen Überblick über Projekte, Entwicklungen und Herausforderungen beim Forschungsdatenmanagement. Am 16. Juni 2021 fand ein Interview mit dem Herausgeber und den Herausgeberrinnen statt, das Ihnen Einblicke in die Intentionen, inhaltlichen Einflüsse sowie ihre Gedanken für die Zukunft des Forschungsdatenmanagements gibt. Hier finden Sie das Webinar auf Youtube : https://www.youtube.com/watch?v=H-v1KPTWsac</dcterms:abstract>
+        <dc:date>2021-01-18</dc:date>
+        <z:language>de</z:language>
+        <dc:identifier>ISBN 978-3-11-065780-7</dc:identifier>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.degruyter.com/document/doi/10.1515/9783110657807/html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:47:30</dcterms:dateSubmitted>
+        <dc:rights>De Gruyter expressly reserves the right to use all content for commercial text and data mining within the meaning of Section 44b of the German Copyright Act.</dc:rights>
+        <dc:description>DOI: 10.1515/9783110657807
+Citation Key: Putnings2021</dc:description>
+    </bib:Book>
+    <bib:Article rdf:about="https://www.nature.com/articles/s41597-022-01710-x">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2052-4463"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Barker</foaf:surname>
+                        <foaf:givenName>Michelle</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chue Hong</foaf:surname>
+                        <foaf:givenName>Neil P.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Katz</foaf:surname>
+                        <foaf:givenName>Daniel S.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lamprecht</foaf:surname>
+                        <foaf:givenName>Anna-Lena</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Martinez-Ortiz</foaf:surname>
+                        <foaf:givenName>Carlos</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Psomopoulos</foaf:surname>
+                        <foaf:givenName>Fotis</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Harrow</foaf:surname>
+                        <foaf:givenName>Jennifer</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Castro</foaf:surname>
+                        <foaf:givenName>Leyla Jael</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gruenpeter</foaf:surname>
+                        <foaf:givenName>Morane</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Martinez</foaf:surname>
+                        <foaf:givenName>Paula Andrea</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Honeyman</foaf:surname>
+                        <foaf:givenName>Tom</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Policy</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Research management</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Introducing the FAIR Principles for research software</dc:title>
+        <dcterms:abstract>Research software is a fundamental and vital part of research, yet significant challenges to discoverability, productivity, quality, reproducibility, and sustainability exist. Improving the practice of scholarship is a common goal of the open science, open source, and FAIR (Findable, Accessible, Interoperable and Reusable) communities and research software is now being understood as a type of digital object to which FAIR should be applied. This emergence reflects a maturation of the research community to better understand the crucial role of FAIR research software in maximising research value. The FAIR for Research Software (FAIR4RS) Working Group has adapted the FAIR Guiding Principles to create the FAIR Principles for Research Software (FAIR4RS Principles). The contents and context of the FAIR4RS Principles are summarised here to provide the basis for discussion of their adoption. Examples of implementation by organisations are provided to share information on how to maximise the value of research outputs, and to encourage others to amplify the importance and impact of this work.</dcterms:abstract>
+        <bib:pages>622</bib:pages>
+        <dc:date>2022-10-14</dc:date>
+        <z:language>en</z:language>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.nature.com/articles/s41597-022-01710-x</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:46:49</dcterms:dateSubmitted>
+        <z:libraryCatalog>www.nature.com</z:libraryCatalog>
+        <dc:rights>2022 The Author(s)</dc:rights>
+        <dc:description>Number: 1
+Publisher: Nature Publishing Group
+Citation Key: Barker2022</dc:description>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2052-4463">
+        <dc:title>Scientific Data</dc:title>
+        <prism:volume>9</prism:volume>
+        <prism:number>1</prism:number>
+        <dcterms:alternative>Sci Data</dcterms:alternative>
+        <dc:identifier>DOI 10.1038/s41597-022-01710-x</dc:identifier>
+        <dc:identifier>ISSN 2052-4463</dc:identifier>
+    </bib:Journal>
+    <bib:Article rdf:about="https://bausteine-fdm.de/article/view/8435">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2626-7489"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cyra</foaf:surname>
+                        <foaf:givenName>Magdalene Alice</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Politze</foaf:surname>
+                        <foaf:givenName>Marius</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Timm</foaf:surname>
+                        <foaf:givenName>Henning</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Best Practice</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>CSV</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Forschungsdatenmanagement</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>GitLab</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>JSON</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Kollaboration</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Schulung</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Versionierung</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Versionsverwaltung</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Workshop</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>git</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>A push for better RDM: Erfahrungsbericht aus dem Einsatz von git für Forschungsdaten</dc:title>
+        <dcterms:abstract>Die Versionskontrollsoftware git und die Serversoftware GitLab wurden für die Softwareentwicklung konzipiert, ermöglichen aber auch kooperatives Arbeiten an Forschungsdaten entlang der FAIR-Prinzipien, beides elementare Herausforderungen im Forschungsdatenmanagement (FDM). Koordiniert durch die Landesinitiative fdm.nrw wurden in den vergangenen Jahren daher Abläufe und Schulungen zum FDM mit git und GitLab erprobt und durchgeführt.
+Eine Hürde bei der Verwendung von git und GitLab im FDM kann die Anwendung der zugrundeliegenden Software mittels Kommandozeilenbefehlen darstellen. Zwar wird das Verständnis der Versionierungsvorgänge erhöht, einige Forschende bevorzugen aber die intuitiven graphischen Interfaces. In jedem Fall ist für die Adaption Einarbeitungszeit einzuplanen. Für datengetriebene Forschung werden Versionsverwaltung und andere Digitalkompetenzen mittelfristig einen ebenso hohen Stellenwert wie das „wissenschaftliche Schreiben“ im Bereich der Sprachkompetenzen einnehmen müssen.
+Es gilt daher zunächst ein grundlegendes Verständnis für git und die Möglichkeiten zur Nutzung im FDM darzustellen. Ergänzend zu etablierten Schulungen wurden kurze, konkrete Beispiele in einer Best Practice Sammlung zusammengetragen: öffentliche GitLab-Projekte realisieren und dokumentieren einzelne Anwendungsfälle mit Hilfe der gebotenen Werkzeuge. Dadurch soll die Anwendungs- und Digitalkompetenz der Forschenden, aber auch der Infrastrukturmitarbeitenden und der Schulenden gesteigert werden und so git und GitLab zu einer besseren Umsetzung des FDM beitragen.</dcterms:abstract>
+        <dc:date>2022-08-05</dc:date>
+        <z:language>de</z:language>
+        <z:shortTitle>A push for better RDM</z:shortTitle>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://bausteine-fdm.de/article/view/8435</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:47:38</dcterms:dateSubmitted>
+        <z:libraryCatalog>bausteine-fdm.de</z:libraryCatalog>
+        <dc:rights>Copyright (c) 2022 Magdalene Alice Cyra, Marius  Politze, Henning Timm</dc:rights>
+        <dc:description>Citation Key: Cyra2022</dc:description>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2626-7489">
+        <dc:title>Bausteine Forschungsdatenmanagement</dc:title>
+        <prism:number>2</prism:number>
+        <dc:identifier>DOI 10.17192/bfdm.2022.2.8435</dc:identifier>
+        <dc:identifier>ISSN 2626-7489</dc:identifier>
+    </bib:Journal>
+    <bib:Article rdf:about="#item_5">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Grossmann</foaf:surname>
+                        <foaf:givenName>Yves Vincent</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Franke</foaf:surname>
+                        <foaf:givenName>Michael</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:title>Software ist kein Beiprodukt!</dc:title>
+        <dcterms:abstract>Forschungssoftware ist ein integraler Bestandteil der Wissenschaft und kein Nebenprodukt mehr. Je nach Disziplin wird dem Code immer mehr Aufmerksamkeit geschenkt. Die fachinterne Anerkennung von Software wird für Wissenschaftlerinnen und Wissenschaftler immer wichtiger. Gleichzeitig entwickelt sich Forschungssoftware zu einem eigenständigen Publikationsgenre neben Text- und Datenpublikationen. Allerdings ist der professionelle Umgang mit Softwareprojekten in der Wissenschaft noch nicht überall gelebte Praxis. Dabei bietet ein expliziter Umgang mit Forschungssoftware erhöhten Nutzen im wissenschaftlichen Alltag und darüber hinaus. Ein Software-Management-Plan als Organisations-Werkzeug besitzt hierfür großes Potenzial. Der Beitrag diskutiert diese aktuellen Entwicklungen und zeigt zugleich mögliche Lösungswege auf.</dcterms:abstract>
+        <dc:date>2023</dc:date>
+        <z:language>de</z:language>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <dc:description>Citation Key: Grossmann2023</dc:description>
+    </bib:Article>
+    <rdf:Description rdf:about="http://arxiv.org/abs/2201.09015">
+        <z:itemType>preprint</z:itemType>
+        <dc:publisher>
+           <foaf:Organization><foaf:name>arXiv</foaf:name></foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Druskat</foaf:surname>
+                        <foaf:givenName>Stephan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bertuch</foaf:surname>
+                        <foaf:givenName>Oliver</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Juckeland</foaf:surname>
+                        <foaf:givenName>Guido</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Knodel</foaf:surname>
+                        <foaf:givenName>Oliver</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Schlauch</foaf:surname>
+                        <foaf:givenName>Tobias</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Computer Science - Digital Libraries</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Computer Science - Software Engineering</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Software publications with rich metadata: state of the art, automated workflows and HERMES concept</dc:title>
+        <dcterms:abstract>To satisfy the principles of FAIR software, software sustainability and software citation, research software must be formally published. Publication repositories make this possible and provide published software versions with unique and persistent identifiers. However, software publication is still a tedious, mostly manual process. To streamline software publication, HERMES, a project funded by the Helmholtz Metadata Collaboration, develops automated workflows to publish research software with rich metadata. The tooling developed by the project utilizes continuous integration solutions to retrieve, collate, and process existing metadata in source repositories, and publish them on publication repositories, including checks against existing metadata requirements. To accompany the tooling and enable researchers to easily reuse it, the project also provides comprehensive documentation and templates for widely used CI solutions. In this paper, we outline the concept for these workflows, and describe how our solution advance the state of the art in research software publication.</dcterms:abstract>
+        <prism:number>arXiv:2201.09015</prism:number>
+        <dc:date>2022-01-22</dc:date>
+        <dc:identifier>DOI 10.48550/arXiv.2201.09015</dc:identifier>
+        <z:citationKey>Druskat2022</z:citationKey>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://arxiv.org/abs/2201.09015</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:50:38</dcterms:dateSubmitted>
+        <z:shortTitle>Software publications with rich metadata</z:shortTitle>
+        <z:libraryCatalog>arXiv.org</z:libraryCatalog>
+    </rdf:Description>
+    <bib:Article rdf:about="https://www.degruyter.com/document/doi/10.1515/bfp-2022-0013/html?lang=de">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1865-7648"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Schirrwagen</foaf:surname>
+                        <foaf:givenName>Jochen</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Research information system</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>integration</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>interoperability</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>open access repository</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>publication management</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Repositorien und Forschungsinformationssysteme bilden keine Dichotomie</dc:title>
+        <dcterms:abstract>Zusammenfassung Dieser Beitrag zeichnet gemeinsame Entwicklungslinien von Forschungsinformationssystemen und Repositorien nach. Beide Systemwelten haben sich zunächst unabhängig voneinander entwickelt, was ihrer Verankerung in unterschiedlichen Verwaltungseinheiten wissenschaftlicher Einrichtungen geschuldet ist. Im Zuge von Open Access und Open Science sowie steigenden Anforderungen an die Forschungsberichterstattung haben sich zunehmend Schnittmengen ergeben. In dessen Folge treiben Initiativen auf europäischer und nationaler Ebene die Konvergenz und Integration über Grundsatzvereinbarungen, Roadmaps, Leitlinien und Implementierungen beider Systemwelten voran.</dcterms:abstract>
+        <bib:pages>284-288</bib:pages>
+        <dc:date>2022-07-01</dc:date>
+        <z:language>de</z:language>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.degruyter.com/document/doi/10.1515/bfp-2022-0013/html?lang=de</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:51:04</dcterms:dateSubmitted>
+        <z:libraryCatalog>www.degruyter.com</z:libraryCatalog>
+        <dc:rights>De Gruyter expressly reserves the right to use all content for commercial text and data mining within the meaning of Section 44b of the German Copyright Act.</dc:rights>
+        <dc:description>Citation Key: Schirrwagen2022</dc:description>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1865-7648">
+        <dc:title>Bibliothek Forschung und Praxis</dc:title>
+        <prism:volume>46</prism:volume>
+        <prism:number>2</prism:number>
+        <dc:identifier>DOI 10.1515/bfp-2022-0013</dc:identifier>
+        <dc:identifier>ISSN 1865-7648</dc:identifier>
+    </bib:Journal>
+    <bib:Book rdf:about="https://edoc.hu-berlin.de/handle/18452/26130">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>Humboldt-Universität zu Berlin</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Forschungsinformationssysteme</foaf:surname>
+                        <foaf:givenName>Dini Ag</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:title>Management von Forschungsinformationen in Hochschulen und Forschungseinrichtungen</dc:title>
+        <dc:date>2022-11-09</dc:date>
+        <z:language>ger</z:language>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://edoc.hu-berlin.de/handle/18452/26130</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:50:43</dcterms:dateSubmitted>
+        <z:libraryCatalog>edoc.hu-berlin.de</z:libraryCatalog>
+        <dc:rights>(CC BY 4.0) Attribution 4.0 International</dc:rights>
+        <dc:description>Citation Key: DINI2022</dc:description>
+    </bib:Book>
+    <bib:Article rdf:about="https://opendata.uni-halle.de//handle/1981185920/47069">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+               <dc:identifier>DOI 10.25673/45118</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Azeroual</foaf:surname>
+                        <foaf:givenName>Otmane</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:title>Untersuchungen zur Datenqualität und Nutzerakzeptanz von Forschungsinformationssystemen</dc:title>
+        <dcterms:abstract>Collecting, integrating and storing input of research information from a variety of 
+heterogeneous data sources and different independent information systems into the 
+research information system (RIS) can result in various data errors and abnormalities, 
+which, on the one hand, can have a different negative impact on the quality of the data 
+and, on the other hand, lead to erroneous research reporting. To be able to recognize 
+errors at an early stage and treat them efficiently, RIS-using higher education and 
+non-university research institutions in Germany and various European countries should 
+consider data quality management as a holistic and continuous improvement process in 
+order to provide an adequate and reliable basis for decision-making in an RIS and to 
+increase the confidence in the available data. Against this background, the dissertation 
+aims to comprehensively examine the data quality of RIS and its impact on user 
+acceptance, as well as to present the techniques, methods and measures of data quality 
+management that are applicable to research information in order to provide institutions 
+with the ability to detect, correct and improve on missing, incorrect and inconsistent 
+data. Thereby this dissertation focuses on a case study of the data quality problems 
+that appear in Web of Science publication data, and for this purpose a concept and 
+framework for monitoring and improving data quality is being developed in order to 
+increase the acceptance of the RIS. The results of the dissertation are validated in 
+different case studies in the German and international research context.</dcterms:abstract>
+        <dc:date>2021</dc:date>
+        <z:language>ger</z:language>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://opendata.uni-halle.de//handle/1981185920/47069</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:50:59</dcterms:dateSubmitted>
+        <z:libraryCatalog>opendata.uni-halle.de</z:libraryCatalog>
+        <dc:rights>https://creativecommons.org/licenses/by-sa/4.0/</dc:rights>
+        <dc:description>Citation Key: Azeroual2021</dc:description>
+    </bib:Article>
+    <bib:Article rdf:about="https://www.o-bib.de/bib/article/view/5826">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2363-9814"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Berg-Weiß</foaf:surname>
+                        <foaf:givenName>Alexander</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hermann</foaf:surname>
+                        <foaf:givenName>Sibylle</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kötter</foaf:surname>
+                        <foaf:givenName>Miriam</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Leiß</foaf:surname>
+                        <foaf:givenName>Caroline</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Müller</foaf:surname>
+                        <foaf:givenName>Christoph</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Strauch-Davey</foaf:surname>
+                        <foaf:givenName>Annette</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Change Management</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Forschungsnahe Dienste</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Kommission für forschungsnahe Dienste</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Open Science</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Openness</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Openness in Bibliotheken : Positionspapier der Kommission für forschungsnahe Dienste des VDB</dc:title>
+        <bib:pages>1-4</bib:pages>
+        <dc:date>2022-05-24</dc:date>
+        <z:language>de</z:language>
+        <z:shortTitle>Openness in Bibliotheken</z:shortTitle>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.o-bib.de/bib/article/view/5826</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:50:55</dcterms:dateSubmitted>
+        <z:libraryCatalog>www.o-bib.de</z:libraryCatalog>
+        <dc:rights>Copyright (c) 2022 Alexander Berg-Weiß, Sibylle Hermann, Miriam Kötter, Caroline Leiß, Christoph Müller, Annette Strauch-Davey</dc:rights>
+        <dc:description>Citation Key: BergWeiss2022</dc:description>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2363-9814">
+        <dc:title>o-bib. Das offene Bibliotheksjournal / Herausgeber VDB</dc:title>
+        <prism:volume>9</prism:volume>
+        <prism:number>2</prism:number>
+        <dc:identifier>DOI 10.5282/o-bib/5826</dc:identifier>
+        <dc:identifier>ISSN 2363-9814</dc:identifier>
+    </bib:Journal>
+    <bib:Article rdf:about="https://www.o-bib.de/bib/article/view/5718">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>o-bib. Das offene Bibliotheksjournal / Herausgeber VDB</dc:title>
+                <prism:volume>8</prism:volume>
+                <prism:number>2</prism:number>
+                <dc:identifier>DOI 10.5282/o-bib/5718</dc:identifier>
+                <dc:identifier>ISSN 2363-9814</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Stille</foaf:surname>
+                        <foaf:givenName>Wolfgang</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Farrenkopf</foaf:surname>
+                        <foaf:givenName>Stefan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hermann</foaf:surname>
+                        <foaf:givenName>Sibylle</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jagusch</foaf:surname>
+                        <foaf:givenName>Gerald</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Leiß</foaf:surname>
+                        <foaf:givenName>Caroline</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Strauch-Davey</foaf:surname>
+                        <foaf:givenName>Annette</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Bibliometrie</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Forschungsdatenmanagement</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Forschungsnahe Dienste</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Forschungsunterstützung</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Organisationsentwicklung</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Personalentwicklung</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Forschungsunterstützung an Bibliotheken: Positionspapier der Kommission für forschungsnahe Dienste des VDB</dc:title>
+        <dcterms:abstract>Forschungsnahe Dienste bezeichnen eine Reihe von Bibliotheksservices, die Wissenschaftlerinnen und Wissenschaftler im gesamten Forschungszyklus unterstützen. Im vorliegenden Beitrag stellt die 2018 ins Leben gerufene Kommission für forschungsnahe Dienste des VDB den aktuellen Stand in diesem Bereich dar und geht auf Voraussetzungen und Rahmenbedingungen für die Entwicklung eines entsprechenden Serviceportfolios ein. Dabei sieht die Kommission ein Umdenken hinsichtlich des Selbstverständnisses und des Dienstleistungsangebots von Bibliotheken als unumgänglich an. Erforderlich sind eine systematische Entwicklung von Serviceportfolios, eine verstärkte Bereitschaft zu projektbezogenem Arbeiten, eine strukturierte Organisations- und Personalentwicklung sowie eine umsichtige Abstimmung mit anderen Anbietern von forschungsunterstützenden Dienstleistungen, um ein für die Nutzenden in sich stimmiges und nachhaltiges Serviceangebot im Bereich forschungsnaher Dienste zu schaffen.</dcterms:abstract>
+        <bib:pages>1-19</bib:pages>
+        <dc:date>2021-06-17</dc:date>
+        <z:language>de</z:language>
+        <z:shortTitle>Forschungsunterstützung an Bibliotheken</z:shortTitle>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.o-bib.de/bib/article/view/5718</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:45:15</dcterms:dateSubmitted>
+        <z:libraryCatalog>www.o-bib.de</z:libraryCatalog>
+        <dc:rights>Copyright (c) 2021 Wolfgang Stille, Stefan Farrenkopf, Sibylle Hermann, Gerald Jagusch, Caroline Leiß, Annette Strauch-Davey</dc:rights>
+        <dc:description>Citation Key: Stille2021</dc:description>
+    </bib:Article>
+    <bib:Article rdf:about="https://zenodo.org/records/4301924">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+               <dc:identifier>DOI 10.5281/zenodo.4301924</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Konrad</foaf:surname>
+                        <foaf:givenName>Uwe</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Förstner</foaf:surname>
+                        <foaf:givenName>Konrad</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Reetz</foaf:surname>
+                        <foaf:givenName>Johannes</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wannemacher</foaf:surname>
+                        <foaf:givenName>Klaus</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kett</foaf:surname>
+                        <foaf:givenName>Jürgen</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mannseicher</foaf:surname>
+                        <foaf:givenName>Florian</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:subject>
+            <z:AutomaticTag>
+                <rdf:value>Allianz der deutschen Wissenschaftsorganisationen</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Digital Transformation</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Digitale Dienste</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Information Technology</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Open Science</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Open Source</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Research Software</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Digitale Dienste für die Wissenschaft - wohin geht die Reise?</dc:title>
+        <dcterms:abstract>Aufgrund des informationstechnologischen Fortschritts, der immer stärkeren, domänenübergreifenden Vernetzung in Wissenschaft und Forschung sowie der Notwendigkeit, gemeinsam Dienste und Ressourcen zu nutzen, werden von den Akteuren in Forschung und Wissenschaft zunehmend verteilte digitale Dienste verwendet. Der Fokus dieser Handreichung liegt auf den wissenschaftlichen Informationsdiensten, zu denen man u. a. Werkzeuge für kollaboratives Arbeiten, für die Aufbereitung und Analyse von Daten sowie Dienste zum wissenschaftlichen Publizieren, aber auch Dienste für die Entwicklung von Forschungssoftware zählen kann. Dabei zielen die Fragen nach der Art der geforderten bzw. wirklich verwendeten Diensten, der Vor- und Nachteile der gegenwärtigen Nutzung sowie der eigenverantwortlichen Bereitstellung dieser Dienste unter dem Aspekt der (finanziellen) Ressourcen- Effizienz.</dcterms:abstract>
+        <dc:date>2020-12-15</dc:date>
+        <z:language>deu</z:language>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://zenodo.org/records/4301924</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:50:51</dcterms:dateSubmitted>
+        <z:libraryCatalog>Zenodo</z:libraryCatalog>
+        <dc:description>Citation Key: Konrad2020</dc:description>
+    </bib:Article>
+    <bib:Memo rdf:about="#item_13">
+        <z:itemType>note</z:itemType>
+        <rdf:value>Comment: 22 pages, 2 figures, 2 tables</rdf:value>
+    </bib:Memo>
+    <bib:Article rdf:about="https://peerj.com/articles/cs-86">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2376-5992"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Smith</foaf:surname>
+                        <foaf:givenName>Arfon M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Katz</foaf:surname>
+                        <foaf:givenName>Daniel S.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Niemeyer</foaf:surname>
+                        <foaf:givenName>Kyle E.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:title>Software citation principles</dc:title>
+        <dcterms:abstract>Software is a critical part of modern research and yet there is little support across the scholarly ecosystem for its acknowledgement and citation. Inspired by the activities of the FORCE11 working group focused on data citation, this document summarizes the recommendations of the FORCE11 Software Citation Working Group and its activities between June 2015 and April 2016. Based on a review of existing community practices, the goal of the working group was to produce a consolidated set of citation principles that may encourage broad adoption of a consistent policy for software citation across disciplines and venues. Our work is presented here as a set of software citation principles, a discussion of the motivations for developing the principles, reviews of existing community practice, and a discussion of the requirements these principles would place upon different stakeholders. Working examples and possible technical solutions for how these principles can be implemented will be discussed in a separate paper.</dcterms:abstract>
+        <bib:pages>e86</bib:pages>
+        <dc:date>2016-09-19</dc:date>
+        <z:language>en</z:language>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://peerj.com/articles/cs-86</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:50:31</dcterms:dateSubmitted>
+        <z:libraryCatalog>peerj.com</z:libraryCatalog>
+        <dc:description>Publisher: PeerJ Inc.</dc:description>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2376-5992">
+        <dc:title>PeerJ Computer Science</dc:title>
+        <prism:volume>2</prism:volume>
+        <dcterms:alternative>PeerJ Comput. Sci.</dcterms:alternative>
+        <dc:identifier>DOI 10.7717/peerj-cs.86</dc:identifier>
+        <dc:identifier>ISSN 2376-5992</dc:identifier>
+    </bib:Journal>
+    <bib:Article rdf:about="https://zenodo.org/records/6451456">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+               <dc:identifier>DOI 10.5281/zenodo.6451456</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bach</foaf:surname>
+                        <foaf:givenName>Felix</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Degkwitz</foaf:surname>
+                        <foaf:givenName>Andreas</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Horstmann</foaf:surname>
+                        <foaf:givenName>Wolfram</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Leinen</foaf:surname>
+                        <foaf:givenName>Peter</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Puchta</foaf:surname>
+                        <foaf:givenName>Michael</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Stäcker</foaf:surname>
+                        <foaf:givenName>Thomas</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Base4NFDI</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>LTA</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Long Term Archiving and Access</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>NFDI</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Concept for Setting up an LTA Working Group in the NFDI Section &quot;Common Infrastructures&quot;</dc:title>
+        <dcterms:abstract>NFDI consortia have a variety of disparate and distributed information infrastructures, many of which are as yet only loosely or poorly connected. A major goal is to create a Research Data Commons (RDC) . The RDC concept1 includes, for example, shared cloud services, an application layer with access to high-performance computing (HPC), collaborative workspaces, terminology services, and a common authentication and authorization infrastructure (AAI). The necessary interoperability of services requires, in particular, agreement on protocols and standards, the specification of workflows and interfaces, and the definition of long-term sustainable responsibilities for overarching services and deliverables. Infrastructure components are often well-tested in NFDI on a domain-specific basis, but are quite heterogeneous and diverse between domains. LTA for digital resources has been a recurring problem for well over 30 years and has not been conclusively solved to date, getting urgency with the exponential growth of research data, whether it involves demands from funders - the DFG requires 10 years of retention - or digital artifacts that must be preserved indefinitely as digital cultural heritage. Against this background, the integration of the LTA into the RDC of the NFDI is an urgent desideratum in order to be able to guarantee the permanent usability of research data. A distinction must be2 made between the archiving of the digital objects as bitstreams (this can be numeric or textual data or complex objects such as models), which represents a first step towards long-term usability, and the archiving of the semantic and software-technical context of the digital original objects, which entails far more effort. Beyond the technical embedding of the LTA in the system environment of a multi-cloud-based infrastructure, a number of technically differentiated requirements of the NFDI's subject consortia are part of the development of a basic service for the LTA and for the re-use of research data.3 The need for funding for the development of a basic LTA service for the NFDI consortia results primarily from the additional costs associated with the technical and organizational development of a cross-NFDI, decentralized network structure for LTA and the sustainable subsequent use of research data. It is imperative that the technical actors are able to act within the network as a technology-oriented community, and that they can provide their own services as part of the support for also within a federated infrastructure. The working group &quot;Long Term Archiving&quot; (LTA) is to develop the requirements of the technical consortia for LTA and, on this basis, strategic approaches for the implementation of a basic service LTA. The working group consists of members of various NFDI consortia covering the humanities, natural science and engineering disciplines and experts from a variety of pertinent infrastructures with strong overall connections to the nestor long-term archiving competence network. The close linkage of NFDI consortia with experienced4 partners in the field of LTA ensures that a) the relevant technical state-of-the-art is present in the group and b) the knowledge of data producers about contexts of origin and data users interact directly. This composition enables the team to take an overarching view that spans the requirements of the disciplines and consortia, also takes into account interdisciplinary needs, and at the same time brings in the existing know-how in the infrastructure sector.</dcterms:abstract>
+        <dc:date>2022-04-12</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://zenodo.org/records/6451456</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:47:26</dcterms:dateSubmitted>
+        <z:libraryCatalog>Zenodo</z:libraryCatalog>
+        <dc:description>Publisher: Zenodo</dc:description>
+    </bib:Article>
+    <bib:Document rdf:about="https://www.iso.org/standard/57284.html">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website><dc:title>ISO</dc:title></z:Website>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                       <foaf:surname>14:00-17:00</foaf:surname>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:title>ISO 14721:2012</dc:title>
+        <dcterms:abstract>Space data and information transfer systems — Open archival information system (OAIS) — Reference model</dcterms:abstract>
+        <z:shortTitle>ISO 14721</z:shortTitle>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.iso.org/standard/57284.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:47:22</dcterms:dateSubmitted>
+        <z:language>en</z:language>
+    </bib:Document>
+    <bib:Book rdf:about="https://edoc.hu-berlin.de/handle/18452/26023">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>Humboldt-Universität zu Berlin</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Publizieren (E-Pub)</foaf:surname>
+                        <foaf:givenName>DINI AG Elektronisches</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:title>DINI-Zertifikat für Open-Access-Publikationsdienste 2022</dc:title>
+        <dcterms:abstract>Das DINI-Zertifikat für Open-Access-Publikationsdinste ebnet den Weg für eine offene Wissenschaftskommunikation durch die freie Bereitstellung wissenschaftlicher Materialien als wesentlicher Baustein zukunftsorientierter forschungsnaher Dienste. 
+ 
+Das DINI-Zertifikat gibt es bereits seit 2004; es wird von der DINI-AG E-Pub angeboten. Das Zertifikat besteht aus einem Katalog von Kriterien, die für Einrichtung und Betrieb eines entsprechenden Open-Access-Publikationsdienstes zu berücksichtigen sind. Für die zertifizierten Einrichtungen bietet es damit quasi eine Garantie, dass der eigene Service den Anforderungen offener Wissenschaft gerecht wird und bleibt. Die DINI-AG E-Pub erarbeitet alle drei Jahre einen angepassten Kriterienkatalog, der auf den aktuellen Stand der technischen und redaktionellen Anforderungen eingeht. Technische Austauschprotokolle, Standards der Wissensbeschreibung und rechtliche Anforderungen an Services entwickeln sich stetig weiter und erfordern eine regelmäßige Anpassung des Zertifikatstexts. Seit den letzten Versionen wird in einem Request-for-Comments-Verfahren zudem das Feedback der interessierten Fachgemeinschaft eingeholt und bei der Überarbeitung berücksichtigt, so dass das Zertifikat zum Standard für entsprechende Publikationsdienste geworden ist. 
+Nach Abschluss der Arbeiten an der aktuellen Zertifikatsversion werden neue Entwicklungen in den Blick genommen, die für die kommende 2025er-Version als bedeutsam erachtet werden. So werden bereits weitere Schritte der Internationalisierung angedacht, etwa durch Vernetzung mit europäischen Projekten, die ebenfalls an internationalen Standards für Open-Access-Publikationsdiensten wirken.</dcterms:abstract>
+        <dc:date>2022-09-19</dc:date>
+        <z:language>ger</z:language>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://edoc.hu-berlin.de/handle/18452/26023</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:47:17</dcterms:dateSubmitted>
+        <z:libraryCatalog>edoc.hu-berlin.de</z:libraryCatalog>
+        <dc:rights>(CC BY 4.0) Attribution 4.0 International</dc:rights>
+        <dc:description>Accepted: 2022-09-19T07:31:14Z
+DOI: 10.18452/24678</dc:description>
+    </bib:Book>
+    <bib:Document rdf:about="http://legacy.earlham.edu/~peters/fos/bethesda.htm">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <dc:title>Bethesda Statement on Open Access Publishing</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>http://legacy.earlham.edu/~peters/fos/bethesda.htm</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:47:09</dcterms:dateSubmitted>
+    </bib:Document>
+    <bib:Book rdf:about="https://edoc.hu-berlin.de/handle/18452/24965">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>Humboldt-Universität zu Berlin</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dini</foaf:surname>
+                        <foaf:givenName>Arbeitsgruppe Elektronisches Publizieren</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dini</foaf:surname>
+                        <foaf:givenName>AG Forschungsinformationssysteme</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:title>Gemeinsames Vokabular für Publikations- und Dokumenttypen</dc:title>
+        <dcterms:abstract>Das 2010 erstmalig veröffentlichte „Gemeinsame Vokabular für Publikations- und Dokumenttypen“ bedurfte angesichts des sich verändernden Publikationsverhaltens und neu hinzugekommenen Anforderungen aus der Forschungsberichterstattung einer Überarbeitung. Die Aktualisierung wurde von einer gemeinsamen Arbeitsgruppe der DINI-Arbeitsgruppen „Elektronisches Publizieren“ (E-Pub) und „Forschungsinformationssysteme“ (FIS) sowie dem „Bundeshelpdesk zum KDSF“ erarbeitet.</dcterms:abstract>
+        <dc:date>2022-03-16</dc:date>
+        <z:language>ger</z:language>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://edoc.hu-berlin.de/handle/18452/24965</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:46:55</dcterms:dateSubmitted>
+        <z:libraryCatalog>edoc.hu-berlin.de</z:libraryCatalog>
+        <dc:rights>(CC BY 4.0) Attribution 4.0 International</dc:rights>
+        <dc:description>Accepted: 2022-03-16T10:39:13Z
+DOI: 10.18452/24147</dc:description>
+    </bib:Book>
+    <bib:Article rdf:about="https://bausteine-fdm.de/article/view/8553">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Bausteine Forschungsdatenmanagement</dc:title>
+                <prism:number>5</prism:number>
+                <dc:identifier>DOI 10.17192/bfdm.2023.5.8553</dc:identifier>
+                <dc:identifier>ISSN 2626-7489</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Adam</foaf:surname>
+                        <foaf:givenName>Beatrix</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bossert</foaf:surname>
+                        <foaf:givenName>Lukas C.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cyra</foaf:surname>
+                        <foaf:givenName>Magdalene Alice</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Grönewald</foaf:surname>
+                        <foaf:givenName>Matthias</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Janosch</foaf:surname>
+                        <foaf:givenName>Stephan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Knipprath</foaf:surname>
+                        <foaf:givenName>Nina</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lindstädt</foaf:surname>
+                        <foaf:givenName>Birte</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Schreyer</foaf:surname>
+                        <foaf:givenName>Lioba</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Strauß</foaf:surname>
+                        <foaf:givenName>Florian</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Timm</foaf:surname>
+                        <foaf:givenName>Henning</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Valencia-Schneider</foaf:surname>
+                        <foaf:givenName>Monica</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Schröder</foaf:surname>
+                        <foaf:givenName>Max</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zerr</foaf:surname>
+                        <foaf:givenName>Sergej</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zulauf</foaf:surname>
+                        <foaf:givenName>Bert</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>ELB</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>ELN</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Elektronische Laborbücher</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Onboarding</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Organisatorische Einführung</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Schulungskonzepte</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Sensibilisierung</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Servicekonzepte</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Technische Umsetzung</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Zentraler Dienst</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Raus aus dem Kladdenchaos: Elektronische Laborbücher als zentrale Dienstleistung – Erfahrungen und Empfehlungen</dc:title>
+        <dcterms:abstract>Immer mehr Forschende integrieren die Nutzung eines elektronischen Laborbuchs (ELN, electronic lab notebook) in ihren Forschungsalltag, um ihre Forschung digital zu dokumentieren. Die Nutzung eines ELN geht mit einer Reihe von Vorteilen einher:Forschungsdaten werden langfristig nachvollziehbar beschrieben und gemeinsam mit ihrer Dokumentation abgelegt, Medienbrüche bei digital erhobenen Forschungsdaten werden minimiert, die Verlustsicherheit (bspw. durch einen Brand) wird erhöht und das Teilen der Forschungsdaten sowie der Dokumentation wird erleichtert. Die Einführung und der dauerhafte Betrieb eines ELN in einer Arbeitsgruppe oder an einer Forschungseinrichtung gehen jedoch mit zahlreichen Herausforderungen einher. Als zentraler Dienst werden ELN oftmals von den Infrastruktureinrichtungen, also den Rechenzentren und Bibliotheken, für ihre Forschenden bereitgestellt. Dabei bietet sich eine enge Zusammenarbeit zwischen diesen Einrichtungen an, um Forschenden die reibungslose Nutzung eines ELN zu ermöglichen. Der vorliegende Artikel fasst die Ergebnisse des 6. Workshops der AG ELB vom 31.01.2022, organisiert von der Landesinitiative für Forschungsdatenmanagement – fdm.nrw, zusammen und präsentiert die Erfahrungen und Empfehlungen der Workshop-Teilnehmenden, die bei Einführung und dauerhaftem Betrieb eines ELN berücksichtigt werden sollten. Behandelt werden die Themen technische Umsetzung, Sensibilisierung und Information der Forschenden, Onboarding und Schulungskonzepte und begleitende Servicekonzepte. Die Autor:innen verfügen über Expertise und haben einen breiten Erfahrungsschatz zusammengestellt, um diesen anderen Institutionen und Personen, die vor einer solchen Einführung stehen, zur Verfügung zu stellen.</dcterms:abstract>
+        <bib:pages>2-19</bib:pages>
+        <dc:date>2023-09-01</dc:date>
+        <z:language>de</z:language>
+        <z:shortTitle>Raus aus dem Kladdenchaos</z:shortTitle>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://bausteine-fdm.de/article/view/8553</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-12-17 14:46:45</dcterms:dateSubmitted>
+        <z:libraryCatalog>bausteine-fdm.de</z:libraryCatalog>
+        <dc:rights>Copyright (c) 2023 Beatrix Adam, Lukas C. Bossert, Magdalene Alice Cyra, Matthias Grönewald, Stephan Janosch, Nina Knipprath, Birte Lindstädt, Lioba Schreyer, Florian Strauß, Henning Timm, Monica Valencia-Schneider, Max  Schröder, Sergej Zerr, Bert Zulauf</dc:rights>
+        <dc:description>Number: 5</dc:description>
+    </bib:Article>
 </rdf:RDF>
