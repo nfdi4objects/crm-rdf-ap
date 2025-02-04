@@ -36,7 +36,21 @@ The CRM classes [E61 Time Primitive], [E94 Space Primitive], and [E95 Spacetime 
 
 ## Temporal data
 
-Instances of [E61 Time Primitive] and [E52 Time-Span] are better expressed as RDF literals of type `xsd:date`, `xsd:time`, `xsd:dateTime`, `xsd:dateTimeStamp`, or `xsd:gDay`, `xsd:gMonthDay`, `xsd:gMonth`, `xsd:gYear`, or `xsd:gYearMonth` if applicable. More complex values, in particular explicit intervals can be expressed with [EDTF] and [Time Ontology]\ (both mapped to each other with [EDTF in RDF]). Support of complex temporal data is limited in SPARQL, so there is no consensus yet.^[See discussion to extend SPARQL 1.2 [for simple dates](https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md).]
+Instances of [E61 Time Primitive] and [E52 Time-Span] SHOULD be expressed as RDF literals with one of the following data types:
+
+- `xsd:date`
+- `xsd:time`
+- `xsd:dateTime`
+- `xsd:dateTimeStamp`
+- `xsd:gDay`
+- `xsd:gMonthDay`
+- `xsd:gMonth`
+- `xsd:gYear`
+- `xsd:gYearMonth`
+- `edtf:EDTF` for more complex values, such as intervals or uncertain dates, in [EDTF] syntax
+  - `edtf:EDTF-level0`
+  - `edtf:EDTF-level1`
+  - `edtf:EDTF-level2`
 
 ~~~{.ttl #lst-temporal-primitives}
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/>
@@ -51,12 +65,22 @@ Instances of [E61 Time Primitive] and [E52 Time-Span] are better expressed as RD
     "1912-04-15"^^edtf:EDTF .                       # imprecise date with EDTF
 ~~~
 
+Support of simple temporal data is included in most SPARQL processors although it is not part of the SPARQL 1.2 specification (see [proposal SEP-0002](https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md)).
+
+More complex temoral data can be expressed with the [Time Ontology] as discussed by @Nys2018. EDTF can be mapped to Time Ontology via [EDTF in RDF]
+
+::: {.callout-node}
+
 @Doerr2020 recommend to use additional properties for temporal intervals ([E52 Time-Span]):
 
 - `P81a_end_of_the_begin` together with  `P81b_begin_of_the_end` instead of [P81 ongoing throughout]
 - `P82a_begin_of_the_begin` together with `P82b_end_of_the_end` instead of [P82 at some time within]
 
-The use of these properties may lead to false assumption of precision and it introduced a solitary solution to a problem also addressed outside of CIDOC. For this reasons these additional properties should *not* be used in favour of EDTF and/or Time Ontology, for instance like this: 
+The use of these properties may lead to false assumption of precision and it introduced a solitary solution to a problem also addressed outside of CIDOC. For this reasons these additional properties should *not* be used in favour of EDTF and/or Time Ontology.
+
+:::
+
+An example: 
 
 ~~~{.ttl}
 <WW1> a crm:E52_Time-Span , time:TemporalEntity .
@@ -75,8 +99,6 @@ Temporal CRM properties such as [P86 falls within] should also be replaced by co
 [P81 ongoing throughout]: http://www.cidoc-crm.org/cidoc-crm/P81
 [P82 at some time within]: http://www.cidoc-crm.org/cidoc-crm/P82
 [P86 falls within]: http://www.cidoc-crm.org/cidoc-crm/P86
-
-See also a more detailled description of combining CRM and Time Ontology by @Nys2018.
 
 ## Geographic data
 
@@ -101,7 +123,7 @@ Instances of [E95 Spacetime Primitive] ... (TODO)
 [P172 contains]: http://www.cidoc-crm.org/cidoc-crm/P172
 [P168 place is defined by]: http://www.cidoc-crm.org/cidoc-crm/P168
 
-## Authority files and types
+# Authority files and types
 
 CRM class **[E32 Authority Document]** and CRM property **[P71 lists]** MUST NOT be used in RDF but corresponding SKOS RDF classes [ConceptScheme] and [inScheme] instead. Applications MAY define [ConceptScheme] as subclass of [E31 Document] and [inScheme] as subproperty of [P67 refers to].
 
@@ -115,9 +137,9 @@ CRM also defines class **[E55 Type]** with properties **[P127 has broader term]*
 [P71 lists]: http://www.cidoc-crm.org/cidoc-crm/P71
 [P67 refers to]: http://www.cidoc-crm.org/cidoc-crm/P67
 
-## CRM Classes to use with caution
+# CRM Classes to use with caution
 
-### E58 Measurement Unit
+## E58 Measurement Unit
 
 Defintion of instances of [E58 Measurement Unit] should be avoided but either taken from an established vocabulary of units such as QUDT or expressed as RDF value with UCUM datatype.^[See [cdt:ucum](https://ci.mines-stetienne.fr/lindt/v4/custom_datatypes#ucum) and [QUDT](https://qudt.org/).]
 
@@ -132,7 +154,7 @@ Defintion of instances of [E58 Measurement Unit] should be avoided but either ta
   ] .
 ~~~
 
-### E41 Appellation
+## E41 Appellation
 
 **[E41 Appellation]** and its subclasses ([E35 Title] and [E42 Identifier]) should be avoided (see [above](#primitive-values) for additional subclasses [E61 Time Primitive], [E94 Space Primitive], and [E94 Space Primitive]), unless a name cannot uniquely be identified with a sequence of Unicode characters and an optional language tag:
 
@@ -178,7 +200,7 @@ instead of
       crm:P190_has_symbolic_content "http://kbpedia.org/kko/rc/RMS-Titanic-TheShip" ] .
 ~~~
 
-## Deprecated CRM classes
+# Deprecated CRM classes
 
 CRM is constantly evolving, so some CRM classes have been renamed or replaced. Outdated classes and properties MUST be supported nevertheless to integrate data that has already been published.
 
