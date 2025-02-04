@@ -133,16 +133,16 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#temporal-data" id="toc-temporal-data" class="nav-link" data-scroll-target="#temporal-data"><span class="header-section-number">2.1</span> Temporal data</a></li>
   <li><a href="#geographic-data" id="toc-geographic-data" class="nav-link" data-scroll-target="#geographic-data"><span class="header-section-number">2.2</span> Geographic data</a></li>
-  <li><a href="#authority-files-and-types" id="toc-authority-files-and-types" class="nav-link" data-scroll-target="#authority-files-and-types"><span class="header-section-number">2.3</span> Authority files and types</a></li>
-  <li><a href="#crm-classes-to-use-with-caution" id="toc-crm-classes-to-use-with-caution" class="nav-link" data-scroll-target="#crm-classes-to-use-with-caution"><span class="header-section-number">2.4</span> CRM Classes to use with caution</a>
+  </ul></li>
+  <li><a href="#authority-files-and-types" id="toc-authority-files-and-types" class="nav-link" data-scroll-target="#authority-files-and-types"><span class="header-section-number">3</span> Authority files and types</a></li>
+  <li><a href="#crm-classes-to-use-with-caution" id="toc-crm-classes-to-use-with-caution" class="nav-link" data-scroll-target="#crm-classes-to-use-with-caution"><span class="header-section-number">4</span> CRM Classes to use with caution</a>
   <ul class="collapse">
-  <li><a href="#e58-measurement-unit" id="toc-e58-measurement-unit" class="nav-link" data-scroll-target="#e58-measurement-unit"><span class="header-section-number">2.4.1</span> E58 Measurement Unit</a></li>
-  <li><a href="#e41-appellation" id="toc-e41-appellation" class="nav-link" data-scroll-target="#e41-appellation"><span class="header-section-number">2.4.2</span> E41 Appellation</a></li>
+  <li><a href="#e58-measurement-unit" id="toc-e58-measurement-unit" class="nav-link" data-scroll-target="#e58-measurement-unit"><span class="header-section-number">4.1</span> E58 Measurement Unit</a></li>
+  <li><a href="#e41-appellation" id="toc-e41-appellation" class="nav-link" data-scroll-target="#e41-appellation"><span class="header-section-number">4.2</span> E41 Appellation</a></li>
   </ul></li>
-  <li><a href="#deprecated-crm-classes" id="toc-deprecated-crm-classes" class="nav-link" data-scroll-target="#deprecated-crm-classes"><span class="header-section-number">2.5</span> Deprecated CRM classes</a></li>
-  </ul></li>
-  <li><a href="#differences-to-the-official-encoding-of-crm-in-rdf" id="toc-differences-to-the-official-encoding-of-crm-in-rdf" class="nav-link" data-scroll-target="#differences-to-the-official-encoding-of-crm-in-rdf"><span class="header-section-number">3</span> Differences to the official encoding of CRM in RDF</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">4</span> References</a></li>
+  <li><a href="#deprecated-crm-classes" id="toc-deprecated-crm-classes" class="nav-link" data-scroll-target="#deprecated-crm-classes"><span class="header-section-number">5</span> Deprecated CRM classes</a></li>
+  <li><a href="#differences-to-the-official-encoding-of-crm-in-rdf" id="toc-differences-to-the-official-encoding-of-crm-in-rdf" class="nav-link" data-scroll-target="#differences-to-the-official-encoding-of-crm-in-rdf"><span class="header-section-number">6</span> Differences to the official encoding of CRM in RDF</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">7</span> References</a></li>
   </ul>
 </nav>
 </div>
@@ -185,7 +185,24 @@ div.csl-indent {
 <p>The CRM classes <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E95">E95 Spacetime Primitive</a> are both subclasses of <a href="http://www.cidoc-crm.org/cidoc-crm/E59">E59 Primitive Value</a> and of <a href="http://www.cidoc-crm.org/cidoc-crm/E41">E41 Appellation</a>, so <a href="#e41-appelation">the latter</a> can be used when a mapping to established RDF data types is not applicable.</p>
 <section id="temporal-data" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="temporal-data"><span class="header-section-number">2.1</span> Temporal data</h2>
-<p>Instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a> are better expressed as RDF literals of type <code>xsd:date</code>, <code>xsd:time</code>, <code>xsd:dateTime</code>, <code>xsd:dateTimeStamp</code>, or <code>xsd:gDay</code>, <code>xsd:gMonthDay</code>, <code>xsd:gMonth</code>, <code>xsd:gYear</code>, or <code>xsd:gYearMonth</code> if applicable. More complex values, in particular explicit intervals can be expressed with <a href="https://www.loc.gov/standards/datetime/">EDTF</a> and <a href="https://www.w3.org/TR/owl-time/">Time Ontology</a>&nbsp;(both mapped to each other with <a href="https://periodo.github.io/edtf-ontology/">EDTF in RDF</a>). Support of complex temporal data is limited in SPARQL, so there is no consensus yet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a> SHOULD be expressed as RDF literals with one of the following data types:</p>
+<ul>
+<li><code>xsd:date</code></li>
+<li><code>xsd:time</code></li>
+<li><code>xsd:dateTime</code></li>
+<li><code>xsd:dateTimeStamp</code></li>
+<li><code>xsd:gDay</code></li>
+<li><code>xsd:gMonthDay</code></li>
+<li><code>xsd:gMonth</code></li>
+<li><code>xsd:gYear</code></li>
+<li><code>xsd:gYearMonth</code></li>
+<li><code>edtf:EDTF</code> for more complex values, such as intervals or uncertain dates, in <a href="https://www.loc.gov/standards/datetime/">EDTF</a> syntax
+<ul>
+<li><code>edtf:EDTF-level0</code></li>
+<li><code>edtf:EDTF-level1</code></li>
+<li><code>edtf:EDTF-level2</code></li>
+</ul></li>
+</ul>
 <pre id="lst-temporal-primitives" class="ttl"><code>@prefix edtf: &lt;http://id.loc.gov/datatypes/edtf/&gt;
 @prefix unit: &lt;http://qudt.org/vocab/unit/&gt; .
 
@@ -196,22 +213,26 @@ div.csl-indent {
     "1912-04-15"^^xsd:date ,                        # date only
     "1912-04-15T02:38–05:18Z"^^xsd:dateTimeStamp ,  # precise date and time with timezone
     "1912-04-15"^^edtf:EDTF .                       # imprecise date with EDTF</code></pre>
+<p>Support of simple temporal data is included in most SPARQL processors although it is not part of the SPARQL 1.2 specification (see <a href="https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md">proposal SEP-0002</a>).</p>
+<p>More complex temoral data can be expressed with the <a href="https://www.w3.org/TR/owl-time/">Time Ontology</a> as discussed by <span class="citation" data-cites="Nys2018">Nys, Ruymbeke, and Billen (<a href="#ref-Nys2018" role="doc-biblioref">2018</a>)</span>. EDTF can be mapped to Time Ontology via <a href="https://periodo.github.io/edtf-ontology/">EDTF in RDF</a></p>
+<div class="callout-node">
 <p><span class="citation" data-cites="Doerr2020">Doerr, Light, and Hiebel (<a href="#ref-Doerr2020" role="doc-biblioref">2020</a>)</span> recommend to use additional properties for temporal intervals (<a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a>):</p>
 <ul>
 <li><code>P81a_end_of_the_begin</code> together with <code>P81b_begin_of_the_end</code> instead of <a href="http://www.cidoc-crm.org/cidoc-crm/P81">P81 ongoing throughout</a></li>
 <li><code>P82a_begin_of_the_begin</code> together with <code>P82b_end_of_the_end</code> instead of <a href="http://www.cidoc-crm.org/cidoc-crm/P82">P82 at some time within</a></li>
 </ul>
-<p>The use of these properties may lead to false assumption of precision and it introduced a solitary solution to a problem also addressed outside of CIDOC. For this reasons these additional properties should <em>not</em> be used in favour of EDTF and/or Time Ontology, for instance like this:</p>
+<p>The use of these properties may lead to false assumption of precision and it introduced a solitary solution to a problem also addressed outside of CIDOC. For this reasons these additional properties should <em>not</em> be used in favour of EDTF and/or Time Ontology.</p>
+</div>
+<p>An example:</p>
 <pre class="ttl"><code>&lt;WW1&gt; a crm:E52_Time-Span , time:TemporalEntity .
   edtfo:hasEDTFDateTimeDescription "1914/1918" ;
   time:hasBeginning [ time:inXSDgYear "1914"^^xsd:gYear ] ;
   time:hasEnd [ time:inXSDgYear "1918"^^xsd:gYear ] .</code></pre>
 <p>Temporal CRM properties such as <a href="http://www.cidoc-crm.org/cidoc-crm/P86">P86 falls within</a> should also be replaced by corresponding properties from Time Ontology such as <a href="https://www.w3.org/TR/owl-time/#time:intervalIn">time:intervalIn</a>.</p>
-<p>See also a more detailled description of combining CRM and Time Ontology by <span class="citation" data-cites="Nys2018">Nys, Ruymbeke, and Billen (<a href="#ref-Nys2018" role="doc-biblioref">2018</a>)</span>.</p>
 </section>
 <section id="geographic-data" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="geographic-data"><span class="header-section-number">2.2</span> Geographic data</h2>
-<p>Instances of <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a></strong> should be expressed using <a href="https://www.ogc.org/de/publications/standard/geosparql/">GeoSPARQL</a> Ontology as instance of <code>geo:hasGeometry</code>, compatible with various geographic data formats (WKT, GeoJSON, GML…).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> CRM Property <a href="http://www.cidoc-crm.org/cidoc-crm/P168">P168 place is defined by</a> should be expressed with RDF property <code>geo:hasGeometry</code>. CRM Properties <a href="http://www.cidoc-crm.org/cidoc-crm/P171">P171 at some place within</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/P172">P172 contains</a> can be used as RDF properties to link places (<a href="http://www.cidoc-crm.org/cidoc-crm/E53">E53 Place</a>) to outer and inner geometries but <code>geo:hasBoundingBox</code> and <code>geo:hasCentroid</code> should be preferred, if applicable.</p>
+<p>Instances of <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a></strong> should be expressed using <a href="https://www.ogc.org/de/publications/standard/geosparql/">GeoSPARQL</a> Ontology as instance of <code>geo:hasGeometry</code>, compatible with various geographic data formats (WKT, GeoJSON, GML…).<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> CRM Property <a href="http://www.cidoc-crm.org/cidoc-crm/P168">P168 place is defined by</a> should be expressed with RDF property <code>geo:hasGeometry</code>. CRM Properties <a href="http://www.cidoc-crm.org/cidoc-crm/P171">P171 at some place within</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/P172">P172 contains</a> can be used as RDF properties to link places (<a href="http://www.cidoc-crm.org/cidoc-crm/E53">E53 Place</a>) to outer and inner geometries but <code>geo:hasBoundingBox</code> and <code>geo:hasCentroid</code> should be preferred, if applicable.</p>
 <pre class="ttl"><code>&lt;TitanticWreckLocation&gt; a crm:E53_Place ;
   crm:P89_falls_within &lt;AtlanticOcean&gt; ;
   geo:hasGeometry [ a geo:Geometry ;
@@ -221,8 +242,9 @@ div.csl-indent {
 <p>GeoSPARQL properties <code>geo:hasMetricSpatialResolution</code> and/or <code>geo:hasSpatialAccuracy</code> can be used to indicate level of detail.</p>
 <p>Instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E95">E95 Spacetime Primitive</a> … (TODO)</p>
 </section>
-<section id="authority-files-and-types" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="authority-files-and-types"><span class="header-section-number">2.3</span> Authority files and types</h2>
+</section>
+<section id="authority-files-and-types" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Authority files and types</h1>
 <p>CRM class <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E32">E32 Authority Document</a></strong> and CRM property <strong><a href="http://www.cidoc-crm.org/cidoc-crm/P71">P71 lists</a></strong> MUST NOT be used in RDF but corresponding SKOS RDF classes <a href="https://www.w3.org/TR/skos-reference/#schemes">ConceptScheme</a> and <a href="https://www.w3.org/TR/skos-reference/#schemes">inScheme</a> instead. Applications MAY define <a href="https://www.w3.org/TR/skos-reference/#schemes">ConceptScheme</a> as subclass of <a href="http://www.cidoc-crm.org/cidoc-crm/E31">E31 Document</a> and <a href="https://www.w3.org/TR/skos-reference/#schemes">inScheme</a> as subproperty of <a href="http://www.cidoc-crm.org/cidoc-crm/P67">P67 refers to</a>.</p>
 <p>CRM also defines class <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E55">E55 Type</a></strong> with properties <strong><a href="http://www.cidoc-crm.org/cidoc-crm/P127">P127 has broader term</a></strong> and <strong><a href="http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term">P127i has narrower term</a></strong>. The class, used with CRM properties P2, P137, P177, P135, P125, P32, and P42, MUST NOT be used in RDF but mapped to</p>
 <ul>
@@ -230,11 +252,11 @@ div.csl-indent {
 <li>individual RDF classes, connected with <code>rdfs:subClassOf</code>.</li>
 </ul>
 </section>
-<section id="crm-classes-to-use-with-caution" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="crm-classes-to-use-with-caution"><span class="header-section-number">2.4</span> CRM Classes to use with caution</h2>
-<section id="e58-measurement-unit" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="e58-measurement-unit"><span class="header-section-number">2.4.1</span> E58 Measurement Unit</h3>
-<p>Defintion of instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E58">E58 Measurement Unit</a> should be avoided but either taken from an established vocabulary of units such as QUDT or expressed as RDF value with UCUM datatype.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<section id="crm-classes-to-use-with-caution" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> CRM Classes to use with caution</h1>
+<section id="e58-measurement-unit" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="e58-measurement-unit"><span class="header-section-number">4.1</span> E58 Measurement Unit</h2>
+<p>Defintion of instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E58">E58 Measurement Unit</a> should be avoided but either taken from an established vocabulary of units such as QUDT or expressed as RDF value with UCUM datatype.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <pre class="ttl"><code>@prefix unit: &lt;http://qudt.org/vocab/unit/&gt; .
 @prefix cdt: &lt;https://w3id.org/cdt/&gt; .
 
@@ -244,8 +266,8 @@ div.csl-indent {
     rdf:value "7 min"^^cdt:ucum                           # UCUM string
   ] .</code></pre>
 </section>
-<section id="e41-appellation" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="e41-appellation"><span class="header-section-number">2.4.2</span> E41 Appellation</h3>
+<section id="e41-appellation" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="e41-appellation"><span class="header-section-number">4.2</span> E41 Appellation</h2>
 <p><strong><a href="http://www.cidoc-crm.org/cidoc-crm/E41">E41 Appellation</a></strong> and its subclasses (<a href="http://www.cidoc-crm.org/cidoc-crm/E35">E35 Title</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E42">E42 Identifier</a>) should be avoided (see <a href="#primitive-values">above</a> for additional subclasses <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>), unless a name cannot uniquely be identified with a sequence of Unicode characters and an optional language tag:</p>
 <pre class="ttl"><code>&lt;RMSTitantic&gt;
   crm:P102_has_title "RMS Titanic"@en ;
@@ -273,14 +295,13 @@ div.csl-indent {
       crm:P190_has_symbolic_content "http://kbpedia.org/kko/rc/RMS-Titanic-TheShip" ] .</code></pre>
 </section>
 </section>
-<section id="deprecated-crm-classes" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="deprecated-crm-classes"><span class="header-section-number">2.5</span> Deprecated CRM classes</h2>
+<section id="deprecated-crm-classes" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Deprecated CRM classes</h1>
 <p>CRM is constantly evolving, so some CRM classes have been renamed or replaced. Outdated classes and properties MUST be supported nevertheless to integrate data that has already been published.</p>
 <p>See <span class="citation" data-cites="CRMResources"><span>“Versions of the CIDOC-CRM”</span> (<a href="#ref-CRMResources" role="doc-biblioref">2025</a>)</span> for a list of CRM versions.</p>
 </section>
-</section>
-<section id="differences-to-the-official-encoding-of-crm-in-rdf" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Differences to the official encoding of CRM in RDF</h1>
+<section id="differences-to-the-official-encoding-of-crm-in-rdf" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Differences to the official encoding of CRM in RDF</h1>
 <p>An official encoding of CRM in RDF is published since version 7.1.2, managed at <a href="https://gitlab.isl.ics.forth.gr/cidoc-crm/cidoc_crm_rdf/" class="uri">https://gitlab.isl.ics.forth.gr/cidoc-crm/cidoc_crm_rdf/</a> (<span class="citation" data-cites="Doerr2020">Doerr, Light, and Hiebel (<a href="#ref-Doerr2020" role="doc-biblioref">2020</a>)</span>). The encoding of CRM in RDF described in this document differes by introduction of SKOS:</p>
 <ul>
 <li><p><a href="http://www.cidoc-crm.org/cidoc-crm/E55">E55 Type</a> has been replaced by <a href="https://www.w3.org/TR/skos-reference/#concepts">Concept</a> and the latter is defined subclass of <a href="http://www.cidoc-crm.org/cidoc-crm/E28">E28 Conceptual Object</a> (instead of defining <a href="https://www.w3.org/TR/skos-reference/#concepts">Concept</a> a subclass of <a href="http://www.cidoc-crm.org/cidoc-crm/E55">E55 Type</a>).</p></li>
@@ -292,8 +313,8 @@ div.csl-indent {
 <p>In addition the use of non-standard temporal properties such as <code>P81a_end_of_the_begin</code> and <code>P82b_end_of_the_end</code> will likely be discouraged in favour of <a href="https://www.w3.org/TR/owl-time/">Time Ontology</a> and <a href="https://www.loc.gov/standards/datetime/">EDTF</a>.</p>
 <p>Rationales: integration with terminologies and simplification of queries.</p>
 </section>
-<section id="references" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> References</h1>
+<section id="references" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> References</h1>
 <!-- TODO: add SKOS -->
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-Doerr2020" class="csl-entry" role="listitem">
@@ -312,9 +333,8 @@ Nys, Gilles-Antoine, Muriel van Ruymbeke, and Roland Billen. 2018. <span>“Spat
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>See discussion to extend SPARQL 1.2 <a href="https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md">for simple dates</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>See also CRM Geo draft at <a href="http://www.cidoc-crm.org/extensions/crmgeo/" class="uri">http://www.cidoc-crm.org/extensions/crmgeo/</a>, defining superclasses of <code>geo:Geometry</code>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>See <a href="https://ci.mines-stetienne.fr/lindt/v4/custom_datatypes#ucum">cdt:ucum</a> and <a href="https://qudt.org/">QUDT</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>See also CRM Geo draft at <a href="http://www.cidoc-crm.org/extensions/crmgeo/" class="uri">http://www.cidoc-crm.org/extensions/crmgeo/</a>, defining superclasses of <code>geo:Geometry</code>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>See <a href="https://ci.mines-stetienne.fr/lindt/v4/custom_datatypes#ucum">cdt:ucum</a> and <a href="https://qudt.org/">QUDT</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->
