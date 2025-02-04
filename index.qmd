@@ -76,6 +76,8 @@ Temporal CRM properties such as [P86 falls within] should also be replaced by co
 [P82 at some time within]: http://www.cidoc-crm.org/cidoc-crm/P82
 [P86 falls within]: http://www.cidoc-crm.org/cidoc-crm/P86
 
+See also a more detailled description of combining CRM and Time Ontology by @Nys2018.
+
 ## Geographic data
 
 Instances of **[E94 Space Primitive]** should be expressed using [GeoSPARQL] Ontology as instance of `geo:hasGeometry`, compatible with various geographic data formats (WKT, GeoJSON, GML...).^[See also CRM Geo draft at <http://www.cidoc-crm.org/extensions/crmgeo/>, defining superclasses of `geo:Geometry`.] CRM Property [P168 place is defined by] should be expressed with RDF property `geo:hasGeometry`. CRM Properties [P171 at some place within], and [P172 contains] can be used as RDF properties to link places ([E53 Place]) to outer and inner geometries but `geo:hasBoundingBox` and `geo:hasCentroid` should be preferred, if applicable.
@@ -99,7 +101,7 @@ Instances of [E95 Spacetime Primitive] ... (TODO)
 [P172 contains]: http://www.cidoc-crm.org/cidoc-crm/P172
 [P168 place is defined by]: http://www.cidoc-crm.org/cidoc-crm/P168
 
-### Authority files and types
+## Authority files and types
 
 CRM class **[E32 Authority Document]** and CRM property **[P71 lists]** MUST NOT be used in RDF but corresponding SKOS RDF classes [ConceptScheme] and [inScheme] instead. Applications MAY define [ConceptScheme] as subclass of [E31 Document] and [inScheme] as subproperty of [P67 refers to].
 
