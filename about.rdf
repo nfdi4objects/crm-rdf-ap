@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xml:lang="en" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xml:base="http://www.cidoc-crm.org/cidoc-crm/" xmlns:vann="http://purl.org/vocab/vann/" xmlns:dcterms="http://purl.org/dc/terms/">
+
+  <rdf:Description rdf:about="http://www.cidoc-crm.org/cidoc-crm/">
+    <vann:preferredNamespacePrefix>crm</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>http://www.cidoc-crm.org/cidoc-crm/</vann:preferredNamespaceUri>
+    <dcterms:title>CIDOC CRM AP</dcterms:title> 
+    <dcterms:description>
+      CIDOC CRM Application profile based on CRM, SKOS, DCTERMS, BIBO, GeoSPARQL and Time Ontology.
+    </dcterms:description>
+  </rdf:Description>
+
+  <!-- Geographic data -->
+  <rdf:Property rdf:about="P171_at_some_place_within">
+    <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Geometry" />
+  </rdf:Property>
+  <rdf:Property rdf:about="P172_contains">
+    <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Geometry" />
+  </rdf:Property>
+
+</rdf:RDF>

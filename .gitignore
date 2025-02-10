@@ -1,2 +1,4 @@
 /.quarto/
 docs/
+node_modules/
+.venv/

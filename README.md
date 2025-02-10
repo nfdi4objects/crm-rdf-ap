@@ -8,8 +8,11 @@ The guidelines are written in Markdown with [quarto](https://quarto.org/) in fil
 
 The repository further contains two RDF files:
 
-- [skos.rdf](skos.rdf) a copy of SKOS ontology
 - [cidoc-crm.rdf](cidoc-crm.rdf) adjusted CIDOC-CRM ontology
+- [skos.rdf](skos.rdf) a copy of SKOS ontology
+- [time.ttl](time.ttl) a copy of Time Ontology
+- [geo.ttl](geo.ttl) a copy of GeoSPARQL Ontology
+- [bibo.ttl](bibo.ttl) a copy of Bibliographic Ontology
 
 ## License
 

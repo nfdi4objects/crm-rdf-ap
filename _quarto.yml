@@ -2,6 +2,9 @@ project:
   type: manuscript
   output-dir: docs
 
+resources:
+  - crm-rdf-ap.html
+
 repo-url: https://github.com/nfdi4objects/crm-rdf-ap
 
 manuscript:

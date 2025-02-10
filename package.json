@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "rdffilter": "rdffilter -f filter.js -t turtle"
+  },
+  "type": "module",
+  "dependencies": {
+    "rdffilter": "^0.4.0",
+    "rdfxml-streaming-parser": "^3.0.1"
+  }
+}
