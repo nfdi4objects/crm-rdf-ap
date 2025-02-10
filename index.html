@@ -185,7 +185,7 @@ div.csl-indent {
 <p>The CRM classes <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E95">E95 Spacetime Primitive</a> are both subclasses of <a href="http://www.cidoc-crm.org/cidoc-crm/E59">E59 Primitive Value</a> and of <a href="http://www.cidoc-crm.org/cidoc-crm/E41">E41 Appellation</a>, so <a href="#e41-appelation">the latter</a> can be used when a mapping to established RDF data types is not applicable.</p>
 <section id="temporal-data" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="temporal-data"><span class="header-section-number">2.1</span> Temporal data</h2>
-<p>Instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a> SHOULD be expressed as RDF literals with one of the following data types:</p>
+<p>Instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a> SHOULD be expressed as RDF literals with one of the following data types or as instance of [TemporalEntity] or its subclasses from <a href="https://www.w3.org/TR/owl-time/">Time Ontology</a>. :</p>
 <ul>
 <li><code>xsd:date</code></li>
 <li><code>xsd:time</code></li>
@@ -215,20 +215,30 @@ div.csl-indent {
     "1912-04-15"^^edtf:EDTF .                       # imprecise date with EDTF</code></pre>
 <p>Support of simple temporal data is included in most SPARQL processors although it is not part of the SPARQL 1.2 specification (see <a href="https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md">proposal SEP-0002</a>).</p>
 <p>More complex temoral data can be expressed with the <a href="https://www.w3.org/TR/owl-time/">Time Ontology</a> as discussed by <span class="citation" data-cites="Nys2018">Nys, Ruymbeke, and Billen (<a href="#ref-Nys2018" role="doc-biblioref">2018</a>)</span>. EDTF can be mapped to Time Ontology via <a href="https://periodo.github.io/edtf-ontology/">EDTF in RDF</a></p>
-<div class="callout-node">
-<p><span class="citation" data-cites="Doerr2020">Doerr, Light, and Hiebel (<a href="#ref-Doerr2020" role="doc-biblioref">2020</a>)</span> recommend to use additional properties for temporal intervals (<a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a>):</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="citation" data-cites="Doerr2020">Doerr, Light, and Hiebel (<a href="#ref-Doerr2020" role="doc-biblioref">2020</a>)</span> recommended to use additional properties for temporal intervals (<a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a>):</p>
 <ul>
 <li><code>P81a_end_of_the_begin</code> together with <code>P81b_begin_of_the_end</code> instead of <a href="http://www.cidoc-crm.org/cidoc-crm/P81">P81 ongoing throughout</a></li>
 <li><code>P82a_begin_of_the_begin</code> together with <code>P82b_end_of_the_end</code> instead of <a href="http://www.cidoc-crm.org/cidoc-crm/P82">P82 at some time within</a></li>
 </ul>
 <p>The use of these properties may lead to false assumption of precision and it introduced a solitary solution to a problem also addressed outside of CIDOC. For this reasons these additional properties should <em>not</em> be used in favour of EDTF and/or Time Ontology.</p>
 </div>
+</div>
 <p>An example:</p>
 <pre class="ttl"><code>&lt;WW1&gt; a crm:E52_Time-Span , time:TemporalEntity .
   edtfo:hasEDTFDateTimeDescription "1914/1918" ;
   time:hasBeginning [ time:inXSDgYear "1914"^^xsd:gYear ] ;
   time:hasEnd [ time:inXSDgYear "1918"^^xsd:gYear ] .</code></pre>
-<p>Temporal CRM properties such as <a href="http://www.cidoc-crm.org/cidoc-crm/P86">P86 falls within</a> should also be replaced by corresponding properties from Time Ontology such as <a href="https://www.w3.org/TR/owl-time/#time:intervalIn">time:intervalIn</a>.</p>
+<p>Temporal CRM properties such as <a href="http://www.cidoc-crm.org/cidoc-crm/P86">P86 falls within</a> should also be replaced by corresponding properties from Time Ontology such as <a href="https://www.w3.org/TR/owl-time/#time:intervalIn">intervalIn</a>.</p>
 </section>
 <section id="geographic-data" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="geographic-data"><span class="header-section-number">2.2</span> Geographic data</h2>
