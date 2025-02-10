@@ -18,4 +18,19 @@
     <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Geometry" />
   </rdf:Property>
 
+  <!-- SKOS -->
+  <owl:Ontology rdf:about="http://www.w3.org/2004/02/skos">
+    <vann:preferredNamespacePrefix>skos</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>http://www.w3.org/2008/05/skos</vann:preferredNamespaceUri>
+  </owl:Ontology>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+    <rdfs:subClassOf rdf:resource="E31_Document" />
+  </rdf:Property>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+    <rdfs:subClassOf rdf:resource="E27_Conceptual_Object" />
+  </rdf:Property>
+  <rdf:Property rdf:about="http://www.w3.org/2004/02/skos/core#inScheme">
+    <rdfs:subPropertyOf rdf:resource="P67_refers_to" />
+  </rdf:Property>
+
 </rdf:RDF>

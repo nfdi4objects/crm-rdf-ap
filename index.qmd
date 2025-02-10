@@ -125,12 +125,15 @@ Instances of [E95 Spacetime Primitive] ... (TODO)
 
 # Authority files and types
 
-CRM class **[E32 Authority Document]** and CRM property **[P71 lists]** MUST NOT be used in RDF but corresponding SKOS RDF classes [ConceptScheme] and [inScheme] instead. Applications MAY define [ConceptScheme] as subclass of [E31 Document] and [inScheme] as subproperty of [P67 refers to].
+CRM class **[E32 Authority Document]** and CRM property **[P71 lists]** MUST NOT be used in RDF but corresponding SKOS RDF classes [ConceptScheme] and [inScheme] instead.
 
-CRM also defines class **[E55 Type]** with properties **[P127 has broader term]** and **[P127i has narrower term]**. The class, used with CRM properties P2, P137, P177, P135, P125, P32, and P42, MUST NOT be used in RDF but mapped to
+CRM also defines class **[E55 Type]** with properties **[P127 has broader term]** and **[P127i has narrower term]**. The class MUST NOT be used in RDF. Instead it can be mapped to one of:
 
-- `skos:Concept` and `skos:broader`/`skos:narrower` or to
-- individual RDF classes, connected with `rdfs:subClassOf`.
+- `skos:Concept` and `skos:broader`/`skos:narrower`, or to
+- individual RDF classes, connected with `rdfs:subClassOf`, or
+- a more specific sublass or more generic superclass of [E55 Type], such as [E56 Language] and [E28 Conceptual Object].
+
+Applications MAY define [ConceptScheme] as subclass of [E31 Document], [Concept] a subclass of [E27 Conceptual Object] and [inScheme] as subproperty of [P67 refers to].
 
 [P127 has broader term]: http://www.cidoc-crm.org/cidoc-crm/P127
 [P127i has narrower term]: http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term
@@ -242,6 +245,7 @@ Rationales: integration with terminologies and simplification of queries.
 [E35 Title]: http://www.cidoc-crm.org/cidoc-crm/E35
 [E42 Identifier]: http://www.cidoc-crm.org/cidoc-crm/E42
 [E55 Type]: http://www.cidoc-crm.org/cidoc-crm/E55
+[E56 Language]: http://www.cidoc-crm.org/cidoc-crm/E56
 [E58 Measurement Unit]: http://www.cidoc-crm.org/cidoc-crm/E58
 [E52 Time-Span]: http://www.cidoc-crm.org/cidoc-crm/E52
 [E53 Place]: http://www.cidoc-crm.org/cidoc-crm/E53

@@ -6,6 +6,10 @@
     <http://www.w3.org/2000/01/rdf-schema#range> <http://www.opengis.net/ont/geosparql#Geometry>.
 <http://www.cidoc-crm.org/cidoc-crm/P172_contains> a <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
     <http://www.w3.org/2000/01/rdf-schema#range> <http://www.opengis.net/ont/geosparql#Geometry>.
+<http://www.w3.org/2004/02/skos> a <http://www.w3.org/2002/07/owl#Ontology>;
+    <http://purl.org/vocab/vann/preferredNamespacePrefix> "skos"@en;
+    <http://purl.org/vocab/vann/preferredNamespaceUri> "http://www.w3.org/2008/05/skos"@en.
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.cidoc-crm.org/cidoc-crm/E31_Document>.
 <http://purl.org/dc/terms/creator> a <http://www.w3.org/2002/07/owl#AnnotationProperty>.
 <http://purl.org/dc/terms/description> a <http://www.w3.org/2002/07/owl#AnnotationProperty>, <http://www.w3.org/2002/07/owl#DatatypeProperty>;
     <http://www.w3.org/2004/02/skos/core#scopeNote> "Used to describe a bibliographic resource."@en.
@@ -3492,343 +3496,348 @@ _:b0_genid12 a <http://www.w3.org/2002/07/owl#Restriction>;
     <http://www.w3.org/2004/02/skos/core#prefLabel> "Spatial Object Collection"@en;
     <http://www.w3.org/2004/02/skos/core#definition> "A collection of individual Spatial Objects."@en;
     <http://www.w3.org/2004/02/skos/core#note> "This is the superclass of Feature Collection and Geometry Collection."@en.
-<http://www.w3.org/2008/05/skos#Concept> a <http://www.w3.org/2002/07/owl#Class>;
+<http://www.w3.org/2004/02/skos> a <http://www.w3.org/2002/07/owl#Ontology>;
+    <http://purl.org/dc/elements/1.1/title> "SKOS Core Vocabulary"@en;
+    <http://purl.org/dc/elements/1.1/contributor> "Dave Beckett", "Nikki Rogers", "Participants in W3C's Semantic Web Deployment Working Group.";
+    <http://purl.org/dc/elements/1.1/description> "An RDF vocabulary for describing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', other types of controlled vocabulary, and also concept schemes embedded in glossaries and terminologies."@en;
+    <http://purl.org/dc/elements/1.1/creator> "Alistair Miles", "Sean Bechhofer".
+<http://www.w3.org/2004/02/skos#Concept> a <http://www.w3.org/2002/07/owl#Class>;
     <http://www.w3.org/2000/01/rdf-schema#label> "Concept"@en.
 _:b0_genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#Concept> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid1;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "An abstract idea or notion; a unit of thought."@en;
+<http://www.w3.org/2004/02/skos#Concept> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid1;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "An abstract idea or notion; a unit of thought."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#ConceptScheme> a <http://www.w3.org/2002/07/owl#Class>;
+<http://www.w3.org/2004/02/skos#ConceptScheme> a <http://www.w3.org/2002/07/owl#Class>;
     <http://www.w3.org/2000/01/rdf-schema#label> "Concept Scheme"@en.
 _:b0_genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#ConceptScheme> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid2;
-    <http://www.w3.org/2002/07/owl#disjointWith> <http://www.w3.org/2008/05/skos#Concept>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A set of concepts, optionally including statements about semantic relationships between those concepts."@en;
+<http://www.w3.org/2004/02/skos#ConceptScheme> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid2;
+    <http://www.w3.org/2002/07/owl#disjointWith> <http://www.w3.org/2004/02/skos#Concept>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A set of concepts, optionally including statements about semantic relationships between those concepts."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#Collection> a <http://www.w3.org/2002/07/owl#Class>;
+<http://www.w3.org/2004/02/skos#Collection> a <http://www.w3.org/2002/07/owl#Class>;
     <http://www.w3.org/2000/01/rdf-schema#label> "Collection"@en.
 _:b0_genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#Collection> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid3;
-    <http://www.w3.org/2002/07/owl#disjointWith> <http://www.w3.org/2008/05/skos#Concept>, <http://www.w3.org/2008/05/skos#ConceptScheme>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A meaningful collection of concepts."@en;
+<http://www.w3.org/2004/02/skos#Collection> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid3;
+    <http://www.w3.org/2002/07/owl#disjointWith> <http://www.w3.org/2004/02/skos#Concept>, <http://www.w3.org/2004/02/skos#ConceptScheme>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A meaningful collection of concepts."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#OrderedCollection> a <http://www.w3.org/2002/07/owl#Class>;
+<http://www.w3.org/2004/02/skos#OrderedCollection> a <http://www.w3.org/2002/07/owl#Class>;
     <http://www.w3.org/2000/01/rdf-schema#label> "Ordered Collection"@en.
 _:b0_genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#OrderedCollection> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid4;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2008/05/skos#Collection>;
-    <http://www.w3.org/2008/05/skos#definition> "An ordered collection of concepts, where both the grouping and the ordering are meaningful."@en;
+<http://www.w3.org/2004/02/skos#OrderedCollection> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid4;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos#Collection>;
+    <http://www.w3.org/2004/02/skos#definition> "An ordered collection of concepts, where both the grouping and the ordering are meaningful."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#inScheme> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#inScheme> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "in scheme"@en.
 _:b0_genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#inScheme> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid5;
-    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2008/05/skos#ConceptScheme>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A concept scheme in which the concept is included."@en;
+<http://www.w3.org/2004/02/skos#inScheme> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid5;
+    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos#ConceptScheme>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A concept scheme in which the concept is included."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#hasTopConcept> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#hasTopConcept> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "has top concept"@en.
 _:b0_genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#hasTopConcept> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid6;
-    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2008/05/skos#ConceptScheme>;
-    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2008/05/skos#Concept>;
-    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2008/05/skos#topConceptOf>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A top level concept in the concept scheme."@en;
+<http://www.w3.org/2004/02/skos#hasTopConcept> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid6;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2004/02/skos#ConceptScheme>;
+    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos#Concept>;
+    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2004/02/skos#topConceptOf>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A top level concept in the concept scheme."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#topConceptOf> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#topConceptOf> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "top concept in scheme"@en.
 _:b0_genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#topConceptOf> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid7;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#inScheme>;
-    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2008/05/skos#Concept>;
-    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2008/05/skos#ConceptScheme>;
-    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2008/05/skos#hasTopConcept>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "Relates a concept to the concept scheme that it is a top level concept of."@en;
+<http://www.w3.org/2004/02/skos#topConceptOf> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid7;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#inScheme>;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2004/02/skos#Concept>;
+    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos#ConceptScheme>;
+    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2004/02/skos#hasTopConcept>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "Relates a concept to the concept scheme that it is a top level concept of."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#prefLabel> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+<http://www.w3.org/2004/02/skos#prefLabel> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "preferred label"@en;
     <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/01/rdf-schema#label>.
 _:b0_genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#prefLabel> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid8;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "The preferred lexical label for a resource, in a given language."@en;
+<http://www.w3.org/2004/02/skos#prefLabel> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid8;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "The preferred lexical label for a resource, in a given language."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#altLabel> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+<http://www.w3.org/2004/02/skos#altLabel> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "alternative label"@en;
     <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/01/rdf-schema#label>.
 _:b0_genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#altLabel> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid9;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "An alternative lexical label for a resource."@en;
+<http://www.w3.org/2004/02/skos#altLabel> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid9;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "An alternative lexical label for a resource."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#hiddenLabel> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+<http://www.w3.org/2004/02/skos#hiddenLabel> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "hidden label"@en;
     <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/01/rdf-schema#label>.
 _:b0_genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#hiddenLabel> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid10;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A lexical label for a resource that should be hidden when generating visual displays of the resource, but should still be accessible to free text search operations."@en;
+<http://www.w3.org/2004/02/skos#hiddenLabel> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid10;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A lexical label for a resource that should be hidden when generating visual displays of the resource, but should still be accessible to free text search operations."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#notation> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+<http://www.w3.org/2004/02/skos#notation> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "notation"@en.
 _:b0_genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Alistair Miles";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#notation> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid11;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A notation, also known as classification code, is a string of characters such as \"T58.5\" or \"303.4833\" used to uniquely identify a concept within the scope of a given concept scheme."@en;
+<http://www.w3.org/2004/02/skos#notation> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid11;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A notation, also known as classification code, is a string of characters such as \"T58.5\" or \"303.4833\" used to uniquely identify a concept within the scope of a given concept scheme."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#note> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#note> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "note"@en.
 _:b0_genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#note> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid12;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A general note, for any purpose."@en;
+<http://www.w3.org/2004/02/skos#note> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid12;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A general note, for any purpose."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#changeNote> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#changeNote> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "change note"@en.
 _:b0_genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#changeNote> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid13;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#note>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A note about a modification to a concept."@en;
+<http://www.w3.org/2004/02/skos#changeNote> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid13;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#note>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A note about a modification to a concept."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#definition> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#definition> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "definition"@en.
 _:b0_genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#definition> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid14;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#note>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A statement or formal explanation of the meaning of a concept."@en;
+<http://www.w3.org/2004/02/skos#definition> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid14;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#note>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A statement or formal explanation of the meaning of a concept."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#editorialNote> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#editorialNote> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "editorial note"@en.
 _:b0_genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#editorialNote> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid15;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#note>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A note for an editor, translator or maintainer of the vocabulary."@en;
+<http://www.w3.org/2004/02/skos#editorialNote> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid15;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#note>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A note for an editor, translator or maintainer of the vocabulary."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#example> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#example> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "example"@en.
 _:b0_genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#example> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid16;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#note>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "An example of the use of a concept."@en;
+<http://www.w3.org/2004/02/skos#example> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid16;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#note>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "An example of the use of a concept."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#historyNote> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#historyNote> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "history note"@en.
 _:b0_genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#historyNote> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid17;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#note>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A note about the past state/use/meaning of a concept."@en;
+<http://www.w3.org/2004/02/skos#historyNote> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid17;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#note>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A note about the past state/use/meaning of a concept."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#scopeNote> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#scopeNote> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "scope note"@en.
 _:b0_genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#scopeNote> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid18;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#note>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A note that helps to clarify the meaning of a concept."@en;
+<http://www.w3.org/2004/02/skos#scopeNote> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid18;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#note>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A note that helps to clarify the meaning of a concept."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#semanticRelation> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#semanticRelation> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "semantic relation"@en.
 _:b0_genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#semanticRelation> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid19;
-    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2008/05/skos#Concept>;
-    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2008/05/skos#Concept>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A concept related by meaning."@en;
+<http://www.w3.org/2004/02/skos#semanticRelation> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid19;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2004/02/skos#Concept>;
+    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos#Concept>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A concept related by meaning."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#broader> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#broader> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "has broader"@en.
 _:b0_genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#broader> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid20;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#broaderTransitive>;
-    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2008/05/skos#narrower>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A concept that is more general in meaning."@en;
+<http://www.w3.org/2004/02/skos#broader> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid20;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#broaderTransitive>;
+    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2004/02/skos#narrower>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A concept that is more general in meaning."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#narrower> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#narrower> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "has narrower"@en.
 _:b0_genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#narrower> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid21;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#narrowerTransitive>;
-    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2008/05/skos#broader>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A concept that is more specific in meaning."@en;
+<http://www.w3.org/2004/02/skos#narrower> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid21;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#narrowerTransitive>;
+    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2004/02/skos#broader>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A concept that is more specific in meaning."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#related> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#related> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "related to"@en.
 _:b0_genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#related> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid22;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#semanticRelation>;
+<http://www.w3.org/2004/02/skos#related> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid22;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#semanticRelation>;
     a <http://www.w3.org/2002/07/owl#SymmetricProperty>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A concept with which there is an associative semantic relationship."@en;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A concept with which there is an associative semantic relationship."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#broaderTransitive> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#broaderTransitive> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "broader transitive"@en.
 _:b0_genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#broaderTransitive> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid23;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#semanticRelation>;
+<http://www.w3.org/2004/02/skos#broaderTransitive> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid23;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#semanticRelation>;
     a <http://www.w3.org/2002/07/owl#TransitiveProperty>;
-    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2008/05/skos#narrowerTransitive>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "skos:broaderTransitive is a transitive superproperty of skos:broader.";
+    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2004/02/skos#narrowerTransitive>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "skos:broaderTransitive is a transitive superproperty of skos:broader.";
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#narrowerTransitive> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#narrowerTransitive> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "narrower transitive"@en.
 _:b0_genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#narrowerTransitive> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid24;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#semanticRelation>;
+<http://www.w3.org/2004/02/skos#narrowerTransitive> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid24;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#semanticRelation>;
     a <http://www.w3.org/2002/07/owl#TransitiveProperty>;
-    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2008/05/skos#broaderTransitive>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "skos:narrowerTransitive is a transitive superproperty of skos:broader. By convention, skos:narrowerTransitive is not intended to be used in assertions, but provides a mechanism whereby the transitive closure of skos:narrower can be queried.";
+    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2004/02/skos#broaderTransitive>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "skos:narrowerTransitive is a transitive superproperty of skos:broader. By convention, skos:narrowerTransitive is not intended to be used in assertions, but provides a mechanism whereby the transitive closure of skos:narrower can be queried.";
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#member> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#member> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "member"@en.
 _:b0_genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#member> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid25;
-    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2008/05/skos#Collection>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "A member of a collection."@en;
+<http://www.w3.org/2004/02/skos#member> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid25;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2004/02/skos#Collection>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "A member of a collection."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#memberList> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#memberList> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "member list"@en.
 _:b0_genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#memberList> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid26;
-    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2008/05/skos#OrderedCollection>;
+<http://www.w3.org/2004/02/skos#memberList> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid26;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2004/02/skos#OrderedCollection>;
     a <http://www.w3.org/2002/07/owl#FunctionalProperty>;
     <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "An RDF list containing the members of an ordered collection."@en;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "An RDF list containing the members of an ordered collection."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#mappingRelation> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#mappingRelation> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "mapping relation"@en.
 _:b0_genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#mappingRelation> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid27;
-    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2008/05/skos#Concept>;
-    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2008/05/skos#Concept>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "Definition"@en;
+<http://www.w3.org/2004/02/skos#mappingRelation> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid27;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2004/02/skos#Concept>;
+    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos#Concept>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "Definition"@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#broadMatch> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#broadMatch> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "broader match"@en.
 _:b0_genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#broadMatch> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid28;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#mappingRelation>, <http://www.w3.org/2008/05/skos#broader>;
-    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2008/05/skos#narrowMatch>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "skos:broadMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes."@en;
+<http://www.w3.org/2004/02/skos#broadMatch> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid28;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#mappingRelation>, <http://www.w3.org/2004/02/skos#broader>;
+    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2004/02/skos#narrowMatch>;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "skos:broadMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#narrowMatch> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#mappingRelation>, <http://www.w3.org/2008/05/skos#narrower>;
-    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2008/05/skos#broadMatch>;
+<http://www.w3.org/2004/02/skos#narrowMatch> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#mappingRelation>, <http://www.w3.org/2004/02/skos#narrower>;
+    <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2004/02/skos#broadMatch>;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
 _:b0_genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#narrowMatch> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid29;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "skos:narrowMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes."@en;
+<http://www.w3.org/2004/02/skos#narrowMatch> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid29;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "skos:narrowMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes."@en;
     <http://www.w3.org/2000/01/rdf-schema#label> "narrower match"@en.
-<http://www.w3.org/2008/05/skos#relatedMatch> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#relatedMatch> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "related match"@en.
 _:b0_genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#relatedMatch> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid30;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#mappingRelation>, <http://www.w3.org/2008/05/skos#related>;
+<http://www.w3.org/2004/02/skos#relatedMatch> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid30;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#mappingRelation>, <http://www.w3.org/2004/02/skos#related>;
     a <http://www.w3.org/2002/07/owl#SymmetricProperty>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "skos:relatedMatch is used to state an associative mapping link between two conceptual resources in different concept schemes."@en;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "skos:relatedMatch is used to state an associative mapping link between two conceptual resources in different concept schemes."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#exactMatch> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#exactMatch> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "exact match"@en.
 _:b0_genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#exactMatch> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid31;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#closeMatch>;
+<http://www.w3.org/2004/02/skos#exactMatch> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid31;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#closeMatch>;
     a <http://www.w3.org/2002/07/owl#SymmetricProperty>, <http://www.w3.org/2002/07/owl#TransitiveProperty>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch."@en;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#closeMatch> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+<http://www.w3.org/2004/02/skos#closeMatch> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
     <http://www.w3.org/2000/01/rdf-schema#label> "exact match"@en.
 _:b0_genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> "Initial description.";
     <http://purl.org/dc/elements/1.1/creator> "Sean Bechhofer";
     <http://purl.org/dc/elements/1.1/date> "2008-05-xx".
-<http://www.w3.org/2008/05/skos#closeMatch> <http://www.w3.org/2008/05/skos#changeNote> _:b0_genid32;
-    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2008/05/skos#mappingRelation>;
+<http://www.w3.org/2004/02/skos#closeMatch> <http://www.w3.org/2004/02/skos#changeNote> _:b0_genid32;
+    <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2004/02/skos#mappingRelation>;
     a <http://www.w3.org/2002/07/owl#SymmetricProperty>;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2008/05/skos>;
-    <http://www.w3.org/2008/05/skos#definition> "skos:closeMatch is used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications. In order to avoid the possibility of \"compound errors\" when combining mappings across more than two concept schemes, skos:closeMatch is not declared to be a transitive property."@en;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos>;
+    <http://www.w3.org/2004/02/skos#definition> "skos:closeMatch is used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications. In order to avoid the possibility of \"compound errors\" when combining mappings across more than two concept schemes, skos:closeMatch is not declared to be a transitive property."@en;
     <http://purl.org/dc/terms/issued> "2008-05-xx".
 _:b0_genid1 a <http://www.w3.org/2002/07/owl#Restriction>;
     <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#gDay>;
