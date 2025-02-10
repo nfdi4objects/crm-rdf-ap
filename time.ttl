@@ -699,11 +699,6 @@ The range of this property is not specified, so can be replaced by any specific 
 Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en ;
   rdfs:label "Generalized day"@en ;
   owl:onDatatype xsd:string ;
-  owl:withRestrictions (
-      [
-        xsd:pattern "---(0[1-9]|[1-9][0-9])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" ;
-      ]
-    ) ;
   skos:definition """Day of month - formulated as a text string with a pattern constraint to reproduce the same lexical form as gDay, except that values up to 99 are permitted, in order to support calendars with more than 31 days in a month. 
 Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en ;
 .
@@ -713,11 +708,6 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
 Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en ;
   rdfs:label "Generalized month"@en ;
   owl:onDatatype xsd:string ;
-  owl:withRestrictions (
-      [
-        xsd:pattern "--(0[1-9]|1[0-9]|20)(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" ;
-      ]
-    ) ;
   skos:definition """Month of year - formulated as a text string with a pattern constraint to reproduce the same lexical form as gMonth, except that values up to 20 are permitted, in order to support calendars with more than 12 months in the year. 
 Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en ;
 .
@@ -727,11 +717,6 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
 Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en ;
   rdfs:label "Generalized year"@en ;
   owl:onDatatype xsd:string ;
-  owl:withRestrictions (
-      [
-        xsd:pattern "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" ;
-      ]
-    ) ;
   skos:definition """Year number - formulated as a text string with a pattern constraint to reproduce the same lexical form as gYear, but not restricted to values from the Gregorian calendar. 
 Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."""@en ;
 .
