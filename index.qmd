@@ -36,7 +36,8 @@ The CRM classes [E61 Time Primitive], [E94 Space Primitive], and [E95 Spacetime 
 
 ## Temporal data
 
-Instances of [E61 Time Primitive] and [E52 Time-Span] SHOULD be expressed as RDF literals with one of the following data types:
+Instances of [E61 Time Primitive] and [E52 Time-Span] SHOULD be expressed as RDF literals with one of the following data types or as instance of [TemporalEntity] or its subclasses from [Time Ontology].
+:
 
 - `xsd:date`
 - `xsd:time`
@@ -69,9 +70,9 @@ Support of simple temporal data is included in most SPARQL processors although i
 
 More complex temoral data can be expressed with the [Time Ontology] as discussed by @Nys2018. EDTF can be mapped to Time Ontology via [EDTF in RDF]
 
-::: {.callout-node}
+::: {.callout-note}
 
-@Doerr2020 recommend to use additional properties for temporal intervals ([E52 Time-Span]):
+@Doerr2020 recommended to use additional properties for temporal intervals ([E52 Time-Span]):
 
 - `P81a_end_of_the_begin` together with  `P81b_begin_of_the_end` instead of [P81 ongoing throughout]
 - `P82a_begin_of_the_begin` together with `P82b_end_of_the_end` instead of [P82 at some time within]
@@ -89,12 +90,11 @@ An example:
   time:hasEnd [ time:inXSDgYear "1918"^^xsd:gYear ] .
 ~~~
 
-Temporal CRM properties such as [P86 falls within] should also be replaced by corresponding properties from Time Ontology such as [time:intervalIn].
+Temporal CRM properties such as [P86 falls within] should also be replaced by corresponding properties from Time Ontology such as [intervalIn].
 
 [Time Ontology]: https://www.w3.org/TR/owl-time/
 [EDTF in RDF]: https://periodo.github.io/edtf-ontology/
-[time:intervalIn]: https://www.w3.org/TR/owl-time/#time:intervalIn
-
+[intervalIn]: https://www.w3.org/TR/owl-time/#time:intervalIn
 [EDTF]: https://www.loc.gov/standards/datetime/
 [P81 ongoing throughout]: http://www.cidoc-crm.org/cidoc-crm/P81
 [P82 at some time within]: http://www.cidoc-crm.org/cidoc-crm/P82
