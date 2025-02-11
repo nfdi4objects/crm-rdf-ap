@@ -142,7 +142,7 @@ div.csl-indent {
   <li><a href="#e41-appellation" id="toc-e41-appellation" class="nav-link" data-scroll-target="#e41-appellation"><span class="header-section-number">4.2</span> E41 Appellation</a></li>
   </ul></li>
   <li><a href="#deprecated-crm-classes" id="toc-deprecated-crm-classes" class="nav-link" data-scroll-target="#deprecated-crm-classes"><span class="header-section-number">5</span> Deprecated CRM classes</a></li>
-  <li><a href="#bibliographic-references" id="toc-bibliographic-references" class="nav-link" data-scroll-target="#bibliographic-references"><span class="header-section-number">6</span> Bibliographic references</a></li>
+  <li><a href="#bibliographic-references" id="toc-bibliographic-references" class="nav-link" data-scroll-target="#bibliographic-references"><span class="header-section-number">6</span> Bibliographic References</a></li>
   <li><a href="#differences-to-the-official-encoding-of-crm-in-rdf" id="toc-differences-to-the-official-encoding-of-crm-in-rdf" class="nav-link" data-scroll-target="#differences-to-the-official-encoding-of-crm-in-rdf"><span class="header-section-number">7</span> Differences to the official encoding of CRM in RDF</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">8</span> References</a></li>
   </ul>
@@ -315,7 +315,7 @@ Note
 <p>See <span class="citation" data-cites="CRMResources"><span>“Versions of the CIDOC-CRM”</span> (<a href="#ref-CRMResources" role="doc-biblioref">2025</a>)</span> for a list of CRM versions.</p>
 </section>
 <section id="bibliographic-references" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Bibliographic references</h1>
+<h1 data-number="6"><span class="header-section-number">6</span> Bibliographic References</h1>
 <p>The encoding of bibliographic data is out of the scope of CRM. LRMoo (formerly known as FRBRoo) extends CRM to express the IFLA Library Reference Model (LRM) for bibliographic information managed by libraries <span class="citation" data-cites="LRMoo">(<a href="#ref-LRMoo" role="doc-biblioref">Aalberg 2024</a>)</span>. The model is based on four levels of description called WEMI (Work, Expression, Manifestation, Item) instead of one class, so the model is not practical for simple bibliographic references (citation data). As long as bibliographic entities are not the core object of investigation, it is enough to express publications as instance of <a href="http://www.cidoc-crm.org/cidoc-crm/E31">E31 Document</a> and express details with an established RDF ontologies for citation data. The preferred choice is the <a href="https://www.dublincore.org/specifications/bibo/bibo/">Bibliographic Ontology</a> (BIBO). Additional ontologies exist for more details, for instance the <a href="http://purl.org/spar/cito">Citation Typing Ontology</a>&nbsp;(CiTO) for citations between publications.</p>
 <p>Data providers MUST NOT create their own classes and properties to model bibliographic references with CRM but use BIBO. Applications MAY use the following CRM classes and statements to link BIBO and its corresponding ontologies with CRM:</p>
 <pre class="ttl"><code>dcterms:Agent   owl:equivalentClass crm:E39_Actor .
@@ -325,16 +325,61 @@ event:Event     owl:equivalentClass crm:E5_Event .
 bibo:Document   rdfs:subClassof     crm:E31_Document .
 bibo:Collection rdfs:subClassof     crm:E31_Document .</code></pre>
 <p>BIBO refers to individual classes and properties from other ontologies (FOAF, DCTERMS, PRISM…). Data providers MUST use these classes and properties in bibliographic references but they MAY include additional RDF statements with corresponding classes and properties from CRM.</p>
-<p>If structured data is not available, bibliographic references can also be expressed with plain strings.</p>
-<!-- TODO: example
-Entities (authors, publishers...) SHOULD be referenced by established URI (e.g. ORCID, GND...) if possible.
+<p>Entities (authors, publishers…) SHOULD be referenced by established URI (DOI, ORCID, ROR…) like shown in the following example of a proceedings article:</p>
+<pre class="ttl"><code>@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; .
+@prefix dct: &lt;http://purl.org/dc/terms/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
-~~~ttl
-_:WWWProposal a crm:
-<https://orcid.org/0000-0003-1279-3709> a foaf:Person .
-<https://www.w3.org/History/1989/proposal.html>
-~~~
--->
+&lt;https://doi.org/10.1145/3543873.3585579&gt; a bibo:Article ;
+  dct:title "Wikidata: The Making Of" ;
+  dct:creator
+    &lt;https://orcid.org/0000-0002-9593-2294&gt; ,
+    &lt;https://orcid.org/0000-0002-3939-2115&gt; ,
+    &lt;https://orcid.org/0000-0002-9172-2601&gt; ;
+  bibo:authorList (
+    &lt;https://orcid.org/0000-0002-9593-2294&gt;
+    &lt;https://orcid.org/0000-0002-3939-2115&gt; ,
+    &lt;https://orcid.org/0000-0002-9172-2601&gt;
+  ) ;
+  bibo:pages "615–624" ;
+  dct:isPartOf &lt;https://doi.org/10.1145/3543873&gt; .
+
+&lt;https://doi.org/10.1145/3543873&gt; a bibo:Proceedings ;
+  dct:date "2023-03-30"^^xsd:date ;
+  dct:publisher &lt;https://ror.org/03wsadn68&gt; .
+  bibo:isbn13 "978-1-4503-9419-2" ;
+  dct:title "Companion Proceedings of the ACM Web Conference 2023" ;
+  dct:isPartOf &lt;https://dblp.org/streams/conf/www&gt; .
+
+&lt;https://ror.org/03wsadn68&gt; a foaf:Organization ;
+  foaf:name "Association for Computing Machinery" .
+
+&lt;https://dblp.org/streams/conf/www&gt; a bibo:Series ;
+  dct:title "WWW '23 Companion" .
+
+&lt;https://orcid.org/0000-0002-9593-2294&gt; a foaf:Person ;
+  foaf:familyName "Vrandečić" ; foaf:givenName "Denny" .
+&lt;https://orcid.org/0000-0002-3939-2115&gt; a foaf:Person ;
+  foaf:familyName "Pintscher" ; foaf:givenName "Lydia" .
+&lt;https://orcid.org/0000-0002-9172-2601&gt; a foaf:Person ;
+  foaf:familyName "Krötzsch" ; foaf:givenName "Markus" .</code></pre>
+<p>If structured data is not available, bibliographic references can also be expressed with blank nodes having a plain string value <code>rdfs:label</code>:</p>
+<pre class="ttl"><code>_:123 a bibo:Document
+  rdfs:label "D. Vrandečić, L. Pintscher, and M. Krötzsch. 2023. Wikidata ..." .</code></pre>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The citation management software <a href="https://www.zotero.org/">Zotero</a> can import a large number of formats and export BIBO RDF.</p>
+</div>
+</div>
+<p>To link bibliographic references to other CRM entities use <a href="http://cidoc-crm.org/cidoc-crm/P70_documents">P70 documents</a>.</p>
 </section>
 <section id="differences-to-the-official-encoding-of-crm-in-rdf" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Differences to the official encoding of CRM in RDF</h1>
