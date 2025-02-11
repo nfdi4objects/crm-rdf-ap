@@ -209,7 +209,7 @@ CRM is constantly evolving, so some CRM classes have been renamed or replaced. O
 
 See @CRMResources for a list of CRM versions.
 
-# Bibliographic references
+# Bibliographic References
 
 The encoding of bibliographic data is out of the scope of CRM. LRMoo (formerly known as FRBRoo) extends CRM to express the IFLA Library Reference Model (LRM) for bibliographic information managed by libraries [@LRMoo]. The model is based on four levels of description called WEMI (Work, Expression, Manifestation, Item) instead of one class, so the model is not practical for simple bibliographic references (citation data). As long as bibliographic entities are not the core object of investigation, it is enough to express publications as instance of [E31 Document] and express details with an established RDF ontologies for citation data. The preferred choice is the [Bibliographic Ontology] (BIBO). Additional ontologies exist for more details, for instance the [Citation Typing Ontology]\ (CiTO) for citations between publications.
 
@@ -226,17 +226,60 @@ bibo:Collection rdfs:subClassof     crm:E31_Document .
 
 BIBO refers to individual classes and properties from other ontologies (FOAF, DCTERMS, PRISM...). Data providers MUST use these classes and properties in bibliographic references but they MAY include additional RDF statements with corresponding classes and properties from CRM.
 
-If structured data is not available, bibliographic references can also be expressed with plain strings.
+Entities (authors, publishers...) SHOULD be referenced by established URI (DOI, ORCID, ROR...) like shown in the following example of a proceedings article:
 
-<!-- TODO: example
-Entities (authors, publishers...) SHOULD be referenced by established URI (e.g. ORCID, GND...) if possible.
+```ttl
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://doi.org/10.1145/3543873.3585579> a bibo:Article ;
+  dct:title "Wikidata: The Making Of" ;
+  dct:creator
+    <https://orcid.org/0000-0002-9593-2294> ,
+    <https://orcid.org/0000-0002-3939-2115> ,
+    <https://orcid.org/0000-0002-9172-2601> ;
+  bibo:authorList (
+    <https://orcid.org/0000-0002-9593-2294>
+    <https://orcid.org/0000-0002-3939-2115> ,
+    <https://orcid.org/0000-0002-9172-2601>
+  ) ;
+  bibo:pages "615–624" ;
+  dct:isPartOf <https://doi.org/10.1145/3543873> .
+
+<https://doi.org/10.1145/3543873> a bibo:Proceedings ;
+  dct:date "2023-03-30"^^xsd:date ;
+  dct:publisher <https://ror.org/03wsadn68> .
+  bibo:isbn13 "978-1-4503-9419-2" ;
+  dct:title "Companion Proceedings of the ACM Web Conference 2023" ;
+  dct:isPartOf <https://dblp.org/streams/conf/www> .
+
+<https://ror.org/03wsadn68> a foaf:Organization ;
+  foaf:name "Association for Computing Machinery" .
+
+<https://dblp.org/streams/conf/www> a bibo:Series ;
+  dct:title "WWW '23 Companion" .
+
+<https://orcid.org/0000-0002-9593-2294> a foaf:Person ;
+  foaf:familyName "Vrandečić" ; foaf:givenName "Denny" .
+<https://orcid.org/0000-0002-3939-2115> a foaf:Person ;
+  foaf:familyName "Pintscher" ; foaf:givenName "Lydia" .
+<https://orcid.org/0000-0002-9172-2601> a foaf:Person ;
+  foaf:familyName "Krötzsch" ; foaf:givenName "Markus" .
+```
+
+If structured data is not available, bibliographic references can also be expressed with blank nodes having a plain string value `rdfs:label`:
 
 ~~~ttl
-_:WWWProposal a crm:
-<https://orcid.org/0000-0003-1279-3709> a foaf:Person .
-<https://www.w3.org/History/1989/proposal.html>
+_:123 a bibo:Document
+  rdfs:label "D. Vrandečić, L. Pintscher, and M. Krötzsch. 2023. Wikidata ..." .
 ~~~
--->
+
+::: {.callout-tip}
+The citation management software [Zotero](https://www.zotero.org/) can import a large number of formats and export BIBO RDF.
+:::
+
+To link bibliographic references to other CRM entities use [P70 documents].
 
 [Citation Typing Ontology]: http://purl.org/spar/cito
 [Bibliographic Ontology]: https://www.dublincore.org/specifications/bibo/bibo/
@@ -287,6 +330,7 @@ Rationales: integration with terminologies and simplification of queries.
 [E94 Space Primitive]: http://www.cidoc-crm.org/cidoc-crm/E94
 [E95 Spacetime Primitive]: http://www.cidoc-crm.org/cidoc-crm/E95
 
+[P70 documents]: http://cidoc-crm.org/cidoc-crm/P70_documents
 [P172 has broader term]: http://cidoc-crm.org/cidoc-crm/P127_has_broader_term
 [P172i has narrower term]: http://cidoc-crm.org/cidoc-crm/P127_has_broader_term
 
