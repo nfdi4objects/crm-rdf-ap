@@ -209,6 +209,38 @@ CRM is constantly evolving, so some CRM classes have been renamed or replaced. O
 
 See @CRMResources for a list of CRM versions.
 
+# Bibliographic references
+
+The encoding of bibliographic data is out of the scope of CRM. LRMoo (formerly known as FRBRoo) extends CRM to express the IFLA Library Reference Model (LRM) for bibliographic information managed by libraries [@LRMoo]. The model is based on four levels of description called WEMI (Work, Expression, Manifestation, Item) instead of one class, so the model is not practical for simple bibliographic references (citation data). As long as bibliographic entities are not the core object of investigation, it is enough to express publications as instance of [E31 Document] and express details with an established RDF ontologies for citation data. The preferred choice is the [Bibliographic Ontology] (BIBO). Additional ontologies exist for more details, for instance the [Citation Typing Ontology]\ (CiTO) for citations between publications.
+
+Data providers MUST NOT create their own classes and properties to model bibliographic references with CRM but use BIBO. Applications MAY use the following CRM classes and statements to link BIBO and its corresponding ontologies with CRM:
+
+~~~ttl
+dcterms:Agent   owl:equivalentClass crm:E39_Actor .
+foaf:Agent      owl:equivalentClass crm:E39_Actor .
+foaf:Person     owl:equivalentClass crm:E74_Person .
+event:Event     owl:equivalentClass crm:E5_Event .
+bibo:Document   rdfs:subClassof     crm:E31_Document .
+bibo:Collection rdfs:subClassof     crm:E31_Document .
+~~~
+
+BIBO refers to individual classes and properties from other ontologies (FOAF, DCTERMS, PRISM...). Data providers MUST use these classes and properties in bibliographic references but they MAY include additional RDF statements with corresponding classes and properties from CRM.
+
+If structured data is not available, bibliographic references can also be expressed with plain strings.
+
+<!-- TODO: example
+Entities (authors, publishers...) SHOULD be referenced by established URI (e.g. ORCID, GND...) if possible.
+
+~~~ttl
+_:WWWProposal a crm:
+<https://orcid.org/0000-0003-1279-3709> a foaf:Person .
+<https://www.w3.org/History/1989/proposal.html>
+~~~
+-->
+
+[Citation Typing Ontology]: http://purl.org/spar/cito
+[Bibliographic Ontology]: https://www.dublincore.org/specifications/bibo/bibo/
+
 # Differences to the official encoding of CRM in RDF
 
 An official encoding of CRM in RDF is published since version 7.1.2, managed at <https://gitlab.isl.ics.forth.gr/cidoc-crm/cidoc_crm_rdf/> (@Doerr2020). The encoding of CRM in RDF described in this document differes by introduction of SKOS:
