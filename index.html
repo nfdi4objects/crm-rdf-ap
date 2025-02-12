@@ -187,24 +187,98 @@ div.csl-indent {
 <p>The CRM classes <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a>, <a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/E95">E95 Spacetime Primitive</a> are both subclasses of <a href="http://www.cidoc-crm.org/cidoc-crm/E59">E59 Primitive Value</a> and of <a href="http://www.cidoc-crm.org/cidoc-crm/E41">E41 Appellation</a>, so <a href="#e41-appelation">the latter</a> can be used when a mapping to established RDF data types is not applicable.</p>
 <section id="temporal-data" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="temporal-data"><span class="header-section-number">2.1</span> Temporal data</h2>
-<p>Instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a> SHOULD be expressed as RDF literals with one of the following data types or as instance of [TemporalEntity] or its subclasses from <a href="https://www.w3.org/TR/owl-time/">Time Ontology</a>. :</p>
-<ul>
-<li><code>xsd:date</code></li>
-<li><code>xsd:time</code></li>
-<li><code>xsd:dateTime</code></li>
-<li><code>xsd:dateTimeStamp</code></li>
-<li><code>xsd:gDay</code></li>
-<li><code>xsd:gMonthDay</code></li>
-<li><code>xsd:gMonth</code></li>
-<li><code>xsd:gYear</code></li>
-<li><code>xsd:gYearMonth</code></li>
-<li><code>edtf:EDTF</code> for more complex values, such as intervals or uncertain dates, in <a href="https://www.loc.gov/standards/datetime/">EDTF</a> syntax
-<ul>
-<li><code>edtf:EDTF-level0</code></li>
-<li><code>edtf:EDTF-level1</code></li>
-<li><code>edtf:EDTF-level2</code></li>
-</ul></li>
-</ul>
+<p>Temporal values (instances of of <a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a> and <a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a> in CRM) SHOULD be expressed by RDF literals with one of the data types from XML Schema (XSD) Data Types or from Extended Date/Time Format (EDTF) listed in <a href="#tbl-temporal-data-types" class="quarto-xref">Table&nbsp;1</a>.</p>
+<div id="tbl-temporal-data-types" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-temporal-data-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Temporal data types
+</figcaption>
+<div aria-describedby="tbl-temporal-data-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Datatype</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>xsd:date</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>2010-12-17</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>xsd:time</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>13:20:00-05:00</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>xsd:dateTime</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>xsd:dateTimeStamp</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>xsd:gYear</code></td>
+<td style="text-align: left;">Year and optional time zone</td>
+<td style="text-align: left;"><code>2010</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>xsd:gYearMonth</code></td>
+<td style="text-align: left;">Year, month, and optional time zone</td>
+<td style="text-align: left;"><code>2010-12</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>xsd:gMonth</code></td>
+<td style="text-align: left;">Month and optional time zone</td>
+<td style="text-align: left;"><code>--12</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>xsd:gMonthDay</code></td>
+<td style="text-align: left;">Month, day, and optional time zone</td>
+<td style="text-align: left;"><code>--12-17</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>xsd:gDay</code></td>
+<td style="text-align: left;">Day and optional time zone</td>
+<td style="text-align: left;"><code>---17</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>edtf:EDTF</code></td>
+<td style="text-align: left;">Complex temporal value in <a href="https://www.loc.gov/standards/datetime/">EDTF</a> syntax</td>
+<td style="text-align: left;"><code>2024~</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>edtf:EDTF-level0</code></td>
+<td style="text-align: left;">EDTF limited to level 1 features</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>edtf:EDTF-level1</code></td>
+<td style="text-align: left;">EDTF limited to level 1 and 2 features</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>edtf:EDTF-level2</code></td>
+<td style="text-align: left;">EDTF with all features up to level 2</td>
+<td style="text-align: left;"><code>15XX-?12</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div id="lst-temporal-primitives" class="ttl listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-temporal-primitives-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing&nbsp;1: An event with date/time given with different data types
+</figcaption>
+<div aria-describedby="lst-temporal-primitives-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <pre id="lst-temporal-primitives" class="ttl"><code>@prefix edtf: &lt;http://id.loc.gov/datatypes/edtf/&gt;
 @prefix unit: &lt;http://qudt.org/vocab/unit/&gt; .
 
@@ -214,9 +288,37 @@ div.csl-indent {
   crm:P4_has_time-span 
     "1912-04-15"^^xsd:date ,                        # date only
     "1912-04-15T02:38–05:18Z"^^xsd:dateTimeStamp ,  # precise date and time with timezone
-    "1912-04-15"^^edtf:EDTF .                       # imprecise date with EDTF</code></pre>
-<p>Support of simple temporal data is included in most SPARQL processors although it is not part of the SPARQL 1.2 specification (see <a href="https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md">proposal SEP-0002</a>).</p>
-<p>More complex temoral data can be expressed with the <a href="https://www.w3.org/TR/owl-time/">Time Ontology</a> as discussed by <span class="citation" data-cites="Nys2018">Nys, Ruymbeke, and Billen (<a href="#ref-Nys2018" role="doc-biblioref">2018</a>)</span>. EDTF can be mapped to Time Ontology via <a href="https://periodo.github.io/edtf-ontology/">EDTF in RDF</a></p>
+    "1912-04-15?"^^edtf:EDTF .                      # uncertain date with EDTF</code></pre>
+</div>
+</figure>
+</div>
+<p>More complex temporal values MAY be expressed as instance of <a href="https://www.w3.org/TR/owl-time/#time:TemporalEntity">time:TemporalEntity</a> or its subclasses from <a href="https://www.w3.org/TR/owl-time/">Time Ontology</a> as discussed by <span class="citation" data-cites="Nys2018">Nys, Ruymbeke, and Billen (<a href="#ref-Nys2018" role="doc-biblioref">2018</a>)</span> and described in <a href="https://periodo.github.io/edtf-ontology/">EDTF in RDF</a>. RDF literals are preferred because it is easer to derive <a href="https://www.w3.org/TR/owl-time/#time:TemporalEntity">time:TemporalEntity</a> than the other way round.</p>
+<div id="lst-edtf" class="ttl listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-edtf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing&nbsp;2: Extended temporal value expressed with Time Ontology
+</figcaption>
+<div aria-describedby="lst-edtf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<pre id="lst-edtf" class="ttl"><code>&lt;WW1&gt; a time:Interval ; # instead of E52_Time-Span
+  edtfo:hasEDTFDateTimeDescription "1914/1918" ;
+  time:hasBeginning [ time:inXSDgYear "1914"^^xsd:gYear ] ;
+  time:hasEnd [ time:inXSDgYear "1918"^^xsd:gYear ] .</code></pre>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Support of simple temporal data with XSD data types is not part of SPARQL 1.2 specification (see <a href="https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md">proposal SEP-0002</a>) but included in most SPARQL processors, so typed date values – in contrast to plain strings – can directly be calculated with.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -235,12 +337,103 @@ Note
 <p>The use of these properties may lead to false assumption of precision and it introduced a solitary solution to a problem also addressed outside of CIDOC. For this reasons these additional properties should <em>not</em> be used in favour of EDTF and/or Time Ontology.</p>
 </div>
 </div>
-<p>An example:</p>
-<pre class="ttl"><code>&lt;WW1&gt; a crm:E52_Time-Span , time:TemporalEntity .
-  edtfo:hasEDTFDateTimeDescription "1914/1918" ;
-  time:hasBeginning [ time:inXSDgYear "1914"^^xsd:gYear ] ;
-  time:hasEnd [ time:inXSDgYear "1918"^^xsd:gYear ] .</code></pre>
-<p>Temporal CRM properties such as <a href="http://www.cidoc-crm.org/cidoc-crm/P86">P86 falls within</a> should also be replaced by corresponding properties from Time Ontology such as <a href="https://www.w3.org/TR/owl-time/#time:intervalIn">intervalIn</a>.</p>
+<p>Temporal CRM properties SHOULD be expressed with corresponding properties from Time Ontology:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">CRM class or property</th>
+<th style="text-align: left;">in RDF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/E52">E52 Time-Span</a></td>
+<td style="text-align: left;">Literal or <a href="https://www.w3.org/TR/owl-time/#time:Interval">time:Interval</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/E61">E61 Time Primitive</a></td>
+<td style="text-align: left;"><a href="https://www.w3.org/TR/owl-time/#time:TemporalEntity">time:TemporalEntity</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P79">P79 beginning is qualified by</a></td>
+<td style="text-align: left;">= ?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P80">P80 end is qualified by</a></td>
+<td style="text-align: left;">= ?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P81">P81 ongoing throughout</a></td>
+<td style="text-align: left;">?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P82">P82 at some time within</a></td>
+<td style="text-align: left;">?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P86">P86 falls within</a></td>
+<td style="text-align: left;"><a href="https://www.w3.org/TR/owl-time/#time:intervalIn">time:intervalIn</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P160">P160 has temporal projection</a></td>
+<td style="text-align: left;">?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P164">P164 is temporally specified by</a></td>
+<td style="text-align: left;">?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P170">P170 defines time</a></td>
+<td style="text-align: left;">?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P183_ends_before_the_start_of">P183 ends before the start of</a></td>
+<td style="text-align: left;"><a href="https://www.w3.org/TR/owl-time/#time:before">time:before</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P183i_starts_after_the_end_of">P183i starts after the end of</a></td>
+<td style="text-align: left;"><a href="https://www.w3.org/TR/owl-time/#time:after">time:after</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P173">P173 starts before or with the end of</a></td>
+<td style="text-align: left;">?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P174">P174 starts before the end of</a></td>
+<td style="text-align: left;">?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P175">P175 starts before or with the start of</a></td>
+<td style="text-align: left;">?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P176">P176 starts before the start of</a></td>
+<td style="text-align: left;">?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P182">P182 ends before or with the start of</a></td>
+<td style="text-align: left;">?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P184">P184 ends before or with the end of</a></td>
+<td style="text-align: left;">?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P185">P185 ends before the end of</a></td>
+<td style="text-align: left;">?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="http://www.cidoc-crm.org/cidoc-crm/P191">P191 has duration</a></td>
+<td style="text-align: left;">?</td>
+</tr>
+</tbody>
+</table>
+<!--
+[P86i contains]
+[P164i temporally specifies]
+[P160i is temporal projection of]
+-->
+<!-- TODO: duration, P192 -->
 </section>
 <section id="geographic-data" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="geographic-data"><span class="header-section-number">2.2</span> Geographic data</h2>
@@ -253,6 +446,11 @@ Note
   ] .</code></pre>
 <p>GeoSPARQL properties <code>geo:hasMetricSpatialResolution</code> and/or <code>geo:hasSpatialAccuracy</code> can be used to indicate level of detail.</p>
 <p>Instances of <a href="http://www.cidoc-crm.org/cidoc-crm/E95">E95 Spacetime Primitive</a> … (TODO)</p>
+<p>This statements need to be discussed:</p>
+<pre class="ttl"><code>crm:E92_Spacetime_Volume rdfs:subClassOf
+  geosparql:SpatialObject ,
+  time:TemporalEntity .
+</code></pre>
 </section>
 </section>
 <section id="authority-files-and-types" class="level1" data-number="3">
