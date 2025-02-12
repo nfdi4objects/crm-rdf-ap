@@ -36,24 +36,27 @@ The CRM classes [E61 Time Primitive], [E94 Space Primitive], and [E95 Spacetime 
 
 ## Temporal data
 
-Instances of [E61 Time Primitive] and [E52 Time-Span] SHOULD be expressed as RDF literals with one of the following data types or as instance of [TemporalEntity] or its subclasses from [Time Ontology].
-:
+Temporal values (instances of of [E61 Time Primitive] and [E52 Time-Span] in CRM) SHOULD be expressed by RDF literals with one of the data types from XML Schema (XSD) Data Types or from Extended Date/Time Format (EDTF) listed in @tbl-temporal-data-types.
 
-- `xsd:date`
-- `xsd:time`
-- `xsd:dateTime`
-- `xsd:dateTimeStamp`
-- `xsd:gDay`
-- `xsd:gMonthDay`
-- `xsd:gMonth`
-- `xsd:gYear`
-- `xsd:gYearMonth`
-- `edtf:EDTF` for more complex values, such as intervals or uncertain dates, in [EDTF] syntax
-  - `edtf:EDTF-level0`
-  - `edtf:EDTF-level1`
-  - `edtf:EDTF-level2`
+| Datatype           | Description | Example
+|:-------------------|:------------|:-------
+| `xsd:date`          | | `2010-12-17`
+| `xsd:time`          | | `13:20:00-05:00`
+| `xsd:dateTime`      | |
+| `xsd:dateTimeStamp` | |
+| `xsd:gYear`         | Year and optional time zone | `2010`
+| `xsd:gYearMonth`    | Year, month, and optional time zone | `2010-12`
+| `xsd:gMonth`        | Month and optional time zone | `--12`
+| `xsd:gMonthDay`     | Month, day, and optional time zone | `--12-17`
+| `xsd:gDay`          | Day and optional time zone | `---17`
+| `edtf:EDTF`         | Complex temporal value in [EDTF] syntax | `2024~`
+| `edtf:EDTF-level0`  | EDTF limited to level 1 features |
+| `edtf:EDTF-level1`  | EDTF limited to level 1 and 2 features |
+| `edtf:EDTF-level2`  | EDTF with all features up to level 2 | `15XX-?12`
 
-~~~{.ttl #lst-temporal-primitives}
+: Temporal data types {#tbl-temporal-data-types}
+
+~~~{.ttl #lst-temporal-primitives lst-cap="An event with date/time given with different data types"}
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/>
 @prefix unit: <http://qudt.org/vocab/unit/> .
 
@@ -63,42 +66,74 @@ Instances of [E61 Time Primitive] and [E52 Time-Span] SHOULD be expressed as RDF
   crm:P4_has_time-span 
     "1912-04-15"^^xsd:date ,                        # date only
     "1912-04-15T02:38–05:18Z"^^xsd:dateTimeStamp ,  # precise date and time with timezone
-    "1912-04-15"^^edtf:EDTF .                       # imprecise date with EDTF
+    "1912-04-15?"^^edtf:EDTF .                      # uncertain date with EDTF
 ~~~
 
-Support of simple temporal data is included in most SPARQL processors although it is not part of the SPARQL 1.2 specification (see [proposal SEP-0002](https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md)).
+More complex temporal values MAY be expressed as instance of [time:TemporalEntity] or its subclasses from [Time Ontology] as discussed by @Nys2018 and described in [EDTF in RDF]. RDF literals are preferred because it is easer to derive [time:TemporalEntity] than the other way round.
 
-More complex temoral data can be expressed with the [Time Ontology] as discussed by @Nys2018. EDTF can be mapped to Time Ontology via [EDTF in RDF]
+~~~{.ttl #lst-edtf lst-cap="Extended temporal value expressed with Time Ontology"}
+<WW1> a time:Interval ; # instead of E52_Time-Span
+  edtfo:hasEDTFDateTimeDescription "1914/1918" ;
+  time:hasBeginning [ time:inXSDgYear "1914"^^xsd:gYear ] ;
+  time:hasEnd [ time:inXSDgYear "1918"^^xsd:gYear ] .
+~~~
+
+::: {.callout-tip}
+Support of simple temporal data with XSD data types is not part of SPARQL 1.2 specification (see [proposal SEP-0002](https://github.com/w3c/sparql-dev/blob/main/SEP/SEP-0002/sep-0002.md)) but included in most SPARQL processors, so typed date values -- in contrast to plain strings -- can directly be calculated with.
+:::
 
 ::: {.callout-note}
-
 @Doerr2020 recommended to use additional properties for temporal intervals ([E52 Time-Span]):
 
 - `P81a_end_of_the_begin` together with  `P81b_begin_of_the_end` instead of [P81 ongoing throughout]
 - `P82a_begin_of_the_begin` together with `P82b_end_of_the_end` instead of [P82 at some time within]
 
 The use of these properties may lead to false assumption of precision and it introduced a solitary solution to a problem also addressed outside of CIDOC. For this reasons these additional properties should *not* be used in favour of EDTF and/or Time Ontology.
-
 :::
 
-An example: 
+Temporal CRM properties SHOULD be expressed with corresponding properties from Time Ontology:
 
-~~~{.ttl}
-<WW1> a crm:E52_Time-Span , time:TemporalEntity .
-  edtfo:hasEDTFDateTimeDescription "1914/1918" ;
-  time:hasBeginning [ time:inXSDgYear "1914"^^xsd:gYear ] ;
-  time:hasEnd [ time:inXSDgYear "1918"^^xsd:gYear ] .
-~~~
+| CRM class or property | in RDF |
+|:-------------|:-------|
+| [E52 Time-Span]                   | Literal or [time:Interval]
+| [E61 Time Primitive]              | [time:TemporalEntity]
+| [P79 beginning is qualified by]   | = ?
+| [P80 end is qualified by]         | = ?
+| [P81 ongoing throughout]          | ? 
+| [P82 at some time within]         | ?
+| [P86 falls within]                | [time:intervalIn]
+| [P160 has temporal projection]    | ?
+| [P164 is temporally specified by] | ?
+| [P170 defines time]               | ?
+| [P183 ends before the start of]   | [time:before]
+| [P183i starts after the end of]   | [time:after]
+| [P173 starts before or with the end of] | ?
+| [P174 starts before the end of]   | ?
+| [P175 starts before or with the start of] | ?
+| [P176 starts before the start of] | ?
+| [P182 ends before or with the start of] | ?
+| [P184 ends before or with the end of] | ?
+| [P185 ends before the end of]     | ?
+| [P191 has duration]               | ?
 
-Temporal CRM properties such as [P86 falls within] should also be replaced by corresponding properties from Time Ontology such as [intervalIn].
+<!--
+[P86i contains]
+[P164i temporally specifies]
+[P160i is temporal projection of]
+-->
+
+
 
 [Time Ontology]: https://www.w3.org/TR/owl-time/
+[time:TemporalEntity]: https://www.w3.org/TR/owl-time/#time:TemporalEntity
+[time:Interval]: https://www.w3.org/TR/owl-time/#time:Interval
+[time:after]: https://www.w3.org/TR/owl-time/#time:after
+[time:before]: https://www.w3.org/TR/owl-time/#time:before
 [EDTF in RDF]: https://periodo.github.io/edtf-ontology/
-[intervalIn]: https://www.w3.org/TR/owl-time/#time:intervalIn
+[time:intervalIn]: https://www.w3.org/TR/owl-time/#time:intervalIn
 [EDTF]: https://www.loc.gov/standards/datetime/
-[P81 ongoing throughout]: http://www.cidoc-crm.org/cidoc-crm/P81
-[P82 at some time within]: http://www.cidoc-crm.org/cidoc-crm/P82
-[P86 falls within]: http://www.cidoc-crm.org/cidoc-crm/P86
+
+<!-- TODO: duration, P192 -->
 
 ## Geographic data
 
@@ -119,9 +154,16 @@ Instances of [E95 Spacetime Primitive] ... (TODO)
 
 [GeoSPARQL]: https://www.ogc.org/de/publications/standard/geosparql/
 
-[P171 at some place within]: http://www.cidoc-crm.org/cidoc-crm/P171
-[P172 contains]: http://www.cidoc-crm.org/cidoc-crm/P172
-[P168 place is defined by]: http://www.cidoc-crm.org/cidoc-crm/P168
+
+This statements need to be discussed:
+
+~~~ttl
+crm:E92_Spacetime_Volume rdfs:subClassOf
+  geosparql:SpatialObject ,
+  time:TemporalEntity .
+
+~~~
+
 
 # Authority files and types
 
@@ -139,6 +181,31 @@ Applications MAY define [ConceptScheme] as subclass of [E31 Document], [Concept]
 [P127i has narrower term]: http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term
 [P71 lists]: http://www.cidoc-crm.org/cidoc-crm/P71
 [P67 refers to]: http://www.cidoc-crm.org/cidoc-crm/P67
+[P79 beginning is qualified by]: http://www.cidoc-crm.org/cidoc-crm/P79
+[P80 end is qualified by]: http://www.cidoc-crm.org/cidoc-crm/P80
+[P81 ongoing throughout]: http://www.cidoc-crm.org/cidoc-crm/P81
+[P82 at some time within]: http://www.cidoc-crm.org/cidoc-crm/P82
+[P86 falls within]: http://www.cidoc-crm.org/cidoc-crm/P86
+[P86i contains]: http://www.cidoc-crm.org/cidoc-crm/P86i_contains
+[P160 has temporal projection]: http://www.cidoc-crm.org/cidoc-crm/P160
+[P160i is temporal projection of]: http://www.cidoc-crm.org/cidoc-crm/P160i_is_temporal_projection_of
+[P164 is temporally specified by]: http://www.cidoc-crm.org/cidoc-crm/P164
+[P164i temporally specifies]: http://www.cidoc-crm.org/cidoc-crm/P164i_temporally_specifies
+[P168 place is defined by]: http://www.cidoc-crm.org/cidoc-crm/P168
+[P170 defines time]: http://www.cidoc-crm.org/cidoc-crm/P170
+[P171 at some place within]: http://www.cidoc-crm.org/cidoc-crm/P171
+[P172 contains]: http://www.cidoc-crm.org/cidoc-crm/P172
+[P183 ends before the start of]: http://www.cidoc-crm.org/cidoc-crm/P183_ends_before_the_start_of
+[P183i starts after the end of]: http://www.cidoc-crm.org/cidoc-crm/P183i_starts_after_the_end_of
+[P191 has duration]: http://www.cidoc-crm.org/cidoc-crm/P191
+
+[P173 starts before or with the end of]: http://www.cidoc-crm.org/cidoc-crm/P173
+[P174 starts before the end of]: http://www.cidoc-crm.org/cidoc-crm/P174
+[P175 starts before or with the start of]: http://www.cidoc-crm.org/cidoc-crm/P175
+[P176 starts before the start of]: http://www.cidoc-crm.org/cidoc-crm/P176
+[P182 ends before or with the start of]: http://www.cidoc-crm.org/cidoc-crm/P182
+[P184 ends before or with the end of]: http://www.cidoc-crm.org/cidoc-crm/P184
+[P185 ends before the end of]: http://www.cidoc-crm.org/cidoc-crm/P185
 
 # CRM Classes to use with caution
 
