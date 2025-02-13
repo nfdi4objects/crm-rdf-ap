@@ -140,19 +140,24 @@ Temporal CRM properties SHOULD be expressed with corresponding properties from T
 
 Instances of **[E94 Space Primitive]** should be expressed using [GeoSPARQL] Ontology as instance of [geo:Geometry], compatible with various geographic data formats (WKT, GeoJSON, GML...).^[See also CRM Geo draft at <http://www.cidoc-crm.org/extensions/crmgeo/>, defining superclasses of `geo:Geometry`.] CRM Property [P168 place is defined by] should be expressed with RDF property `geo:hasGeometry`. CRM Properties [P171 at some place within], and [P172 contains] can be used as RDF properties to link places ([E53 Place]) to outer and inner geometries but `geo:hasBoundingBox` and `geo:hasCentroid` should be preferred, if applicable.
 
+The preferred serialization of spatial coordinates is WKT because this allows for spatial queries with GeoSPARQL. GeoJSON can be derived automatically for display in web applications. For simple WKT POINT coordinates in WGS 84 coordinate system, data providers MAY use the [Basic Geo (WGS84 lat/long) Vocabulary](https://www.w3.org/2003/01/geo/) in addition.
+
 ~~~{.ttl #lst-spatial-example lst-cap="A place with geographic coordinates"}
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 
 <TitanticWreckLocation> a crm:E53_Place ;
   crm:P89_falls_within <AtlanticOcean> ;
-  geo:hasGeometry [ a geo:Geometry ;
-    geo:asGeoJSON '{"type": "Point","coordinates": [-49.946944,41.7325,-3803]}' ;
+  geo:hasGeometry [
+    a geo:Geometry ;
     geo:asWKT "POINT (-49.946944 41.7325 -3803)"^^geo:wktLiteral ;
+    geo:asGeoJSON '{"type": "Point","coordinates": [-49.946944,41.7325,-3803]}' ;
+    wgs84:long "-49.946944" ; wgs84:lat "41.7325" ; wgs84:alt "-3803"
   ] .
 ~~~
 
-GeoSPARQL properties `geo:hasMetricSpatialResolution` and/or `geo:hasSpatialAccuracy` can be used to indicate level of detail. 
+GeoSPARQL properties `geo:hasMetricSpatialResolution` and/or `geo:hasSpatialAccuracy` can be used to indicate level of detail.
 
 ## Geotemporal data
 
