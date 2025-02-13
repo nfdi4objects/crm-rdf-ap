@@ -438,7 +438,7 @@ Note
 <section id="spatial-data" class="level2">
 <h2 class="anchored" data-anchor-id="spatial-data">Spatial data</h2>
 <p>Instances of <strong><a href="http://www.cidoc-crm.org/cidoc-crm/E94">E94 Space Primitive</a></strong> should be expressed using <a href="https://www.ogc.org/de/publications/standard/geosparql/">GeoSPARQL</a> Ontology as instance of <a href="http://www.opengis.net/ont/geosparql#Geometry">geo:Geometry</a>, compatible with various geographic data formats (WKT, GeoJSON, GML…).<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> CRM Property <a href="http://www.cidoc-crm.org/cidoc-crm/P168">P168 place is defined by</a> should be expressed with RDF property <code>geo:hasGeometry</code>. CRM Properties <a href="http://www.cidoc-crm.org/cidoc-crm/P171">P171 at some place within</a>, and <a href="http://www.cidoc-crm.org/cidoc-crm/P172">P172 contains</a> can be used as RDF properties to link places (<a href="http://www.cidoc-crm.org/cidoc-crm/E53">E53 Place</a>) to outer and inner geometries but <code>geo:hasBoundingBox</code> and <code>geo:hasCentroid</code> should be preferred, if applicable.</p>
-<p>The preferred serialization of spatial coordinates is WKT because this allows for spatial queries with GeoSPARQL. GeoJSON can be derived automatically for display in web applications. Data providers MAY also use the <a href="https://www.w3.org/2003/01/geo/">Basic Geo (WGS84 lat/long) Vocabulary</a> for simple points in WGS 84 coordinate systems and generate WKT serialization from this or vice versa.</p>
+<p>The preferred serialization of spatial coordinates is WKT because this allows for spatial queries with GeoSPARQL. GeoJSON can be derived automatically for display in web applications. For simple WKT POINT coordinates in WGS 84 coordinate system, data providers MAY use the <a href="https://www.w3.org/2003/01/geo/">Basic Geo (WGS84 lat/long) Vocabulary</a> in addition.</p>
 <div id="lst-spatial-example" class="ttl listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-spatial-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -453,10 +453,8 @@ Listing&nbsp;3: A place with geographic coordinates
   crm:P89_falls_within &lt;AtlanticOcean&gt; ;
   geo:hasGeometry [
     a geo:Geometry ;
-    # preferred serialization WKT for GeoSPARQL queries
     geo:asWKT "POINT (-49.946944 41.7325 -3803)"^^geo:wktLiteral ;
     geo:asGeoJSON '{"type": "Point","coordinates": [-49.946944,41.7325,-3803]}' ;
-    # additional serialization latitude and longitude (ONLY for simple WGS 84 points!)
     wgs84:long "-49.946944" ; wgs84:lat "41.7325" ; wgs84:alt "-3803"
   ] .</code></pre>
 </div>
