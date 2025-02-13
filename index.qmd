@@ -11,18 +11,17 @@ authors:
 
 # Introduction
 
-## Background and Motivation
+The [CIDOC Conceptual Reference Model (CRM)](https://www.cidoc-crm.org/) is a conceptual data model used in the cultural heritage domain. The [Resource Description Framework (RDF)](https://www.w3.org/TR/rdf11-concepts/) is a graph-based data format. Both CRM and RDF have been created independently for integration of information. RDF is a good fit to express CRM in data and it has been used to do so. The expression of CRM in RDF is not trivial though, so some guidelines are needed. This document is going to provide an application profile to best use CRM in RDF for integration with other RDF data. The primary use case is data integration in the Knowledge Graph of NFDI4Objects.
 
-The [CIDOC Conceptual Reference Model (CRM)](https://www.cidoc-crm.org/) is a conceptual data model used in the cultural heritage domain. The [Resource Description Framework (RDF)](https://www.w3.org/TR/rdf11-concepts/) is a graph-based data format. Both CRM and RDF have been created independently for integration of information. RDF is a good fit to express CRM in data and it has been used to do so. The expression of CRM in RDF is not trivial though, so some guidelines are needed. This document is going to provide an application profile to best use CRM in RDF for integration with other RDF data within NFDI4Objects. The document is going to be compared and aligned with similar recommendations such as @Doerr2020.
-
-## Difficulties in expressing CRM and RDF
+## Expressing CRM and RDF
 
 CRM defines abstract types of entities (CRM classes) such as events, measurements, places, and actors with relationship types (CRM properties) to connect instances of these entity types. RDF and its most common extensions define how to identify entities (resources), entity types (RDF classes) and relationship types (CRM properties) with URIs and values with Unicode strings (RDF literals) optionally having a language or a data type to encode values such as numbers and dates. RDF is used with ontologies that define RDF classes, properties, and constraints. CRM looks like an ontology or like it could directly be mapped to an RDF ontology, but this is not the case. CRM is agnostic to data formats: CRM classes are not RDF classes and CRM has no concept of data types and values, so any expression of CRM in RDF comes with choices of design. It is possible to express the same information modeled with CRM in different forms of RDF, so data cannot be integrated flawlessly.
+
+Some recommendation exist to express CRM in RDF (@Doerr2020) and to combine it with other ontologies (e.g. @Nys2018).
 
 ## About this document
 
 The document is managed in a git repository at <https://github.com/nfdi4objects/crm-rdf-ap>. Contributions and feedback is very welcome!
-
 
 # Primitive values
 
@@ -38,12 +37,12 @@ The CRM classes [E61 Time Primitive], [E94 Space Primitive], and [E95 Spacetime 
 
 Temporal values (instances of of [E61 Time Primitive] and [E52 Time-Span] in CRM) SHOULD be expressed by RDF literals with one of the data types from XML Schema (XSD) Data Types or from Extended Date/Time Format (EDTF) listed in @tbl-temporal-data-types.
 
-| Datatype           | Description | Example
-|:-------------------|:------------|:-------
-| `xsd:date`          | | `2010-12-17`
-| `xsd:time`          | | `13:20:00-05:00`
-| `xsd:dateTime`      | |
-| `xsd:dateTimeStamp` | |
+| Datatype            | Description | Example
+|:--------------------|:------------|:-------
+| `xsd:date`          | Year, month and day and optional time zone | `2010-12-17`
+| `xsd:time`          | Time with o | `13:20:00-05:00`
+| `xsd:dateTime`      | Full date, time, and optional time zone | `1912-04-15T02:38–05:18`
+| `xsd:dateTimeStamp` | Full date, time and mandatory time zone | `1912-04-15T02:38–05:18Z`
 | `xsd:gYear`         | Year and optional time zone | `2010`
 | `xsd:gYearMonth`    | Year, month, and optional time zone | `2010-12`
 | `xsd:gMonth`        | Month and optional time zone | `--12`
@@ -57,12 +56,14 @@ Temporal values (instances of of [E61 Time Primitive] and [E52 Time-Span] in CRM
 : Temporal data types {#tbl-temporal-data-types}
 
 ~~~{.ttl #lst-temporal-primitives lst-cap="An event with date/time given with different data types"}
-@prefix edtf: <http://id.loc.gov/datatypes/edtf/>
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <TitanticSinking> a crm:E81_Transformation ;
   crm:P124_transformed <RMSTitanic> ;
-  crm:P123_resulted_in <TitanticWreck> .
+  crm:P123_resulted_in <TitanticWreck> ;
   crm:P4_has_time-span 
     "1912-04-15"^^xsd:date ,                        # date only
     "1912-04-15T02:38–05:18Z"^^xsd:dateTimeStamp ,  # precise date and time with timezone
@@ -135,35 +136,58 @@ Temporal CRM properties SHOULD be expressed with corresponding properties from T
 
 <!-- TODO: duration, P192 -->
 
-## Geographic data
+## Spatial data
 
-Instances of **[E94 Space Primitive]** should be expressed using [GeoSPARQL] Ontology as instance of `geo:hasGeometry`, compatible with various geographic data formats (WKT, GeoJSON, GML...).^[See also CRM Geo draft at <http://www.cidoc-crm.org/extensions/crmgeo/>, defining superclasses of `geo:Geometry`.] CRM Property [P168 place is defined by] should be expressed with RDF property `geo:hasGeometry`. CRM Properties [P171 at some place within], and [P172 contains] can be used as RDF properties to link places ([E53 Place]) to outer and inner geometries but `geo:hasBoundingBox` and `geo:hasCentroid` should be preferred, if applicable.
+Instances of **[E94 Space Primitive]** should be expressed using [GeoSPARQL] Ontology as instance of [geo:Geometry], compatible with various geographic data formats (WKT, GeoJSON, GML...).^[See also CRM Geo draft at <http://www.cidoc-crm.org/extensions/crmgeo/>, defining superclasses of `geo:Geometry`.] CRM Property [P168 place is defined by] should be expressed with RDF property `geo:hasGeometry`. CRM Properties [P171 at some place within], and [P172 contains] can be used as RDF properties to link places ([E53 Place]) to outer and inner geometries but `geo:hasBoundingBox` and `geo:hasCentroid` should be preferred, if applicable.
 
-~~~ttl
+~~~{.ttl #lst-spatial-example lst-cap="A place with geographic coordinates"}
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+
 <TitanticWreckLocation> a crm:E53_Place ;
   crm:P89_falls_within <AtlanticOcean> ;
   geo:hasGeometry [ a geo:Geometry ;
     geo:asGeoJSON '{"type": "Point","coordinates": [-49.946944,41.7325,-3803]}' ;
-    geo:asWKT "POINT (-49.946944 41.7325 -3803)" ;
+    geo:asWKT "POINT (-49.946944 41.7325 -3803)"^^geo:wktLiteral ;
   ] .
 ~~~
 
 GeoSPARQL properties `geo:hasMetricSpatialResolution` and/or `geo:hasSpatialAccuracy` can be used to indicate level of detail. 
 
-Instances of [E95 Spacetime Primitive] ... (TODO)
+## Geotemporal data
+
+The CRM class [E95 Spacetime Primitive] and its corresponding property [P169i spacetime volume is defined by] MUST NOT be used in RDF. Their purpose in CRM is to define the time and place of an abstract [E92 Spacetime Volume] or one of its subclasses. In RDF this can be done by combination of [P4 has time-span] or [P160 has temporal projection] for time (see [Temporal data]) and [P161 has spatial projection] or [geo:hasGeometry] for place (see [Spatial data]):
+
+~~~{.ttl #lst-geotemporal-data lst-cap="A spacetime primitive in time and place"}
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+
+<AssassinationOfArchdukeFranzFerdinand>
+  crm:P4_has_time-span "1914-06-28"^^xsd:date ;
+  geo:hasGeometry [
+    # 43°51'28.5"N 18°25'43.9"E
+    geo:asWKT "POINT (18.4283426 43.8576859)"^^geo:wktLiteral
+  ] .
+~~~
+
+
+[P161 has spatial projection]: http://www.cidoc-crm.org/cidoc-crm/P161_has_spatial_projection
 
 [GeoSPARQL]: https://www.ogc.org/de/publications/standard/geosparql/
+[geo:Geometry]: http://www.opengis.net/ont/geosparql#Geometry
+[geo:hasGeometry]: http://www.opengis.net/ont/geosparql#hasGeometry
 
-
-This statements need to be discussed:
+Applications MAY assume:
 
 ~~~ttl
 crm:E92_Spacetime_Volume rdfs:subClassOf
   geosparql:SpatialObject ,
   time:TemporalEntity .
-
 ~~~
 
+::: {.callout-note}
+The CRMgeo extension of CRM combines CRM and GeoSPARQL in a similar but more complex way @Hiebel2016.
+:::
 
 # Authority files and types
 
@@ -179,6 +203,7 @@ Applications MAY define [ConceptScheme] as subclass of [E31 Document], [Concept]
 
 [P127 has broader term]: http://www.cidoc-crm.org/cidoc-crm/P127
 [P127i has narrower term]: http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term
+[P4 has time-span]: http://www.cidoc-crm.org/cidoc-crm/P4
 [P71 lists]: http://www.cidoc-crm.org/cidoc-crm/P71
 [P67 refers to]: http://www.cidoc-crm.org/cidoc-crm/P67
 [P79 beginning is qualified by]: http://www.cidoc-crm.org/cidoc-crm/P79
@@ -198,6 +223,8 @@ Applications MAY define [ConceptScheme] as subclass of [E31 Document], [Concept]
 [P183 ends before the start of]: http://www.cidoc-crm.org/cidoc-crm/P183_ends_before_the_start_of
 [P183i starts after the end of]: http://www.cidoc-crm.org/cidoc-crm/P183i_starts_after_the_end_of
 [P191 has duration]: http://www.cidoc-crm.org/cidoc-crm/P191
+[P169i spacetime volume is defined by]: http://www.cidoc-crm.org/cidoc-crm/P169i_spacetime_volume_is_defined_by
+
 
 [P173 starts before or with the end of]: http://www.cidoc-crm.org/cidoc-crm/P173
 [P174 starts before the end of]: http://www.cidoc-crm.org/cidoc-crm/P174
@@ -394,6 +421,7 @@ Rationales: integration with terminologies and simplification of queries.
 [E41 Appellation]: http://www.cidoc-crm.org/cidoc-crm/E41
 [E59 Primitive Value]: http://www.cidoc-crm.org/cidoc-crm/E59
 [E61 Time Primitive]: http://www.cidoc-crm.org/cidoc-crm/E61
+[E92 Spacetime Volume]: http://www.cidoc-crm.org/cidoc-crm/E92
 [E94 Space Primitive]: http://www.cidoc-crm.org/cidoc-crm/E94
 [E95 Spacetime Primitive]: http://www.cidoc-crm.org/cidoc-crm/E95
 
