@@ -1,0 +1,38 @@
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://doi.org/10.1145/3543873.3585579> a bibo:Article ;
+  dct:title "Wikidata: The Making Of" ;
+  dct:creator
+    <https://orcid.org/0000-0002-9593-2294> ,
+    <https://orcid.org/0000-0002-3939-2115> ,
+    <https://orcid.org/0000-0002-9172-2601> ;
+  bibo:authorList (
+    <https://orcid.org/0000-0002-9593-2294>
+    <https://orcid.org/0000-0002-3939-2115>
+    <https://orcid.org/0000-0002-9172-2601>
+  ) ;
+  bibo:pages "615–624" ;
+  dct:isPartOf <https://doi.org/10.1145/3543873> .
+
+<https://doi.org/10.1145/3543873> a bibo:Proceedings ;
+  dct:date "2023-03-30"^^xsd:date ;
+  dct:publisher <https://ror.org/03wsadn68> .
+  bibo:isbn13 "978-1-4503-9419-2" ;
+  dct:title "Companion Proceedings of the ACM Web Conference 2023" ;
+  dct:isPartOf <https://dblp.org/streams/conf/www> .
+
+<https://ror.org/03wsadn68> a foaf:Organization ;
+  foaf:name "Association for Computing Machinery" .
+
+<https://dblp.org/streams/conf/www> a bibo:Series ;
+  dct:title "WWW '23 Companion" .
+
+<https://orcid.org/0000-0002-9593-2294> a foaf:Person ;
+  foaf:familyName "Vrandečić" ; foaf:givenName "Denny" .
+<https://orcid.org/0000-0002-3939-2115> a foaf:Person ;
+  foaf:familyName "Pintscher" ; foaf:givenName "Lydia" .
+<https://orcid.org/0000-0002-9172-2601> a foaf:Person ;
+  foaf:familyName "Krötzsch" ; foaf:givenName "Markus" .

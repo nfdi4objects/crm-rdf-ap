@@ -11,17 +11,18 @@ authors:
 
 # Introduction
 
-The [CIDOC Conceptual Reference Model (CRM)](https://www.cidoc-crm.org/) is a conceptual data model used in the cultural heritage domain. The [Resource Description Framework (RDF)](https://www.w3.org/TR/rdf11-concepts/) is a graph-based data format. Both CRM and RDF have been created independently for integration of information. RDF is a good fit to express CRM in data and it has been used to do so. The expression of CRM in RDF is not trivial though, so some guidelines are needed. This document is going to provide an application profile to best use CRM in RDF for integration with other RDF data. The primary use case is data integration in the Knowledge Graph of NFDI4Objects.
+The [CIDOC Conceptual Reference Model (CRM)](https://www.cidoc-crm.org/) is a conceptual data model used in the cultural heritage domain. The [Resource Description Framework (RDF)](https://www.w3.org/TR/rdf11-concepts/) is a graph-based data format. Both CRM and RDF have been created independently for integration of information. RDF is a good fit to express CRM in data and it has been used to do so. The expression of CRM in RDF is not trivial though, so some guidelines are needed. This document provides an **application profile** to best use CRM in RDF for integration with other RDF data. The primary use case is data integration into the [Knowledge Graph of NFDI4Objects](https://graph.nfdi4objects.net).
+
+:::{.callout-note}
+This document is still in an early draft. Contributions and feedback are very welcome!
+The document sources are managed in a git repository at <https://github.com/nfdi4objects/crm-rdf-ap>.
+:::
 
 ## Expressing CRM and RDF
 
 CRM defines abstract types of entities (CRM classes) such as events, measurements, places, and actors with relationship types (CRM properties) to connect instances of these entity types. RDF and its most common extensions define how to identify entities (resources), entity types (RDF classes) and relationship types (CRM properties) with URIs and values with Unicode strings (RDF literals) optionally having a language or a data type to encode values such as numbers and dates. RDF is used with ontologies that define RDF classes, properties, and constraints. CRM looks like an ontology or like it could directly be mapped to an RDF ontology, but this is not the case. CRM is agnostic to data formats: CRM classes are not RDF classes and CRM has no concept of data types and values, so any expression of CRM in RDF comes with choices of design. It is possible to express the same information modeled with CRM in different forms of RDF, so data cannot be integrated flawlessly.
 
 Some recommendation exist to express CRM in RDF (@Doerr2020) and to combine it with other ontologies (e.g. @Nys2018).
-
-## About this document
-
-The document is managed in a git repository at <https://github.com/nfdi4objects/crm-rdf-ap>. Contributions and feedback is very welcome!
 
 # Primitive values
 
@@ -49,8 +50,8 @@ Temporal values (instances of of [E61 Time Primitive] and [E52 Time-Span] in CRM
 | `xsd:gMonthDay`     | Month, day, and optional time zone | `--12-17`
 | `xsd:gDay`          | Day and optional time zone | `---17`
 | `edtf:EDTF`         | Complex temporal value in [EDTF] syntax | `2024~`
-| `edtf:EDTF-level0`  | EDTF limited to level 1 features |
-| `edtf:EDTF-level1`  | EDTF limited to level 1 and 2 features |
+| `edtf:EDTF-level0`  | EDTF limited to level 1 features | `2010-12`
+| `edtf:EDTF-level1`  | EDTF limited to level 1 and 2 features | `2010-12?`
 | `edtf:EDTF-level2`  | EDTF with all features up to level 2 | `15XX-?12`
 
 : Temporal data types {#tbl-temporal-data-types}
@@ -315,8 +316,10 @@ The encoding of bibliographic data is out of the scope of CRM. LRMoo (formerly k
 Data providers MUST NOT create their own classes and properties to model bibliographic references with CRM but use BIBO. Applications MAY use the following CRM classes and statements to link BIBO and its corresponding ontologies with CRM:
 
 ~~~ttl
-dcterms:Agent   owl:equivalentClass crm:E39_Actor .
-foaf:Agent      owl:equivalentClass crm:E39_Actor .
+dcterms:Agent   rdfs:subClassOf     crm:E77_Persistent_Item .
+foaf:Agent      rdfs:subClassOf     crm:E77_Persistent_Item .
+crm:E39_Actor   rdfs:subClassof     dcterms:Agent .
+crm:E39_Actor   rdfs:subClassof     foaf:Agent .
 foaf:Person     owl:equivalentClass crm:E74_Person .
 event:Event     owl:equivalentClass crm:E5_Event .
 bibo:Document   rdfs:subClassof     crm:E31_Document .
@@ -327,52 +330,20 @@ BIBO refers to individual classes and properties from other ontologies (FOAF, DC
 
 Entities (authors, publishers...) SHOULD be referenced by established URI (DOI, ORCID, ROR...) like shown in the following example of a proceedings article:
 
+::: {#lst-bibo lst-cap="Example of a full bibliographic reference"}
 ```ttl
-@prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://doi.org/10.1145/3543873.3585579> a bibo:Article ;
-  dct:title "Wikidata: The Making Of" ;
-  dct:creator
-    <https://orcid.org/0000-0002-9593-2294> ,
-    <https://orcid.org/0000-0002-3939-2115> ,
-    <https://orcid.org/0000-0002-9172-2601> ;
-  bibo:authorList (
-    <https://orcid.org/0000-0002-9593-2294>
-    <https://orcid.org/0000-0002-3939-2115> ,
-    <https://orcid.org/0000-0002-9172-2601>
-  ) ;
-  bibo:pages "615–624" ;
-  dct:isPartOf <https://doi.org/10.1145/3543873> .
-
-<https://doi.org/10.1145/3543873> a bibo:Proceedings ;
-  dct:date "2023-03-30"^^xsd:date ;
-  dct:publisher <https://ror.org/03wsadn68> .
-  bibo:isbn13 "978-1-4503-9419-2" ;
-  dct:title "Companion Proceedings of the ACM Web Conference 2023" ;
-  dct:isPartOf <https://dblp.org/streams/conf/www> .
-
-<https://ror.org/03wsadn68> a foaf:Organization ;
-  foaf:name "Association for Computing Machinery" .
-
-<https://dblp.org/streams/conf/www> a bibo:Series ;
-  dct:title "WWW '23 Companion" .
-
-<https://orcid.org/0000-0002-9593-2294> a foaf:Person ;
-  foaf:familyName "Vrandečić" ; foaf:givenName "Denny" .
-<https://orcid.org/0000-0002-3939-2115> a foaf:Person ;
-  foaf:familyName "Pintscher" ; foaf:givenName "Lydia" .
-<https://orcid.org/0000-0002-9172-2601> a foaf:Person ;
-  foaf:familyName "Krötzsch" ; foaf:givenName "Markus" .
+{{< include examples/bibo.ttl >}}
 ```
+:::
 
 If structured data is not available, bibliographic references can also be expressed with blank nodes having a plain string value `rdfs:label`:
 
-~~~ttl
+::: {#lst-bibo-flat}
+```ttl
 _:123 a bibo:Document
   rdfs:label "D. Vrandečić, L. Pintscher, and M. Krötzsch. 2023. Wikidata ..." .
-~~~
+```
+:::
 
 ::: {.callout-tip}
 The citation management software [Zotero](https://www.zotero.org/) can import a large number of formats and export BIBO RDF.
