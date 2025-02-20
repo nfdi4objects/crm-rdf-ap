@@ -127,7 +127,6 @@ div.csl-indent {
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
   <ul class="collapse">
   <li><a href="#expressing-crm-and-rdf" id="toc-expressing-crm-and-rdf" class="nav-link" data-scroll-target="#expressing-crm-and-rdf">Expressing CRM and RDF</a></li>
-  <li><a href="#about-this-document" id="toc-about-this-document" class="nav-link" data-scroll-target="#about-this-document">About this document</a></li>
   </ul></li>
   <li><a href="#primitive-values" id="toc-primitive-values" class="nav-link" data-scroll-target="#primitive-values"><span class="header-section-number">2</span> Primitive values</a>
   <ul class="collapse">
@@ -164,15 +163,24 @@ div.csl-indent {
 
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>The <a href="https://www.cidoc-crm.org/">CIDOC Conceptual Reference Model (CRM)</a> is a conceptual data model used in the cultural heritage domain. The <a href="https://www.w3.org/TR/rdf11-concepts/">Resource Description Framework (RDF)</a> is a graph-based data format. Both CRM and RDF have been created independently for integration of information. RDF is a good fit to express CRM in data and it has been used to do so. The expression of CRM in RDF is not trivial though, so some guidelines are needed. This document is going to provide an application profile to best use CRM in RDF for integration with other RDF data. The primary use case is data integration in the Knowledge Graph of NFDI4Objects.</p>
+<p>The <a href="https://www.cidoc-crm.org/">CIDOC Conceptual Reference Model (CRM)</a> is a conceptual data model used in the cultural heritage domain. The <a href="https://www.w3.org/TR/rdf11-concepts/">Resource Description Framework (RDF)</a> is a graph-based data format. Both CRM and RDF have been created independently for integration of information. RDF is a good fit to express CRM in data and it has been used to do so. The expression of CRM in RDF is not trivial though, so some guidelines are needed. This document provides an <strong>application profile</strong> to best use CRM in RDF for integration with other RDF data. The primary use case is data integration into the <a href="https://graph.nfdi4objects.net">Knowledge Graph of NFDI4Objects</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This document is still in an early draft. Contributions and feedback are very welcome! The document sources are managed in a git repository at <a href="https://github.com/nfdi4objects/crm-rdf-ap" class="uri">https://github.com/nfdi4objects/crm-rdf-ap</a>.</p>
+</div>
+</div>
 <section id="expressing-crm-and-rdf" class="level2">
 <h2 class="anchored" data-anchor-id="expressing-crm-and-rdf">Expressing CRM and RDF</h2>
 <p>CRM defines abstract types of entities (CRM classes) such as events, measurements, places, and actors with relationship types (CRM properties) to connect instances of these entity types. RDF and its most common extensions define how to identify entities (resources), entity types (RDF classes) and relationship types (CRM properties) with URIs and values with Unicode strings (RDF literals) optionally having a language or a data type to encode values such as numbers and dates. RDF is used with ontologies that define RDF classes, properties, and constraints. CRM looks like an ontology or like it could directly be mapped to an RDF ontology, but this is not the case. CRM is agnostic to data formats: CRM classes are not RDF classes and CRM has no concept of data types and values, so any expression of CRM in RDF comes with choices of design. It is possible to express the same information modeled with CRM in different forms of RDF, so data cannot be integrated flawlessly.</p>
 <p>Some recommendation exist to express CRM in RDF (<span class="citation" data-cites="Doerr2020">Doerr, Light, and Hiebel (<a href="#ref-Doerr2020" role="doc-biblioref">2020</a>)</span>) and to combine it with other ontologies (e.g. <span class="citation" data-cites="Nys2018">Nys, Ruymbeke, and Billen (<a href="#ref-Nys2018" role="doc-biblioref">2018</a>)</span>).</p>
-</section>
-<section id="about-this-document" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-document">About this document</h2>
-<p>The document is managed in a git repository at <a href="https://github.com/nfdi4objects/crm-rdf-ap" class="uri">https://github.com/nfdi4objects/crm-rdf-ap</a>. Contributions and feedback is very welcome!</p>
 </section>
 </section>
 <section id="primitive-values" class="level1" data-number="2">
@@ -254,12 +262,12 @@ Table&nbsp;1: Temporal data types
 <tr class="odd">
 <td style="text-align: left;"><code>edtf:EDTF-level0</code></td>
 <td style="text-align: left;">EDTF limited to level 1 features</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>2010-12</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>edtf:EDTF-level1</code></td>
 <td style="text-align: left;">EDTF limited to level 1 and 2 features</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>2010-12?</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>edtf:EDTF-level2</code></td>
@@ -565,16 +573,25 @@ Note
 <h1 data-number="6"><span class="header-section-number">6</span> Bibliographic References</h1>
 <p>The encoding of bibliographic data is out of the scope of CRM. LRMoo (formerly known as FRBRoo) extends CRM to express the IFLA Library Reference Model (LRM) for bibliographic information managed by libraries <span class="citation" data-cites="LRMoo">(<a href="#ref-LRMoo" role="doc-biblioref">Aalberg 2024</a>)</span>. The model is based on four levels of description called WEMI (Work, Expression, Manifestation, Item) instead of one class, so the model is not practical for simple bibliographic references (citation data). As long as bibliographic entities are not the core object of investigation, it is enough to express publications as instance of <a href="http://www.cidoc-crm.org/cidoc-crm/E31">E31 Document</a> and express details with an established RDF ontologies for citation data. The preferred choice is the <a href="https://www.dublincore.org/specifications/bibo/bibo/">Bibliographic Ontology</a> (BIBO). Additional ontologies exist for more details, for instance the <a href="http://purl.org/spar/cito">Citation Typing Ontology</a>&nbsp;(CiTO) for citations between publications.</p>
 <p>Data providers MUST NOT create their own classes and properties to model bibliographic references with CRM but use BIBO. Applications MAY use the following CRM classes and statements to link BIBO and its corresponding ontologies with CRM:</p>
-<pre class="ttl"><code>dcterms:Agent   owl:equivalentClass crm:E39_Actor .
-foaf:Agent      owl:equivalentClass crm:E39_Actor .
+<pre class="ttl"><code>dcterms:Agent   rdfs:subClassOf     crm:E77_Persistent_Item .
+foaf:Agent      rdfs:subClassOf     crm:E77_Persistent_Item .
+crm:E39_Actor   rdfs:subClassof     dcterms:Agent .
+crm:E39_Actor   rdfs:subClassof     foaf:Agent .
 foaf:Person     owl:equivalentClass crm:E74_Person .
 event:Event     owl:equivalentClass crm:E5_Event .
 bibo:Document   rdfs:subClassof     crm:E31_Document .
 bibo:Collection rdfs:subClassof     crm:E31_Document .</code></pre>
 <p>BIBO refers to individual classes and properties from other ontologies (FOAF, DCTERMS, PRISM…). Data providers MUST use these classes and properties in bibliographic references but they MAY include additional RDF statements with corresponding classes and properties from CRM.</p>
 <p>Entities (authors, publishers…) SHOULD be referenced by established URI (DOI, ORCID, ROR…) like shown in the following example of a proceedings article:</p>
-<pre class="ttl"><code>@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; .
+<div id="lst-bibo" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-bibo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing&nbsp;5: Example of a full bibliographic reference
+</figcaption>
+<div aria-describedby="lst-bibo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<pre id="lst-bibo" class="ttl"><code>@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; .
 @prefix dct: &lt;http://purl.org/dc/terms/&gt; .
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 &lt;https://doi.org/10.1145/3543873.3585579&gt; a bibo:Article ;
@@ -585,7 +602,7 @@ bibo:Collection rdfs:subClassof     crm:E31_Document .</code></pre>
     &lt;https://orcid.org/0000-0002-9172-2601&gt; ;
   bibo:authorList (
     &lt;https://orcid.org/0000-0002-9593-2294&gt;
-    &lt;https://orcid.org/0000-0002-3939-2115&gt; ,
+    &lt;https://orcid.org/0000-0002-3939-2115&gt;
     &lt;https://orcid.org/0000-0002-9172-2601&gt;
   ) ;
   bibo:pages "615–624" ;
@@ -609,10 +626,23 @@ bibo:Collection rdfs:subClassof     crm:E31_Document .</code></pre>
 &lt;https://orcid.org/0000-0002-3939-2115&gt; a foaf:Person ;
   foaf:familyName "Pintscher" ; foaf:givenName "Lydia" .
 &lt;https://orcid.org/0000-0002-9172-2601&gt; a foaf:Person ;
-  foaf:familyName "Krötzsch" ; foaf:givenName "Markus" .</code></pre>
+  foaf:familyName "Krötzsch" ; foaf:givenName "Markus" .
+</code></pre>
+</div>
+</figure>
+</div>
 <p>If structured data is not available, bibliographic references can also be expressed with blank nodes having a plain string value <code>rdfs:label</code>:</p>
-<pre class="ttl"><code>_:123 a bibo:Document
+<div id="lst-bibo-flat" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-bibo-flat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing&nbsp;6
+</figcaption>
+<div aria-describedby="lst-bibo-flat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<pre id="lst-bibo-flat" class="ttl"><code>_:123 a bibo:Document
   rdfs:label "D. Vrandečić, L. Pintscher, and M. Krötzsch. 2023. Wikidata ..." .</code></pre>
+</div>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
